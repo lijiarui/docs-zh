@@ -6,5 +6,5 @@
 ## Intro
 
 * [What is](intro/what-is.md)
-* [Untitled](intro/untitled-1.md)
+* [Untitled](intro/untitled.md)
 
