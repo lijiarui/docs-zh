@@ -4,9 +4,9 @@ description: Wechaty 是主要的bot 类，一个 Bot 代表着一个微信客�
 
 # Wechaty
 
-根据你选择的[Puppet](../puppet.md)的不同，Bot 可能等于下面中的一个客户端
+根据你选择的[Puppet](../puppet.md)的不同，Bot 可能等于下面中的一个客户端，不同的[Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) 代表的我们对微信协议的不同实现方式, Puppet的英文意思是`傀儡`, 很形象的描述了我们希望Puppet做的事情：帮助 Wechaty 来控制微信的操作。
 
-* 网页微信客户端t, 当你选择: [puppet-puppeteer](https://github.com/chatie/wechaty-puppet-puppeteer)/[puppet-wechat4u](https://github.com/chatie/wechaty-puppet-wechat4u)​
+* 网页微信客户端, 当你选择: [puppet-puppeteer](https://github.com/chatie/wechaty-puppet-puppeteer)/[puppet-wechat4u](https://github.com/chatie/wechaty-puppet-wechat4u)​
 * iPad 微信客户端, 当你选择: [puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat)​
 
 了解更多:
@@ -25,16 +25,35 @@ description: Wechaty 是主要的bot 类，一个 Bot 代表着一个微信客�
 
 {% page-ref page="room.md" %}
 
-## Typedefs <a id="typedefs"></a>
+## 类型定义
 
-​PuppetName​
+### [PuppetModuleName](#puppetmodulename​)
 
-The term [Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) in Wechaty is an Abstract Class for implementing protocol plugins. The plugins are the component that helps Wechaty to control the Wechat\(that's the reason we call it puppet\). The plugins are named XXXPuppet, for example:
+PuppetModuleName 参数在这里代表着Puppet 的名称，类型是 string, 可能的取值为：
 
-* ​[PuppetPuppeteer](https://github.com/Chatie/wechaty-puppet-puppeteer):
-* ​[PuppetPadchat](https://github.com/lijiarui/wechaty-puppet-padchat)​
+- PUPPET_DEFAULT
+- wechaty-puppet-ioscat'    
+- wechaty-puppet-mock'      
+- wechaty-puppet-padchat'   
+- wechaty-puppet-padpro'    
+- wechaty-puppet-puppeteer' 
+- wechaty-puppet-wechat4u'  
 
-​[WechatyOptions](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyOptions)​
+
+### [WechatyOptions](#wechatyoptions)
+
+这个参数
+
+```ts
+export interface WechatyOptions {
+  memory?        : MemoryCard,
+  name?          : string,                    // Wechaty Name
+  profile?       : null | string,             // DEPRECATED: use name instead
+  puppet?        : PuppetModuleName | Puppet, // Puppet name or instance
+  puppetOptions? : PuppetOptions,             // Puppet TOKEN
+  ioToken?       : string,                    // Io TOKEN
+}
+```
 
 The option parameter to create a wechaty instance[WechatyEventName](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyEventName)​
 
