@@ -1,22 +1,22 @@
-# Summary
+# Table of contents
 
 * [介绍](README.md)
-* [快速开始](untitled.md)
-* [API 文档](api/README)
-  * [Wechaty](api/what-is.md)
-  * [Message](api/test.md)
+* [快速开始](quick-start.md)
+* [API 文档](api/README.md)
+  * [Wechaty](api/wechaty.md)
+  * [Message](api/message.md)
   * [Contact](api/contact.md)
   * [Room](api/room.md)
   * [ContactSelf](api/contactself.md)
   * [RoomInvitation](api/roominvitation.md)
   * [Friendship](api/friendship.md)
-* [示例代码](shi-li-dai-ma.md)
+* [示例代码](example.md)
 * [Puppet](puppet.md)
 * [FAQ](faq.md)
 
-
 ## 了解更多
 
-* [进阶](jin-jie.md)
-* [ChangeLog](changelog.md)
-* [Awesome Wechaty](awesome-wechaty.md)
+* [进阶](more/advanced.md)
+* [ChangeLog](more/changelog.md)
+* [Awesome Wechaty](more/awesome-wechaty.md)
+
