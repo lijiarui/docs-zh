@@ -12,7 +12,7 @@
   * [Friendship](api/friendship.md)
 * [示例代码](example.md)
 * [Puppet](puppet.md)
-* [FAQ](https-github.com-chatie-wechaty-issues.md)
+* [FAQ](faq.md)
 
 ## 了解更多
 
