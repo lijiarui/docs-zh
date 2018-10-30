@@ -16,7 +16,7 @@
 
 ## 了解更多
 
-* [进阶](liao-jie-geng-duo/advanced.md)
-* [ChangeLog](liao-jie-geng-duo/changelog.md)
-* [Awesome Wechaty](liao-jie-geng-duo/awesome-wechaty.md)
+* [进阶](more/advanced.md)
+* [ChangeLog](more/changelog.md)
+* [Awesome Wechaty](more/awesome-wechaty.md)
 
