@@ -21,5 +21,5 @@
 * [ReleaseLog](more/releaselog.md)
 * [ChangeLog](more/changelog.md)
 * [Awesome Wechaty](more/awesome-wechaty.md)
-* [Contributor](more/contributor.md)
+* [Contributors](https://github.com/Chatie/wechaty/wiki/Contributors)
 
