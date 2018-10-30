@@ -33,7 +33,7 @@ description: Wechaty 是主要的bot 类，一个 Bot 代表着一个微信客�
 
 ## Typedefs <a id="typedefs"></a>
 
-​PuppetName​
+[​PuppetName​](#puppetname)
 
 The term [Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) in Wechaty is an Abstract Class for implementing protocol plugins. The plugins are the component that helps Wechaty to control the Wechat\(that's the reason we call it puppet\). The plugins are named XXXPuppet, for example:
 
