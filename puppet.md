@@ -18,6 +18,11 @@
 
 ### 2.1 调用 Wechaty 的开发者
 
+| Wechaty Puppet                                              | Backend Protocol    | Npm Name            |  Npm Version                                                    | Stage   |
+| :-----------------------------------------------------------| :-------------------| :-------------------| :---------------------------------------------------------------| :-------|
+| [Puppet](https://github.com/Chatie/wechaty-puppet)          | Abstract Base Class | wechaty-puppet      | ![Puppet](https://badge.fury.io/js/wechaty-puppet.svg) <br /> [![npm (tag)](https://img.shields.io/npm/v/wechaty-puppet/next.svg)](https://www.npmjs.com/package/wechaty-puppet?activeTab=versions)         | ![Stage:Release](https://img.shields.io/badge/Stage-Release-green.svg) |
+| [PuppetMock](https://github.com/Chatie/wechaty-puppet-mock) | Mocking             | wechaty-puppet-mock | ![PuppetMock](https://badge.fury.io/js/wechaty-puppet-mock.svg) <br /> [![npm (tag)](https://img.shields.io/npm/v/wechaty-puppet-mock/next.svg)](https://www.npmjs.com/package/wechaty-puppet-mock?activeTab=versions)| ![Stage:Release](https://img.shields.io/badge/Stage-Release-green.svg) |
+
 | Puppet | 使用的微信协议 | Npm 名称 | Npm 版本 | 状态 |
 | :--- | :--- | :--- | :--- | :--- |
 |  | 通过浏览器Hook 网页API |  |  |  |
@@ -34,13 +39,41 @@
 |  | 抽象父类 |  |  |  |
 |  | 为单元测试提供模拟调用 |  |  |  |
 
+| Wechaty Puppet                                              | Backend Protocol    | Npm Name            |  Npm Version                                                    | Stage   |
+| :-----------------------------------------------------------| :-------------------| :-------------------| :---------------------------------------------------------------| :-------|
+| [Puppet](https://github.com/Chatie/wechaty-puppet)          | Abstract Base Class | wechaty-puppet      | ![Puppet](https://badge.fury.io/js/wechaty-puppet.svg) <br /> [![npm (tag)](https://img.shields.io/npm/v/wechaty-puppet/next.svg)](https://www.npmjs.com/package/wechaty-puppet?activeTab=versions)         | ![Stage:Release](https://img.shields.io/badge/Stage-Release-green.svg) |
+| [PuppetMock](https://github.com/Chatie/wechaty-puppet-mock) | Mocking             | wechaty-puppet-mock | ![PuppetMock](https://badge.fury.io/js/wechaty-puppet-mock.svg) <br /> [![npm (tag)](https://img.shields.io/npm/v/wechaty-puppet-mock/next.svg)](https://www.npmjs.com/package/wechaty-puppet-mock?activeTab=versions)| ![Stage:Release](https://img.shields.io/badge/Stage-Release-green.svg) |
+
 ## 3. Wechaty Puppet 兼容性
 
 ### 3.1 Puppet 联系人接口
 
+| Contact API | wechat4u &<br />puppeteer | padchat | Ioscat
+| --- | :---: | :---: | :---: |
+| Permanent ContactPayload.id  | ~~No~~ | Yes | ~~No~~
+| ContactPayload.friend | ~~No~~ | Yes | Yes
+
 ### 3.2 Puppet 消息收发接口
 
+| Message API | wechat4u &<br />puppeteer | padchat | Ioscat
+| --- | :---: | :---: | :---: |
+| messageSendContact() | ~~No~~ | Yes | ~~No~~
+| messageFile() | Yes | Yes for Image/Audio/Video<br />No for other Attachments | ~~No~~
+| messageSendFile() | Yes | Yes for Image/Audio/Video<br />No for other Attachments | ~~No~~ |
+| messageSendUrl() | ~~No~~ | Yes | ~~No~~ |
+
 ### 3.3 Puppet 微信群接口
+
+| Room API | wechat4u &<br />puppeteer | padchat | Ioscat
+| --- | :---: | :---: | :---: |
+| Permanent RoomPayload.id | ~~No~~ | Yes | ~~No~~
+| roomQrcode() | ~~No~~ | Yes | Yes
+| roomCreate() | ~~No~~ | Yes | Yes
+| roomAdd() | ~~No~~ | Yes | Yes
+| roomDel() | ~~No~~ | Yes | Yes
+| roomQuit() | ~~No~~ | Yes | Yes
+| roomAnnounce() | ~~No~~ | Yes | Yes
+| roomPayload.owner | ~~No~~ | Yes | ~~No~~
 
 ## 4. 了解更多
 
