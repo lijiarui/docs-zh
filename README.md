@@ -23,11 +23,13 @@
 从2017年6月下旬开始，使用基于web版微信接入方案存在大概率的被限制登陆的可能性。 主要表现为：无法登陆Web 微信，但不影响手机等其他平台。 验证是否被限制登陆： [https://wx.qq.com](https://wx.qq.com) 上扫码查看是否能登陆。 更多内容详见：
 
 * [Can not login with error message: 当前登录环境异常。为了你的帐号安全，暂时不能登录web微信。](https://github.com/Chatie/wechaty/issues/603)
-* [\[RUMOR\] wechat will close webapi for wechat](https://github.com/Chatie/wechaty/issues/990)
-* [New account login issue](https://github.com/Chatie/wechaty/issues/872)
+* [\[谣言\] 微信将会关闭网页版本](https://github.com/Chatie/wechaty/issues/990)
+* [新注册的微信号无法登陆](https://github.com/Chatie/wechaty/issues/872)
 * [wechaty-puppet-puppeteer](https://github.com/chatie/wechaty-puppet-puppeteer)
 
-**解决方案：我们提供了非web 版本的解决方案，正在进行alpha 测试，**[**点击申请测试token**](https://github.com/Chatie/wechaty/issues/1296)**，技术细节及实现请查看**[**wechaty-puppet-padchat**](https://github.com/lijiarui/wechaty-puppet-padchat)
+{% hint style="success" %}
+**解决方案： 我们提供了非web 版本解决方案，**[**点击购买token**](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token) **, 更多技术细节查看** [**wechaty-puppet-padchat**](https://github.com/lijiarui/wechaty-puppet-padchat)
+{% endhint %}
 
 ## 什么是 Puppet
 
@@ -40,9 +42,9 @@
 
 如果你希望深入了解Puppet是如何在Wechaty 运行的，你可以在[https://github.com/Chatie/wechaty-puppet/blob/master/src/puppet.ts](https://github.com/Chatie/wechaty-puppet/blob/master/src/puppet.ts) 查看源代码。
 
-基于网页微信的实现方式是免费的，基于其他的接入方式是收费的，收费相关可以查看[这里](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/购买token)
+基于网页微信的实现方式是免费的，基于其他的接入方式是收费的，详细介绍：[收费说明](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/购买token)
 
-以下是Puppet 和Wechaty 的架构图，更多Puppet 的介绍在这里： [Puppet in wiki](https://github.com/Chatie/wechaty-puppet/wiki) 查看更多详细的介绍。
+以下是Puppet 和Wechaty 的架构图，更多Puppet 的介绍在这里： [Puppet in wiki](https://github.com/Chatie/wechaty-puppet/wiki) 
 
 ![](https://github.com/Chatie/wechaty/wiki/image/abstract-info.png)
 
