@@ -79,6 +79,60 @@ bot.on('room-join', (room, inviteeList, inviter) => {
 })
 ```
 
+#### 2.5 为什么需要扫码登陆而不是用户名密码登陆？
+
+> 我发现代码是有通过用户名密码登陆的方法的，所以也许我可以很简单的写一个创建账户的功能，然后不用再扫码登陆，但是为什么现在没做呢？
+
+对的，我们不支持账号密码登陆，以后也不会支持。
+
+有一些Puppet 有有通过账号密码登陆的方法的，但是我们并不打算把这个API开放出来，因为以下3个原因：
+
+1. 有一些Puppet 是不支持这个功能的，比如使用网页API的PuppetWechat4u
+2. 当你使用扫码的方式登陆的时候，你是可以保存你手机的session的。换句话说，你可以同时让手机和机器人同时在线。如果你使用了用户名密码登陆，那么的session将会失效，只有机器人微信在线，手机微信将会自动退出。
+3. 通过用户名密码登陆的协议，是使用一个协议服务器来控制iPad 微信的。如果你使用用户名密码的方式登陆，那么你就会直接把这些敏感的账号信息发给第三方的服务器，这种方式大部分用户会觉得很不舒服。
+
+#### 2.6 如何不使用onMessage 来发消息？
+
+**在群内发送消息：**
+
+```typescript
+const room = await Room.find('room name')
+room.say('hello room')
+```
+
+**给一个好友私信发消息：**
+
+```typescript
+const contact = await Contact.find('contact name')
+contact.say('hello room')
+```
+
+更多例子请参考：[https://github.com/Chatie/wechaty-getting-started/blob/master/examples](https://github.com/Chatie/wechaty-getting-started/blob/master/examples)
+
+相关issue:
+
+* [\#446](https://github.com/Chatie/wechaty/issues/446) how to send mesage without onMessage
+* [\#200](https://github.com/Chatie/wechaty/issues/200) \[new feature\] Forward Message
+* [\#89](https://github.com/Chatie/wechaty/issues/89) Wechaty.send\(\) error when send message to the room
+* [\#41](https://github.com/Chatie/wechaty/issues/41) \[New Feature\] send message by branding new method: say\(\)
+
+#### 2.7 运行出现Error: can not found bot file: xxx.js when using docker to start wechaty.
+
+首先，请确认你有`xxx.js`文件，如果依然有这个问题，请检查一下Linux 的 `SELinux`设置。
+
+**SELinux** 在`CentOS`系统下是默认开启的，`Ubuntu`默认 看不到这个。 
+
+`root` 用户是没有权限读这个目录的，你可以运行下面的命令 
+
+```text
+setenforce 0
+```
+
+`setenforce 0` 会禁掉SELinux
+
+* 相关博客:  [Find if permission denied errors are caused by SELinux](https://www.mysysadmintips.com/linux/servers/587-find-if-permission-denied-error-is-caused-by-selinux)
+* 相关 issues:[\#66](https://github.com/Chatie/wechaty/issues/66#issuecomment-374086724) Dockerize Wechaty for easy start
+
 ### 3. 最佳实践
 
 #### 3.1 wechaty & 队列的最佳实践
@@ -139,18 +193,38 @@ wechaty 可以实现多个微信接入的方案，对外提供统一的接口，
 
 **简单回答：**
 
-较小的偶数数字是生产版本。
+次要版本号是偶数数字是生产版本。
 
 **详细回答：**
 
-Wechaty 根据 [http://semver.org/ ](http://semver.org/%20) 的规则制定版本号，并使用较小的版本来说明发布的版本是生产版本还是开发版本。
+Wechaty 根据 [http://semver.org/ ](http://semver.org/%20) 的规则制定版本号，并使用次要版本号来发布的版本是生产版本还是开发版本。
 
 数字的规则：
 
 1. 偶数版本，如0.8，0.12，是用于生产环境的
 2. 奇数版本，如0.11，0.13，是发布的开发版本
 
-参考 \[\]\(\)
+参考 [wechaty issue \#905](https://github.com/Chatie/wechaty/issues/905) 和 [wechaty issue 1158](https://github.com/Chatie/wechaty/issues/1158), 当语义版本的次要版本号是技术的时候，意味着它是开发分支，建议不要上生产环境。
+
+**偶数版本**  例子: \(用于生产环境\)
+
+* 0.**16**.1
+* 0.**16**.2
+* 1.**0**.1
+* 1.**0**.2
+
+**技术版本** 例子: \(用于开发环境\)
+
+* 0.**15**.1
+* 0.**15**.2
+* 1.**1**.1
+* 1.**1**.2
+
+同时，只要代码通过了Travis CI 的自动化测试，我们会发布所有版本的NPM包。
+
+如果想了解更多：[How to Understand the Wechaty Semantic Versioning?](https://github.com/Chatie/wechaty/wiki/FAQ#3-how-to-understand-the-wechaty-semantic-versioning)
+
+### 
 
 
 
