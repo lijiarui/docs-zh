@@ -4,6 +4,8 @@ description: Wechaty 是主要的bot 类，一个 Bot 代表着一个微信客�
 
 # Wechaty
 
+## 简介
+
 根据你选择的[Puppet](../puppet.md)的不同，Bot 可能等于下面中的一个客户端，不同的[Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) 代表的我们对微信协议的不同实现方式, Puppet的英文意思是`傀儡`, 很形象的描述了我们希望Puppet做的事情：帮助 Wechaty 来控制微信的操作。
 
 * 网页微信客户端, 当你选择: [puppet-puppeteer](https://github.com/chatie/wechaty-puppet-puppeteer)/[puppet-wechat4u](https://github.com/chatie/wechaty-puppet-wechat4u)​
@@ -27,7 +29,7 @@ description: Wechaty 是主要的bot 类，一个 Bot 代表着一个微信客�
 
 ## 类型定义
 
-### [PuppetModuleName](#puppetmodulename​)
+### [PuppetModuleName]
 
 PuppetModuleName 参数在这里代表着Puppet 的名称，类型是 string, 可能的取值为：
 
@@ -40,7 +42,7 @@ PuppetModuleName 参数在这里代表着Puppet 的名称，类型是 string, �
 - wechaty-puppet-wechat4u'  
 
 
-### [WechatyOptions](#wechatyoptions)
+### [WechatyOptions]
 
 这个参数
 
