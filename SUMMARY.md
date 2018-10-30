@@ -21,5 +21,5 @@
 * [ReleaseLog](liao-jie-geng-duo/releaselog.md)
 * [ChangeLog](liao-jie-geng-duo/changelog.md)
 * [Awesome Wechaty](liao-jie-geng-duo/awesome-wechaty.md)
-* [ContributorList](liao-jie-geng-duo/contributorlist.md)
+* [Contributor](liao-jie-geng-duo/contributorlist.md)
 
