@@ -2,7 +2,7 @@
 
 * [介绍](README.md)
 * [快速开始](quick-start.md)
-* [API 文档](api/README.md)
+* API 文档
   * [Wechaty](api/wechaty.md)
   * [Message](api/message.md)
   * [Contact](api/contact.md)
