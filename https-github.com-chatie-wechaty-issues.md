@@ -1,8 +1,16 @@
 # FAQ
 
-### 1. 无法登陆
+### 1. 基本使用
 
-#### 1.1 我的微信号无法登陆
+#### 1.1 如何用最简单的方式把wechaty 跑起来？
+
+1. 从github 上clone wechaty 的教学代码： [https://github.com/Chatie/wechaty-getting-started](https://github.com/Chatie/wechaty-getting-started)
+2. 运行 \`npm install\`
+3. 运行 \`npm start\`
+4. 默认会跑起来我们的demo 例子，demo代码位置: [examples/starter-bot.js](https://github.com/Chatie/wechaty-getting-started/blob/master/examples/starter-bot.js)
+5. 修改demo 的例子，实现你自己想要的bot 逻辑
+
+#### 1.2 我的微信号无法登陆
 
 从2017年6月下旬开始，使用基于web版微信接入方案存在大概率的被限制登陆的可能性。 主要表现为：无法登陆Web 微信，但不影响手机等其他平台。 验证是否被限制登陆： [https://wx.qq.com](https://wx.qq.com) 上扫码查看是否能登陆。 更多内容详见：
 
@@ -28,6 +36,7 @@
 * 支付相关 - 红包、转账、收款 等都不支持
 * 在群聊中@他人 - 是的，Web 微信中被人@后也不会提醒
 * 朋友圈相关 - 后续会支持
+* 小程序 - 后续会支持
 
 以下功能部分支持
 
@@ -56,6 +65,18 @@ PuppetPadchat 是支持的， 其他版本是不支持的，示例代码：
     })
     m.say(link)
   })
+```
+
+#### 2.4 机器人被拉到一个新的群组里的事件是否支持？
+
+支持，可以通过\`room-join\` 获取到这个事件。
+
+```typescript
+bot.on('room-join', (room, inviteeList, inviter) => {
+  const nameList = inviteeList.map(c => c.name()).join(',')
+  console.log(`Room ${room.topic()} got new member ${nameList}, invited by ${inviter}`)
+  // 如果机器人被拉到一个新的群组里, inviteeList[0] === bot.self()
+})
 ```
 
 ### 3. 最佳实践
@@ -114,9 +135,22 @@ wechaty 可以实现多个微信接入的方案，对外提供统一的接口，
 
 {% embed url="https://github.com/Chatie/python-wechaty" %}
 
+#### 4.3 如何理解Wechaty 的版本号
 
+**简单回答：**
 
+较小的偶数数字是生产版本。
 
+**详细回答：**
+
+Wechaty 根据 [http://semver.org/ ](http://semver.org/%20) 的规则制定版本号，并使用较小的版本来说明发布的版本是生产版本还是开发版本。
+
+数字的规则：
+
+1. 偶数版本，如0.8，0.12，是用于生产环境的
+2. 奇数版本，如0.11，0.13，是发布的开发版本
+
+参考 \[\]\(\)
 
 
 
