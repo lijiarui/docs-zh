@@ -73,18 +73,18 @@ bot.start()
 * **logout**: 当机器人退出登陆的时候，会触发到这个事件。
 * **message**: 当有新消息的时候会触发这个事件。
 
-初次之外，wechaty还有一些群相关的事件，了解更多：[WechatyEventName](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyEventName)​
+初次之外，wechaty还有一些群相关的事件，了解更多：[WechatyEventName](#wechatyeventname)​
 
 你可以在这些时间的方法中自定义你希望的所有逻辑。​
 
-**Kind**: instance method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty) 
+**Kind**: instance method of [`Wechaty`](#wechaty) 
 
-**Returns**: [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty) - - this for chaining, see advanced [chaining usage](https://github.com/Chatie/wechaty-getting-started/wiki/FAQ-EN#36-why-wechatyonevent-listener-return-wechaty)​
+**Returns**: [`Wechaty`](#wechaty) - - this for chaining, see advanced [chaining usage](https://github.com/Chatie/wechaty-getting-started/wiki/FAQ-EN#36-why-wechatyonevent-listener-return-wechaty)​
 
 | Param | Type | Description |
 | :--- | :--- | :--- |
-| event | ​[`WechatyEventName`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyEventName)​ | Emit WechatyEvent |
-| listener | ​[`WechatyEventFunction`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyEventFunction)​ | Depends on the WechatyEvent |
+| event | ​[`WechatyEventName`](#wechatyeventname)​ | Emit WechatyEvent |
+| listener | ​[`WechatyEventFunction`](#wechatyeventfunction)​ | Depends on the WechatyEvent |
 
 **Example** _\(Event:scan\)_
 
@@ -205,7 +205,7 @@ bot.on('room-topic', (room, topic, oldTopic, changer) => {
 机器人所有的操作必须在这个函数执行完成之后。
 {% endhint %}
 
-**Kind**: instance method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty) **Example**
+**Kind**: instance method of [`Wechaty`](#wechaty) **Example**
 
 ```typescript
 await bot.start() // do other stuff with bot here
@@ -215,7 +215,7 @@ await bot.start() // do other stuff with bot here
 
 停止机器人
 
-**Kind**: instance method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty) **Example**
+**Kind**: instance method of [`Wechaty`](#Wechaty) **Example**
 
 ```typescript
 await bot.stop()
@@ -225,7 +225,7 @@ await bot.stop()
 
 登出机器人
 
-**Kind**: instance method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty) **Example**
+**Kind**: instance method of [`Wechaty`](#wechaty) **Example**
 
 ```typescript
 await bot.logout()
@@ -235,7 +235,7 @@ await bot.logout()
 
 获取机器人logon/logoff 的状态
 
-**Kind**: instance method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty) **Example**
+**Kind**: instance method of [`Wechaty`](#wechaty) **Example**
 
 ```typescript
 if (bot.logonoff()) {  
@@ -249,7 +249,7 @@ if (bot.logonoff()) {
 
 获取当前机器人的所有信息
 
-**Kind**: instance method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty) **Example**
+**Kind**: instance method of [`Wechaty`](#wechaty) **Example**
 
 ```typescript
 const contact = bot.userSelf()
@@ -264,7 +264,7 @@ console.log(`Bot is ${contact.name()}`)
 这个函数是否能成功调用，取决于你使用了哪一种Puppet 的实现，了解更多：[Puppet 兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
 {% endhint %}
 
-**Kind**: instance method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty)​
+**Kind**: instance method of [`Wechaty`](#wechaty)​
 
 <table>
   <thead>
@@ -314,11 +314,11 @@ await bot.say(fileBox)
 
 获取全局的Wechaty 实例。
 
-**Kind**: static method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty)​
+**Kind**: static method of [`Wechaty`](#wechaty)​
 
 | Param | Type | Default |
 | :--- | :--- | :--- |
-| \[options\] | ​[`WechatyOptions`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyOptions)​ | `{}` |
+| \[options\] | ​[`WechatyOptions`](#wechatyoptions)​ | `{}` |
 
 **Example** _\(The World's Shortest ChatBot Code: 6 lines of JavaScript\)_
 
