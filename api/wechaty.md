@@ -34,15 +34,15 @@ description: Wechaty 是主要的bot 类，一个 Bot 代表着一个微信客�
 * ​[Wechaty](#Wechaty)​
   * ​[new Wechaty\(\[options\]\)](#new-wechaty-options)​
   * _instance_
-    * ​[.on\(event, listener\)](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty+on) ⇒ [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty)​
-    * ​[.start\(\)](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty+start) ⇒ `Promise.`
-    * ​[.stop\(\)](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty+stop) ⇒ `Promise.`
-    * ​[.logout\(\)](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty+logout) ⇒ `Promise.`
-    * ​[.logonoff\(\)](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty+logonoff) ⇒ `boolean`
-    * ​[.userSelf\(\)](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty+userSelf) ⇒ `ContactSelf`
-    * ​[.say\(textOrContactOrFileOrUrl\)](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty+say) ⇒ `Promise.`
+    * ​[.on\(event, listener\)]() ⇒ [`Wechaty`](#wechaty-on-event-listener-wechaty)​
+    * ​[.start\(\)](#wechaty-start-promise) ⇒ `Promise.`
+    * ​[.stop\(\)](#wechaty-stop-promise) ⇒ `Promise.`
+    * ​[.logout\(\)](#wechaty-logout-promise) ⇒ `Promise.`
+    * ​[.logonoff\(\)](#wechaty-logonoff-boolean) ⇒ `boolean`
+    * ​[.userSelf\(\)](#wechaty-userself-contactself) ⇒ `ContactSelf`
+    * ​[.say\(textOrContactOrFileOrUrl\)](#wechaty-say-textorcontactorfileorurl-promise) ⇒ `Promise.`
   * _static_
-    * ​[.instance\(\[options\]\)](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty.instance)​
+    * ​[.instance\(\[options\]\)]()​
 
 ### new Wechaty\(\[options\]\)  <a id="new-wechaty-options"></a>
 
@@ -50,7 +50,7 @@ description: Wechaty 是主要的bot 类，一个 Bot 代表着一个微信客�
 
 | Param | Type | Default |
 | :--- | :--- | :--- |
-| \[options\]  | ​[`WechatyOptions`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyOptions)​ | `{}` |
+| \[options\]  | ​[`WechatyOptions`](#wechatyoptions)​ | `{}` |
 
 **Example** _\(The World's Shortest ChatBot Code: 6 lines of JavaScript\)_
 
@@ -64,7 +64,7 @@ bot.on('message', message => console.log(`Message: ${message}`))
 bot.start()
 ```
 
-### wechaty.on\(event, listener\) ⇒ [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty)​  <a id="wechaty-on-event-listener-wechaty"></a>
+### wechaty.on\(event, listener\) ⇒ [`Wechaty`](#Wechaty)​  <a id="wechaty-on-event-listener-wechaty"></a>
 
 当机器人收到消息，会触发一个事件，一些简单的事件介绍如下：
 
@@ -406,7 +406,9 @@ export interface WechatyOptions {
       <td style="text-align:left">Io TOKEN</td>
     </tr>
   </tbody>
-</table>### WechatyEventName 
+</table>
+
+### WechatyEventName 
 
 Wechaty 事件的类型
 
@@ -498,7 +500,9 @@ Wechaty 事件的类型
       </td>
     </tr>
   </tbody>
-</table>### WechatyEventFunction 
+</table>
+
+### WechatyEventFunction 
 
 Wechaty 事件函数
 
