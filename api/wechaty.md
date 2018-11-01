@@ -42,7 +42,7 @@ description: Wechaty 是主要的bot 类，一个 Bot 代表着一个微信客�
     * ​[.userSelf\(\)](#wechaty-userself-contactself) ⇒ `ContactSelf`
     * ​[.say\(textOrContactOrFileOrUrl\)](#wechaty-say-textorcontactorfileorurl-promise) ⇒ `Promise.`
   * _static_
-    * ​[.instance\(\[options\]\)]()​
+    * ​[.instance\(\[options\]\)](#wechaty-instance-options)​
 
 ### new Wechaty\(\[options\]\)  <a id="new-wechaty-options"></a>
 
@@ -285,7 +285,9 @@ console.log(`Bot is ${contact.name()}`)
       </td>
     </tr>
   </tbody>
-</table>**Example**
+</table>
+
+**Example**
 
 ```typescript
 const bot = new Wechaty()
