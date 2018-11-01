@@ -1,7 +1,5 @@
 ---
-description: >-
-  Bot itself will be encapsulated as a ContactSelf. This class is extends
-  Contact
+description: 机器人自己的信息将会封装一个ContactSelf 类. 这个类继承自  Contact
 ---
 
 # ContactSelf
