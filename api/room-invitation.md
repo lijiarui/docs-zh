@@ -1,30 +1,31 @@
 ---
-description: 'accept room invitation'
+description: accept room invitation
 ---
 
-<a name="RoomInvitation"></a>
+# RoomInvitation
 
 ## RoomInvitation
+
 accept room invitation
 
-**Kind**: global class  
+**Kind**: global class
 
-* [RoomInvitation](#RoomInvitation)
-    * [.accept()](#RoomInvitation+accept) ⇒ <code>Promise.&lt;void&gt;</code>
-    * [.inviter()](#RoomInvitation+inviter) ⇒ <code>Contact</code>
-    * [.topic()](#RoomInvitation+topic) ⇒ <code>Contact</code>
-    * [.roomTopic()](#RoomInvitation+roomTopic)
-    * [.date()](#RoomInvitation+date) ⇒ <code>Promise.&lt;Date&gt;</code>
-    * [.age()](#RoomInvitation+age) ⇒ <code>number</code>
+* [RoomInvitation](room-invitation.md#RoomInvitation)
+  * [.accept\(\)](room-invitation.md#RoomInvitation+accept) ⇒ `Promise.`
+  * [.inviter\(\)](room-invitation.md#RoomInvitation+inviter) ⇒ `Contact`
+  * [.topic\(\)](room-invitation.md#RoomInvitation+topic) ⇒ `Contact`
+  * [.roomTopic\(\)](room-invitation.md#RoomInvitation+roomTopic)
+  * [.date\(\)](room-invitation.md#RoomInvitation+date) ⇒ `Promise.`
+  * [.age\(\)](room-invitation.md#RoomInvitation+age) ⇒ `number`
 
-<a name="RoomInvitation+accept"></a>
+### roomInvitation.accept\(\) ⇒ `Promise.`
 
-### roomInvitation.accept() ⇒ <code>Promise.&lt;void&gt;</code>
 Accept Room Invitation
 
-**Kind**: instance method of [<code>RoomInvitation</code>](#RoomInvitation)  
-**Example**  
-```js
+**Kind**: instance method of [`RoomInvitation`](room-invitation.md#RoomInvitation)  
+**Example**
+
+```javascript
 const bot = new Wechaty()
 bot.on('room-invite', async roomInvitation => {
   try {
@@ -36,14 +37,15 @@ bot.on('room-invite', async roomInvitation => {
 }
 .start()
 ```
-<a name="RoomInvitation+inviter"></a>
 
-### roomInvitation.inviter() ⇒ <code>Contact</code>
+### roomInvitation.inviter\(\) ⇒ `Contact`
+
 Get the inviter from room invitation
 
-**Kind**: instance method of [<code>RoomInvitation</code>](#RoomInvitation)  
-**Example**  
-```js
+**Kind**: instance method of [`RoomInvitation`](room-invitation.md#RoomInvitation)  
+**Example**
+
+```javascript
 const bot = new Wechaty()
 bot.on('room-invite', async roomInvitation => {
   const inviter = await roomInvitation.inviter()
@@ -52,14 +54,15 @@ bot.on('room-invite', async roomInvitation => {
 }
 .start()
 ```
-<a name="RoomInvitation+topic"></a>
 
-### roomInvitation.topic() ⇒ <code>Contact</code>
+### roomInvitation.topic\(\) ⇒ `Contact`
+
 Get the room topic from room invitation
 
-**Kind**: instance method of [<code>RoomInvitation</code>](#RoomInvitation)  
-**Example**  
-```js
+**Kind**: instance method of [`RoomInvitation`](room-invitation.md#RoomInvitation)  
+**Example**
+
+```javascript
 const bot = new Wechaty()
 bot.on('room-invite', async roomInvitation => {
   const topic = await roomInvitation.topic()
@@ -67,24 +70,26 @@ bot.on('room-invite', async roomInvitation => {
 }
 .start()
 ```
-<a name="RoomInvitation+roomTopic"></a>
 
-### roomInvitation.roomTopic()
-**Kind**: instance method of [<code>RoomInvitation</code>](#RoomInvitation)  
-**Deprecated:**: use topic() instead  
-<a name="RoomInvitation+date"></a>
+### roomInvitation.roomTopic\(\)
 
-### roomInvitation.date() ⇒ <code>Promise.&lt;Date&gt;</code>
+**Kind**: instance method of [`RoomInvitation`](room-invitation.md#RoomInvitation)  
+**Deprecated:**: use topic\(\) instead  
+
+
+### roomInvitation.date\(\) ⇒ `Promise.`
+
 Get the invitation time
 
-**Kind**: instance method of [<code>RoomInvitation</code>](#RoomInvitation)  
-<a name="RoomInvitation+age"></a>
+**Kind**: instance method of [`RoomInvitation`](room-invitation.md#RoomInvitation)  
 
-### roomInvitation.age() ⇒ <code>number</code>
-Returns the roopm invitation age in seconds. <br>
 
-For example, the invitation is sent at time `8:43:01`,
-and when we received it in Wechaty, the time is `8:43:15`,
-then the age() will return `8:43:15 - 8:43:01 = 14 (seconds)`
+### roomInvitation.age\(\) ⇒ `number`
 
-**Kind**: instance method of [<code>RoomInvitation</code>](#RoomInvitation)  
+Returns the roopm invitation age in seconds.   
+
+
+For example, the invitation is sent at time `8:43:01`, and when we received it in Wechaty, the time is `8:43:15`, then the age\(\) will return `8:43:15 - 8:43:01 = 14 (seconds)`
+
+**Kind**: instance method of [`RoomInvitation`](room-invitation.md#RoomInvitation)
+

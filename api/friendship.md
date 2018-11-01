@@ -2,37 +2,38 @@
 description: 'Send, receive friend request, and friend confirmation events.'
 ---
 
-<a name="Friendship"></a>
+# Friendship
 
 ## Friendship
+
 Send, receive friend request, and friend confirmation events.
 
 1. send request
-2. receive request(in friend event)
-3. confirmation friendship(friend event)
+2. receive request\(in friend event\)
+3. confirmation friendship\(friend event\)
 
 [Examples/Friend-Bot](https://github.com/Chatie/wechaty/blob/1523c5e02be46ebe2cc172a744b2fbe53351540e/examples/friend-bot.ts)
 
-**Kind**: global class  
+**Kind**: global class
 
-* [Friendship](#Friendship)
-    * _instance_
-        * [.accept()](#Friendship+accept) ⇒ <code>Promise.&lt;void&gt;</code>
-        * [.hello()](#Friendship+hello) ⇒ <code>string</code>
-        * [.contact()](#Friendship+contact) ⇒ <code>Contact</code>
-        * [.type()](#Friendship+type) ⇒ <code>FriendshipType</code>
-    * _static_
-        * ~~[.send()](#Friendship.send)~~
-        * [.add(contact, hello)](#Friendship.add) ⇒ <code>Promise.&lt;void&gt;</code>
+* [Friendship](friendship.md#Friendship)
+  * _instance_
+    * [.accept\(\)](friendship.md#Friendship+accept) ⇒ `Promise.`
+    * [.hello\(\)](friendship.md#Friendship+hello) ⇒ `string`
+    * [.contact\(\)](friendship.md#Friendship+contact) ⇒ `Contact`
+    * [.type\(\)](friendship.md#Friendship+type) ⇒ `FriendshipType`
+  * _static_
+    * [~~.send\(\)~~](friendship.md#Friendship.send)
+    * [.add\(contact, hello\)](friendship.md#Friendship.add) ⇒ `Promise.`
 
-<a name="Friendship+accept"></a>
+### friendship.accept\(\) ⇒ `Promise.`
 
-### friendship.accept() ⇒ <code>Promise.&lt;void&gt;</code>
 Accept Friend Request
 
-**Kind**: instance method of [<code>Friendship</code>](#Friendship)  
-**Example**  
-```js
+**Kind**: instance method of [`Friendship`](friendship.md#Friendship)  
+**Example**
+
+```javascript
 const bot = new Wechaty()
 bot.on('friendship', async friendship => {
   try {
@@ -57,14 +58,15 @@ bot.on('friendship', async friendship => {
 }
 .start()
 ```
-<a name="Friendship+hello"></a>
 
-### friendship.hello() ⇒ <code>string</code>
+### friendship.hello\(\) ⇒ `string`
+
 Get verify message from
 
-**Kind**: instance method of [<code>Friendship</code>](#Friendship)  
-**Example** *(If request content is &#x60;ding&#x60;, then accept the friendship)*  
-```js
+**Kind**: instance method of [`Friendship`](friendship.md#Friendship)  
+**Example** _\(If request content is \`ding\`, then accept the friendship\)_
+
+```javascript
 const bot = new Wechaty()
 bot.on('friendship', async friendship => {
   try {
@@ -78,14 +80,15 @@ bot.on('friendship', async friendship => {
 }
 .start()
 ```
-<a name="Friendship+contact"></a>
 
-### friendship.contact() ⇒ <code>Contact</code>
+### friendship.contact\(\) ⇒ `Contact`
+
 Get the contact from friendship
 
-**Kind**: instance method of [<code>Friendship</code>](#Friendship)  
-**Example**  
-```js
+**Kind**: instance method of [`Friendship`](friendship.md#Friendship)  
+**Example**
+
+```javascript
 const bot = new Wechaty()
 bot.on('friendship', async friendship => {
   const contact = friendship.contact()
@@ -94,19 +97,22 @@ bot.on('friendship', async friendship => {
 }
 .start()
 ```
-<a name="Friendship+type"></a>
 
-### friendship.type() ⇒ <code>FriendshipType</code>
+### friendship.type\(\) ⇒ `FriendshipType`
+
 Return the Friendship Type
-> Tips: FriendshipType is enum here. </br>
-- FriendshipType.Unknown  </br>
-- FriendshipType.Confirm  </br>
-- FriendshipType.Receive  </br>
-- FriendshipType.Verify   </br>
 
-**Kind**: instance method of [<code>Friendship</code>](#Friendship)  
-**Example** *(If request content is &#x60;ding&#x60;, then accept the friendship)*  
-```js
+> Tips: FriendshipType is enum here. &lt;/br&gt;
+>
+> * FriendshipType.Unknown  &lt;/br&gt;
+> * FriendshipType.Confirm  &lt;/br&gt;
+> * FriendshipType.Receive  &lt;/br&gt;
+> * FriendshipType.Verify   &lt;/br&gt;
+
+**Kind**: instance method of [`Friendship`](friendship.md#Friendship)  
+**Example** _\(If request content is \`ding\`, then accept the friendship\)_
+
+```javascript
 const bot = new Wechaty()
 bot.on('friendship', async friendship => {
   try {
@@ -119,33 +125,35 @@ bot.on('friendship', async friendship => {
 }
 .start()
 ```
-<a name="Friendship.send"></a>
 
-### ~~Friendship.send()~~
-***Deprecated***
+### ~~Friendship.send\(\)~~
 
-use [Friendship#add](Friendship#add) instead
+_**Deprecated**_
 
-**Kind**: static method of [<code>Friendship</code>](#Friendship)  
-<a name="Friendship.add"></a>
+use [Friendship\#add](https://github.com/lijiarui/wechaty-docs/tree/4b4881c7ba011f0af6619b9d6a8922584d6c91b0/api/Friendship/README.md#add) instead
 
-### Friendship.add(contact, hello) ⇒ <code>Promise.&lt;void&gt;</code>
+**Kind**: static method of [`Friendship`](friendship.md#Friendship)  
+
+
+### Friendship.add\(contact, hello\) ⇒ `Promise.`
+
 Send a Friend Request to a `contact` with message `hello`.
 
-The best practice is to send friend request once per minute.
-Remeber not to do this too frequently, or your account may be blocked.
+The best practice is to send friend request once per minute. Remeber not to do this too frequently, or your account may be blocked.
 
-**Kind**: static method of [<code>Friendship</code>](#Friendship)  
+**Kind**: static method of [`Friendship`](friendship.md#Friendship)
 
 | Param | Type | Description |
-| --- | --- | --- |
-| contact | <code>Contact</code> | Send friend request to contact |
-| hello | <code>string</code> | The friend request content |
+| :--- | :--- | :--- |
+| contact | `Contact` | Send friend request to contact |
+| hello | `string` | The friend request content |
 
-**Example**  
-```js
+**Example**
+
+```javascript
 const memberList = await room.memberList()
 for (let i = 0; i < memberList.length; i++) {
   await bot.Friendship.add(member, 'Nice to meet you! I am wechaty bot!')
 }
 ```
+

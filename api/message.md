@@ -1,46 +1,45 @@
 ---
-description: 'All wechat messages will be encapsulated as a Message.'
+description: 所有的微信消息会被封装成一个Message 类
 ---
 
-<a name="Message"></a>
+# Message
 
 ## Message
-All wechat messages will be encapsulated as a Message.
 
 [Examples/Ding-Dong-Bot](https://github.com/Chatie/wechaty/blob/1523c5e02be46ebe2cc172a744b2fbe53351540e/examples/ding-dong-bot.ts)
 
-**Kind**: global class  
+**Kind**: global class
 
-* [Message](#Message)
-    * _instance_
-        * [.from()](#Message+from) ⇒ <code>Contact</code>
-        * [.to()](#Message+to) ⇒ <code>Contact</code> \| <code>null</code>
-        * [.room()](#Message+room) ⇒ <code>Room</code> \| <code>null</code>
-        * ~~[.content()](#Message+content)~~
-        * [.text()](#Message+text) ⇒ <code>string</code>
-        * [.say(textOrContactOrFile, [mention])](#Message+say) ⇒ <code>Promise.&lt;void&gt;</code>
-        * [.type()](#Message+type) ⇒ <code>MessageType</code>
-        * [.self()](#Message+self) ⇒ <code>boolean</code>
-        * [.mention()](#Message+mention) ⇒ <code>Promise.&lt;Array.&lt;Contact&gt;&gt;</code>
-        * [.mentionSelf()](#Message+mentionSelf) ⇒ <code>Promise.&lt;boolean&gt;</code>
-        * [.forward(to)](#Message+forward) ⇒ <code>Promise.&lt;void&gt;</code>
-        * [.date()](#Message+date)
-        * [.age()](#Message+age) ⇒ <code>number</code>
-        * ~~[.file()](#Message+file)~~
-        * [.toFileBox()](#Message+toFileBox) ⇒ <code>Promise.&lt;FileBox&gt;</code>
-        * [.toContact()](#Message+toContact) ⇒ <code>Promise.&lt;Contact&gt;</code>
-    * _static_
-        * [.find()](#Message.find)
-        * [.findAll()](#Message.findAll)
+* [Message](message.md#Message)
+  * _instance_
+    * [.from\(\)](message.md#Message+from) ⇒ `Contact`
+    * [.to\(\)](message.md#Message+to) ⇒ `Contact` \| `null`
+    * [.room\(\)](message.md#Message+room) ⇒ `Room` \| `null`
+    * [~~.content\(\)~~](message.md#Message+content)
+    * [.text\(\)](message.md#Message+text) ⇒ `string`
+    * [.say\(textOrContactOrFile, \[mention\]\)](message.md#Message+say) ⇒ `Promise.`
+    * [.type\(\)](message.md#Message+type) ⇒ `MessageType`
+    * [.self\(\)](message.md#Message+self) ⇒ `boolean`
+    * [.mention\(\)](message.md#Message+mention) ⇒ `Promise.>`
+    * [.mentionSelf\(\)](message.md#Message+mentionSelf) ⇒ `Promise.`
+    * [.forward\(to\)](message.md#Message+forward) ⇒ `Promise.`
+    * [.date\(\)](message.md#Message+date)
+    * [.age\(\)](message.md#Message+age) ⇒ `number`
+    * [~~.file\(\)~~](message.md#Message+file)
+    * [.toFileBox\(\)](message.md#Message+toFileBox) ⇒ `Promise.`
+    * [.toContact\(\)](message.md#Message+toContact) ⇒ `Promise.`
+  * _static_
+    * [.find\(\)](message.md#Message.find)
+    * [.findAll\(\)](message.md#Message.findAll)
 
-<a name="Message+from"></a>
+### message.from\(\) ⇒ `Contact`
 
-### message.from() ⇒ <code>Contact</code>
-Get the sender from a message.
+获取发送消息的联系人
 
-**Kind**: instance method of [<code>Message</code>](#Message)  
-**Example**  
-```js
+**Kind**: instance method of [`Message`](message.md#Message)  
+**Example**
+
+```javascript
 const bot = new Wechaty()
 bot
 .on('message', async m => {
@@ -56,22 +55,21 @@ bot
 })
 .start()
 ```
-<a name="Message+to"></a>
 
-### message.to() ⇒ <code>Contact</code> \| <code>null</code>
-Get the destination of the message
-Message.to() will return null if a message is in a room, use Message.room() to get the room.
+### message.to\(\) ⇒ `Contact` \| `null`
 
-**Kind**: instance method of [<code>Message</code>](#Message)  
-<a name="Message+room"></a>
+获取消息发送的联系人。在微信群中，Message.to\(\) 会返回null，使用Message.room\(\)获取微信群信息。
 
-### message.room() ⇒ <code>Room</code> \| <code>null</code>
-Get the room from the message.
-If the message is not in a room, then will return `null`
+**Kind**: instance method of [`Message`](message.md#Message)
 
-**Kind**: instance method of [<code>Message</code>](#Message)  
-**Example**  
-```js
+### message.room\(\) ⇒ `Room` \| `null`
+
+获取消息所在的微信群，如果这条消息不在微信群中，会返回null
+
+**Kind**: instance method of [`Message`](message.md#Message)  
+**Example**
+
+```javascript
 const bot = new Wechaty()
 bot
 .on('message', async m => {
@@ -87,22 +85,24 @@ bot
 })
 .start()
 ```
-<a name="Message+content"></a>
 
-### ~~message.content()~~
-***Deprecated***
+### ~~message.content\(\)~~
 
-use [text](#Message+text) instead
+_**Deprecated**_
 
-**Kind**: instance method of [<code>Message</code>](#Message)  
-<a name="Message+text"></a>
+请使用  [message.text\(\)](message.md#Message+text) 
 
-### message.text() ⇒ <code>string</code>
-Get the text content of the message
+**Kind**: instance method of [`Message`](message.md#Message)  
 
-**Kind**: instance method of [<code>Message</code>](#Message)  
-**Example**  
-```js
+
+### message.text\(\) ⇒ `string`
+
+获取消息的文本内容。
+
+**Kind**: instance method of [`Message`](message.md#Message)  
+**Example**
+
+```javascript
 const bot = new Wechaty()
 bot
 .on('message', async m => {
@@ -118,23 +118,46 @@ bot
 })
 .start()
 ```
-<a name="Message+say"></a>
 
-### message.say(textOrContactOrFile, [mention]) ⇒ <code>Promise.&lt;void&gt;</code>
-Reply a Text or Media File message to the sender.
-> Tips:
-This function is depending on the Puppet Implementation, see [puppet-compatible-table](https://github.com/Chatie/wechaty/wiki/Puppet#3-puppet-compatible-table)
+### message.say\(textOrContactOrFile, \[mention\]\) ⇒ `Promise.`
 
-**Kind**: instance method of [<code>Message</code>](#Message)  
-**See**: [Examples/ding-dong-bot](https://github.com/Chatie/wechaty/blob/1523c5e02be46ebe2cc172a744b2fbe53351540e/examples/ding-dong-bot.ts)  
+回复多媒体、微信名片或者文本给这条消息的发送者。
 
-| Param | Type | Description |
-| --- | --- | --- |
-| textOrContactOrFile | <code>string</code> \| <code>Contact</code> \| <code>FileBox</code> | send text, Contact, or file to bot. </br> You can use [FileBox](https://www.npmjs.com/package/file-box) to send file |
-| [mention] | <code>Contact</code> \| <code>Array.&lt;Contact&gt;</code> | If this is a room message, when you set mention param, you can `@` Contact in the room. |
+{% hint style="info" %}
+这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+{% endhint %}
 
-**Example**  
-```js
+**Kind**: instance method of [`Message`](message.md#Message)  
+**See**: [Examples/ding-dong-bot](https://github.com/Chatie/wechaty/blob/1523c5e02be46ebe2cc172a744b2fbe53351540e/examples/ding-dong-bot.ts)
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Param</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">textOrContactOrFile</td>
+      <td style="text-align:left"><code>string</code> | <code>Contact</code> | <code>FileBox</code>
+      </td>
+      <td style="text-align:left">
+        <p>发送文本、名片或者文件</p>
+        <p>你可以使用 <a href="https://www.npmjs.com/package/file-box">FileBox</a> 来发送文件</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">[mention]</td>
+      <td style="text-align:left"><code>Contact</code> | <code>Array.</code>
+      </td>
+      <td style="text-align:left">如果这是一条来自微信群的消息，当你设置了这个参数，你会在群中@这个联系人。</td>
+    </tr>
+  </tbody>
+</table>**Example**
+
+```javascript
 import { FileBox }  from 'file-box'
 const bot = new Wechaty()
 bot
@@ -167,89 +190,104 @@ bot
 })
 .start()
 ```
-<a name="Message+type"></a>
 
-### message.type() ⇒ <code>MessageType</code>
-Get the type from the message.
-> Tips: MessageType is Enum here. </br>
-- MessageType.Unknown     </br>
-- MessageType.Attachment  </br>
-- MessageType.Audio       </br>
-- MessageType.Contact     </br>
-- MessageType.Emoticon    </br>
-- MessageType.Image       </br>
-- MessageType.Text        </br>
-- MessageType.Video       </br>
-- MessageType.Url         </br>
+### message.type\(\) ⇒ `MessageType`
 
-**Kind**: instance method of [<code>Message</code>](#Message)  
-**Example**  
-```js
+获取消息的类型
+
+{% hint style="info" %}
+MessageType 的类型是 Enum， 具体如下
+
+* MessageType.Unknown     
+* MessageType.Attachment  
+* MessageType.Audio       
+* MessageType.Contact     
+* MessageType.Emoticon  
+* MessageType.Image      
+* MessageType.Text      
+* MessageType.Video    
+* MessageType.Url   
+{% endhint %}
+
+**Kind**: instance method of [`Message`](message.md#Message)  
+**Example**
+
+```javascript
 const bot = new Wechaty()
 if (message.type() === bot.Message.Type.Text) {
   console.log('This is a text message')
 }
 ```
-<a name="Message+self"></a>
 
-### message.self() ⇒ <code>boolean</code>
-Check if a message is sent by self.
+### message.self\(\) ⇒ `boolean`
 
-**Kind**: instance method of [<code>Message</code>](#Message)  
-**Returns**: <code>boolean</code> - - Return `true` for send from self, `false` for send from others.  
-**Example**  
-```js
+查看这条消息是否为机器人发送的。
+
+**Kind**: instance method of [`Message`](message.md#Message)  
+**Returns**: `boolean` - - Return `true` for send from self, `false` for send from others.  
+**Example**
+
+```javascript
 if (message.self()) {
  console.log('this message is sent by myself!')
 }
 ```
-<a name="Message+mention"></a>
 
-### message.mention() ⇒ <code>Promise.&lt;Array.&lt;Contact&gt;&gt;</code>
-Get message mentioned contactList.
+### message.mention\(\) ⇒ `Promise.>`
 
-Message event table as follows
+获取在群中@的用户列表。
 
-|                                                                            | Web  |  Mac PC Client | iOS Mobile |  android Mobile |
-| :---                                                                       | :--: |     :----:     |   :---:    |     :---:       |
-| [You were mentioned] tip ([有人@我]的提示)                                   |  ✘   |        √       |     √      |       √         |
-| Identify magic code (8197) by copy & paste in mobile                       |  ✘   |        √       |     √      |       ✘         |
-| Identify magic code (8197) by programming                                  |  ✘   |        ✘       |     ✘      |       ✘         |
-| Identify two contacts with the same roomAlias by [You were  mentioned] tip |  ✘   |        ✘       |     √      |       √         |
+**Kind**: instance method of [`Message`](message.md#Message)  
+**Returns**: `Promise.>` - - Return message mentioned contactList  
+**Example**
 
-**Kind**: instance method of [<code>Message</code>](#Message)  
-**Returns**: <code>Promise.&lt;Array.&lt;Contact&gt;&gt;</code> - - Return message mentioned contactList  
-**Example**  
-```js
+```javascript
 const contactList = await message.mention()
 console.log(contactList)
 ```
-<a name="Message+mentionSelf"></a>
 
-### message.mentionSelf() ⇒ <code>Promise.&lt;boolean&gt;</code>
-Check if a message is mention self.
+### message.mentionSelf\(\) ⇒ `Promise.`
 
-**Kind**: instance method of [<code>Message</code>](#Message)  
-**Returns**: <code>Promise.&lt;boolean&gt;</code> - - Return `true` for mention me.  
-**Example**  
-```js
+获取机器人是否在群里被@ 了
+
+**Kind**: instance method of [`Message`](message.md#Message)  
+**Returns**: `Promise.` - - Return `true` for mention me.  
+**Example**
+
+```javascript
 if (await message.mentionSelf()) {
  console.log('this message were mentioned me! [You were mentioned] tip ([有人@我]的提示)')
 }
 ```
-<a name="Message+forward"></a>
 
-### message.forward(to) ⇒ <code>Promise.&lt;void&gt;</code>
-Forward the received message.
+### message.forward\(to\) ⇒ `Promise.`
 
-**Kind**: instance method of [<code>Message</code>](#Message)  
+转发收到的消息
 
-| Param | Type | Description |
-| --- | --- | --- |
-| to | <code>Sayable</code> \| <code>Array.&lt;Sayable&gt;</code> | Room or Contact The recipient of the message, the room, or the contact |
+**Kind**: instance method of [`Message`](message.md#Message)
 
-**Example**  
-```js
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Param</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">to</td>
+      <td style="text-align:left"><code>Sayable</code> | <code>Array.</code>
+      </td>
+      <td style="text-align:left">
+        <p>Room or Contact</p>
+        <p>The recipient of the message, the room, or the contact</p>
+      </td>
+    </tr>
+  </tbody>
+</table>**Example**
+
+```javascript
 const bot = new Wechaty()
 bot
 .on('message', async m => {
@@ -261,56 +299,65 @@ bot
 })
 .start()
 ```
-<a name="Message+date"></a>
 
-### message.date()
-Message sent date
+### message.date\(\)
 
-**Kind**: instance method of [<code>Message</code>](#Message)  
-<a name="Message+age"></a>
+消息发送的时间
 
-### message.age() ⇒ <code>number</code>
-Returns the message age in seconds. <br>
+**Kind**: instance method of [`Message`](message.md#Message)  
 
-For example, the message is sent at time `8:43:01`,
-and when we received it in Wechaty, the time is `8:43:15`,
-then the age() will return `8:43:15 - 8:43:01 = 14 (seconds)`
 
-**Kind**: instance method of [<code>Message</code>](#Message)  
-<a name="Message+file"></a>
+### message.age\(\) ⇒ `number`
 
-### ~~message.file()~~
-***Deprecated***
+消息的时差
 
-use [toFileBox](#Message+toFileBox) instead
+   
+例如： 消息在`8:43:01`发送的，当我们在wechaty 上收到消息的时候，时间是`8:43:15`,那么 age\(\) 为 `8:43:15 - 8:43:01 = 14 (seconds)`
 
-**Kind**: instance method of [<code>Message</code>](#Message)  
-<a name="Message+toFileBox"></a>
+**Kind**: instance method of [`Message`](message.md#Message)  
 
-### message.toFileBox() ⇒ <code>Promise.&lt;FileBox&gt;</code>
-Extract the Media File from the Message, and put it into the FileBox.
-> Tips:
-This function is depending on the Puppet Implementation, see [puppet-compatible-table](https://github.com/Chatie/wechaty/wiki/Puppet#3-puppet-compatible-table)
 
-**Kind**: instance method of [<code>Message</code>](#Message)  
-<a name="Message+toContact"></a>
+### ~~message.file\(\)~~
 
-### message.toContact() ⇒ <code>Promise.&lt;Contact&gt;</code>
-Get Share Card of the Message
-Extract the Contact Card from the Message, and encapsulate it into Contact class
-> Tips:
-This function is depending on the Puppet Implementation, see [puppet-compatible-table](https://github.com/Chatie/wechaty/wiki/Puppet#3-puppet-compatible-table)
+_**Deprecated**_
 
-**Kind**: instance method of [<code>Message</code>](#Message)  
-<a name="Message.find"></a>
+使用 [toFileBox](message.md#Message+toFileBox) 
 
-### Message.find()
-Find message in cache
+**Kind**: instance method of [`Message`](message.md#Message)  
 
-**Kind**: static method of [<code>Message</code>](#Message)  
-<a name="Message.findAll"></a>
 
-### Message.findAll()
-Find messages in cache
+### message.toFileBox\(\) ⇒ `Promise.`
 
-**Kind**: static method of [<code>Message</code>](#Message)  
+ 从消息中提取多媒体文件并把它 存入到FileBox 里面。
+
+{% hint style="info" %}
+这个方法是否能实现，取决于用的是什么Puppet，具体请看：[Puppet 兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+{% endhint %}
+
+**Kind**: instance method of [`Message`](message.md#Message)  
+
+
+### message.toContact\(\) ⇒ `Promise.`
+
+提取转发的微信好友名片内容，并封装成Contact 类型。
+
+{% hint style="info" %}
+这个方法是否能实现，取决于用的是什么Puppet，具体请看：[Puppet 兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+{% endhint %}
+
+**Kind**: instance method of [`Message`](message.md#Message)  
+
+
+### Message.find\(\)
+
+在缓存中找消息。
+
+**Kind**: static method of [`Message`](message.md#Message)  
+
+
+### Message.findAll\(\)
+
+在缓存中找消息
+
+**Kind**: static method of [`Message`](message.md#Message)
+

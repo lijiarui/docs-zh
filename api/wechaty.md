@@ -1,5 +1,5 @@
 ---
-description: Wechaty 是主要的bot 类，一个 Bot 代表着一个微信客户端。
+description: 一个Wechaty 代表着一个微信的客户端，他取决于你具体使用哪一个Puppet
 ---
 
 # Wechaty
@@ -46,7 +46,7 @@ description: Wechaty 是主要的bot 类，一个 Bot 代表着一个微信客�
 
 ### new Wechaty\(\[options\]\)   <a id="new-wechaty-options"></a>
 
-创建一个 Wechaty 的实\#例.
+创建一个 Wechaty 的实例.
 
 | Param | Type | Default |
 | :--- | :--- | :--- |
