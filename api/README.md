@@ -1,5 +1,5 @@
 ---
-description: Wechaty v0.20 版本文档
+description: 'Wechaty Version: v0.20'
 ---
 
 # API 文档
