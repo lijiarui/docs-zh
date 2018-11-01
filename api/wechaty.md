@@ -27,56 +27,7 @@ description: Wechaty 是主要的bot 类，一个 Bot 代表着一个微信客�
 
 {% page-ref page="room.md" %}
 
-## 类型定义
-
-### \[PuppetModuleName\]
-
-PuppetModuleName 参数在这里代表着Puppet 的名称，类型是 string, 可能的取值为：
-
-* PUPPET\_DEFAULT
-* wechaty-puppet-ioscat'    
-* wechaty-puppet-mock'      
-* wechaty-puppet-padchat'   
-* wechaty-puppet-padpro'    
-* wechaty-puppet-puppeteer' 
-* wechaty-puppet-wechat4u'  
-
-### \[WechatyOptions\]
-
-这个参数
-
-```typescript
-export interface WechatyOptions {
-  memory?        : MemoryCard,
-  name?          : string,                    // Wechaty Name
-  profile?       : null | string,             // DEPRECATED: use name instead
-  puppet?        : PuppetModuleName | Puppet, // Puppet name or instance
-  puppetOptions? : PuppetOptions,             // Puppet TOKEN
-  ioToken?       : string,                    // Io TOKEN
-}
-```
-
-The option parameter to create a wechaty instance[WechatyEventName](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyEventName)​
-
-Wechaty Class Event Type[WechatyEventFunction](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyEventFunction)​
-
-Wechaty Class Event Function
-
 ## Wechaty  <a id="wechaty"></a>
-
-Main bot class.
-
-A `Bot` is a wechat client depends on which puppet you use. It may equals
-
-* web-wechat, when you use: [puppet-puppeteer](https://github.com/chatie/wechaty-puppet-puppeteer)/[puppet-wechat4u](https://github.com/chatie/wechaty-puppet-wechat4u)​
-* ipad-wechat, when you use: [puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat)​
-* ios-wechat, when you use: puppet-ioscat
-
-See more:
-
-* ​[What is a Puppet in Wechaty](https://github.com/Chatie/wechaty-getting-started/wiki/FAQ-EN#31-what-is-a-puppet-in-wechaty)​
-
-> If you want to know how to send message, see [Message](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Message) If you want to know how to get contact, see [Contact](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Contact)​
 
 **Kind**: global class
 
@@ -95,32 +46,40 @@ See more:
 
 ### new Wechaty\(\[options\]\)  <a id="new-wechaty-options"></a>
 
-Creates an instance of Wechaty.
+创建一个 Wechaty 的实\#例.
 
 | Param | Type | Default |
 | :--- | :--- | :--- |
-| \[options\] | ​[`WechatyOptions`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyOptions)​ | `{}` |
+| \[options\]  | ​[`WechatyOptions`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyOptions)​ | `{}` |
 
 **Example** _\(The World's Shortest ChatBot Code: 6 lines of JavaScript\)_
 
-```text
-const { Wechaty } = require('wechaty')const bot = new Wechaty()bot.on('scan',    (qrcode, status) => console.log(['https://api.qrserver.com/v1/create-qr-code/?data=',encodeURIComponent(qrcode),'&size=220x220&margin=20',].join('')))bot.on('login',   user => console.log(`User ${user} logined`))bot.on('message', message => console.log(`Message: ${message}`))bot.start()
+```javascript
+const { Wechaty } = require('wechaty')
+
+const bot = new Wechaty()
+bot.on('scan',    (qrcode, status) => console.log(['https://api.qrserver.com/v1/create-qr-code/?data=',encodeURIComponent(qrcode),'&size=220x220&margin=20',].join('')))
+bot.on('login',   user => console.log(`User ${user} logined`))
+bot.on('message', message => console.log(`Message: ${message}`))
+bot.start()
 ```
 
 ### wechaty.on\(event, listener\) ⇒ [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty)​  <a id="wechaty-on-event-listener-wechaty"></a>
 
-When the bot get message, it will emit the following Event.
+当机器人收到消息，会触发一个事件，一些简单的事件介绍如下：
 
-You can do anything you want when in these events functions. The main Event name as follows:
+* **scan**: 当机器人需要扫码登录的时候，会触发这个事件，当手机扫码登录后，机器人就可以登录进去了。
+* **login**: 当机器人登陆成功后，会触发这个事件。
+* **logout**: 当机器人退出登陆的时候，会触发到这个事件。
+* **message**: 当有新消息的时候会触发这个事件。
 
-* **scan**: Emit when the bot needs to show you a QR Code for scanning. After scan the qrcode, you can login
-* **login**: Emit when bot login full successful.
-* **logout**: Emit when bot detected log out.
-* **message**: Emit when there's a new message.
+初次之外，wechaty还有一些群相关的事件，了解更多：[WechatyEventName](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyEventName)​
 
-see more in [WechatyEventName](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyEventName)​
+你可以在这些时间的方法中自定义你希望的所有逻辑。​
 
-**Kind**: instance method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty) **Returns**: [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty) - - this for chaining, see advanced [chaining usage](https://github.com/Chatie/wechaty-getting-started/wiki/FAQ-EN#36-why-wechatyonevent-listener-return-wechaty)​
+**Kind**: instance method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty) 
+
+**Returns**: [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty) - - this for chaining, see advanced [chaining usage](https://github.com/Chatie/wechaty-getting-started/wiki/FAQ-EN#36-why-wechatyonevent-listener-return-wechaty)​
 
 | Param | Type | Description |
 | :--- | :--- | :--- |
@@ -129,137 +88,229 @@ see more in [WechatyEventName](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y
 
 **Example** _\(Event:scan\)_
 
-```text
-// Scan Event will emit when the bot needs to show you a QR Code for scanning​bot.on('scan', (url, code) => {  console.log(`[${code}] Scan ${url} to login.` )})
+```typescript
+// Scan Event will emit when the bot needs to show you a QR Code for scanning​
+
+bot.on('scan', (url, code) => {  console.log(`[${code}] Scan ${url} to login.` )})
 ```
 
 **Example** _\(Event:login \)_
 
-```text
-// Login Event will emit when bot login full successful.​bot.on('login', (user) => {  console.log(`user ${user} login`)})
+```typescript
+// Login Event will emit when bot login full successful.
+
+​bot.on('login', (user) => {  console.log(`user ${user} login`)})
 ```
 
 **Example** _\(Event:logout \)_
 
-```text
-// Logout Event will emit when bot detected log out.​bot.on('logout', (user) => {  console.log(`user ${user} logout`)})
+```typescript
+// Logout Event will emit when bot detected log out.
+
+​bot.on('logout', (user) => {  console.log(`user ${user} logout`)})
 ```
 
 **Example** _\(Event:message \)_
 
-```text
-// Message Event will emit when there's a new message.​wechaty.on('message', (message) => {  console.log(`message ${message} received`)})
+```typescript
+// Message Event will emit when there's a new message.
+
+​wechaty.on('message', (message) => {  console.log(`message ${message} received`)})
 ```
 
 **Example** _\(Event:friendship \)_
 
-```text
-// Friendship Event will emit when got a new friend request, or friendship is confirmed.​bot.on('friendship', (friendship) => {  if(friendship.type() === Friendship.Type.Receive){ // 1. receive new friendship request from new contact    const contact = friendship.contact()    let result = await friendship.accept()      if(result){        console.log(`Request from ${contact.name()} is accept succesfully!`)      } else{        console.log(`Request from ${contact.name()} failed to accept!`)      }      } else if (friendship.type() === Friendship.Type.Confirm) { // 2. confirm friendship      console.log(`new friendship confirmed with ${contact.name()}`)   } })
+```typescript
+// Friendship Event will emit when got a new friend request, or friendship is confirmed.
+
+​bot.on('friendship', (friendship) => {  
+  if(friendship.type() === Friendship.Type.Receive){
+     
+    // 1. receive new friendship request from new contact    
+    const contact = friendship.contact()    
+    let result = await friendship.accept()      
+    if(result){
+      console.log(`Request from ${contact.name()} is accept succesfully!`)      
+    } else {        
+      console.log(`Request from ${contact.name()} failed to accept!`)      
+    }      
+  } else if (friendship.type() === Friendship.Type.Confirm) { 
+  
+    // 2. confirm friendship      
+    console.log(`new friendship confirmed with ${contact.name()}`)   
+    } 
+})
 ```
 
 **Example** _\(Event:room-join \)_
 
-```text
-// room-join Event will emit when someone join the room.​bot.on('room-join', (room, inviteeList, inviter) => {  const nameList = inviteeList.map(c => c.name()).join(',')  console.log(`Room ${room.topic()} got new member ${nameList}, invited by ${inviter}`)})
+```typescript
+// room-join Event will emit when someone join the room.
+​
+bot.on('room-join', (room, inviteeList, inviter) => {  
+  const nameList = inviteeList.map(c => c.name()).join(',')  
+  console.log(`Room ${room.topic()} got new member ${nameList}, invited by ${inviter}`)
+})
 ```
 
 **Example** _\(Event:room-leave \)_
 
-```text
-// room-leave Event will emit when someone leave the room.​bot.on('room-leave', (room, leaverList) => {  const nameList = leaverList.map(c => c.name()).join(',')  console.log(`Room ${room.topic()} lost member ${nameList}`)})
+```typescript
+// room-leave Event will emit when someone leave the room.​
+
+bot.on('room-leave', (room, leaverList) => {  
+  const nameList = leaverList.map(c => c.name()).join(',')  
+  console.log(`Room ${room.topic()} lost member ${nameList}`)
+})
 ```
 
 **Example** _\(Event:room-topic \)_
 
-```text
-// room-topic Event will emit when someone change the room's topic.​bot.on('room-topic', (room, topic, oldTopic, changer) => {  console.log(`Room ${room.topic()} topic changed from ${oldTopic} to ${topic} by ${changer.name()}`)})
+```typescript
+// room-topic Event will emit when someone change the room's topic.
+​
+bot.on('room-topic', (room, topic, oldTopic, changer) => {  
+  console.log(`Room ${room.topic()} topic changed from ${oldTopic} to ${topic} by ${changer.name()}`)
+})
 ```
 
 **Example** _\(Event:room-invite, RoomInvitation has been encapsulated as a RoomInvitation Class. \)_
 
-```text
-// room-invite Event will emit when there's an room invitation.​bot.on('room-invite', async roomInvitation => {  try {    console.log(`received room-invite event.`)    await roomInvitation.accept()  } catch (e) {    console.error(e)  }}
+```typescript
+// room-invite Event will emit when there's an room invitation.
+
+​bot.on('room-invite', async roomInvitation => {  
+  try {    
+    console.log(`received room-invite event.`)    
+    await roomInvitation.accept()  
+  } catch (e) {    
+    console.error(e)  
+  }
+}
 ```
 
 **Example** _\(Event:error \)_
 
-```text
-// error Event will emit when there's an error occurred.​bot.on('error', (error) => {  console.error(error)})
+```typescript
+// error Event will emit when there's an error occurred.
+
+​bot.on('error', (error) => {  console.error(error)})
 ```
 
 ### wechaty.start\(\) ⇒ `Promise.`  <a id="wechaty-start-promise"></a>
 
-When you start the bot, bot will begin to login, need you wechat scan qrcode to login
+启动机器人
 
-> Tips: All the bot operation needs to be triggered after start\(\) is done
+{% hint style="info" %}
+机器人所有的操作必须在这个函数执行完成之后。
+{% endhint %}
 
 **Kind**: instance method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty) **Example**
 
-```text
-await bot.start()// do other stuff with bot here
+```typescript
+await bot.start() // do other stuff with bot here
 ```
 
 ### wechaty.stop\(\) ⇒ `Promise.`  <a id="wechaty-stop-promise"></a>
 
-Stop the bot
+停止机器人
 
 **Kind**: instance method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty) **Example**
 
-```text
+```typescript
 await bot.stop()
 ```
 
 ### wechaty.logout\(\) ⇒ `Promise.`  <a id="wechaty-logout-promise"></a>
 
-Logout the bot
+登出机器人
 
 **Kind**: instance method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty) **Example**
 
-```text
+```typescript
 await bot.logout()
 ```
 
 ### wechaty.logonoff\(\) ⇒ `boolean`  <a id="wechaty-logonoff-boolean"></a>
 
-Get the logon / logoff state
+获取机器人logon/logoff 的状态
 
 **Kind**: instance method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty) **Example**
 
-```text
-if (bot.logonoff()) {  console.log('Bot logined')} else {  console.log('Bot not logined')}
+```typescript
+if (bot.logonoff()) {  
+  console.log('Bot logined')
+} else {  
+  console.log('Bot not logined')
+}
 ```
 
 ### wechaty.userSelf\(\) ⇒ `ContactSelf`  <a id="wechaty-userself-contactself"></a>
 
-Get current user
+获取当前机器人的所有信息
 
 **Kind**: instance method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty) **Example**
 
-```text
-const contact = bot.userSelf()console.log(`Bot is ${contact.name()}`)
+```typescript
+const contact = bot.userSelf()
+console.log(`Bot is ${contact.name()}`)
 ```
 
 ### wechaty.say\(textOrContactOrFileOrUrl\) ⇒ `Promise.`  <a id="wechaty-say-textorcontactorfileorurl-promise"></a>
 
-Send message to userSelf, in other words, bot send message to itself.
+机器人自己给自己发消息。
 
-> Tips: This function is depending on the Puppet Implementation, see [puppet-compatible-table](https://github.com/Chatie/wechaty/wiki/Puppet#3-puppet-compatible-table)​
+{% hint style="info" %}
+这个函数是否能成功调用，取决于你使用了哪一种Puppet 的实现，了解更多：[Puppet 兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+{% endhint %}
 
 **Kind**: instance method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty)​
 
-| Param | Type | Description |
-| :--- | :--- | :--- |
-| textOrContactOrFileOrUrl | `string` \| `Contact` \| `FileBox` | send text, Contact, or file to bot. &lt;/br&gt; You can use [FileBox](https://www.npmjs.com/package/file-box) to send file |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Param</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">textOrContactOrFileOrUrl</td>
+      <td style="text-align:left"><code>string</code> | <code>Contact</code> | <code>FileBox</code>
+      </td>
+      <td style="text-align:left">
+        <p>发送文本、联系人名片或者文件给机器人自己。</p>
+        <p>你可以使用 <a href="https://www.npmjs.com/package/file-box">FileBox</a> 来发送文件</p>
+      </td>
+    </tr>
+  </tbody>
+</table>**Example**
 
-**Example**
+```typescript
+const bot = new Wechaty()
+await bot.start()
+// after logged in
 
-```text
-const bot = new Wechaty()await bot.start()// after logged in​// 1. send text to bot itselfawait bot.say('hello!')​// 2. send Contact to bot itselfconst contact = bot.Contact.load('contactId')await bot.say(contact)​// 3. send Image to bot itself from remote urlimport { FileBox }  from 'file-box'const fileBox = FileBox.fromUrl('https://chatie.io/wechaty/images/bot-qr-code.png')await bot.say(fileBox)​// 4. send Image to bot itself from local fileimport { FileBox }  from 'file-box'const fileBox = FileBox.fromFile('/tmp/text.jpg')await bot.say(fileBox)
+​// 1. send text to bot itselfawait bot.say('hello!')​
+// 2. send Contact to bot itself
+const contact = bot.Contact.load('contactId')
+await bot.say(contact)​
+
+// 3. send Image to bot itself from remote url
+import { FileBox }  from 'file-box'
+const fileBox = FileBox.fromUrl('https://chatie.io/wechaty/images/bot-qr-code.png')
+await bot.say(fileBox)​
+
+// 4. send Image to bot itself from local file
+import { FileBox }  from 'file-box'
+const fileBox = FileBox.fromFile('/tmp/text.jpg')
+await bot.say(fileBox)
 ```
 
 ### Wechaty.instance\(\[options\]\)  <a id="wechaty-instance-options"></a>
 
-Get the global instance of Wechaty
+获取全局的Wechaty 实例。
 
 **Kind**: static method of [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty)​
 
@@ -269,8 +320,13 @@ Get the global instance of Wechaty
 
 **Example** _\(The World's Shortest ChatBot Code: 6 lines of JavaScript\)_
 
-```text
-const { Wechaty } = require('wechaty')​Wechaty.instance() // Global instance.on('scan', (url, code) => console.log(`Scan QR Code to login: ${code}\n${url}`)).on('login',       user => console.log(`User ${user} logined`)).on('message',  message => console.log(`Message: ${message}`)).start()
+```typescript
+const { Wechaty } = require('wechaty')
+​Wechaty.instance() // Global instance
+.on('scan', (url, code) => console.log(`Scan QR Code to login: ${code}\n${url}`))
+.on('login',       user => console.log(`User ${user} logined`))
+.on('message',  message => console.log(`Message: ${message}`))
+.start()
 ```
 
 ## PuppetName  <a id="puppetname"></a>
@@ -322,6 +378,41 @@ Wechaty Class Event Type
 | room-leave | `string` | Emit when anyone leave the room. |
 | room-invite | `string` | Emit when there is a room invitation, see more in [RoomInvitation](https://github.com/Chatie/docs/tree/777195b62684a2fcb789911ad01bf3a16e5bdbf6/root/wechaty/api/RoomInvitation/README.md) If someone leaves the room by themselves, wechat will not notice other people in the room, so the bot will never get the "leave" event. |
 | scan | `string` | A scan event will be emitted when the bot needs to show you a QR Code for scanning. &lt;/br&gt; It is recommend to install qrcode-terminal\(run `npm install qrcode-terminal`\) in order to show qrcode in the terminal. |
+
+## 类型定义
+
+### \[PuppetModuleName\]
+
+PuppetModuleName 参数在这里代表着Puppet 的名称，类型是 string, 可能的取值为：
+
+* PUPPET\_DEFAULT
+* wechaty-puppet-ioscat'    
+* wechaty-puppet-mock'      
+* wechaty-puppet-padchat'   
+* wechaty-puppet-padpro'    
+* wechaty-puppet-puppeteer' 
+* wechaty-puppet-wechat4u'  
+
+### \[WechatyOptions\]
+
+这个参数
+
+```typescript
+export interface WechatyOptions {
+  memory?        : MemoryCard,
+  name?          : string,                    // Wechaty Name
+  profile?       : null | string,             // DEPRECATED: use name instead
+  puppet?        : PuppetModuleName | Puppet, // Puppet name or instance
+  puppetOptions? : PuppetOptions,             // Puppet TOKEN
+  ioToken?       : string,                    // Io TOKEN
+}
+```
+
+The option parameter to create a wechaty instance[WechatyEventName](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyEventName)​
+
+Wechaty Class Event Type[WechatyEventFunction](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyEventFunction)​
+
+Wechaty Class Event Function
 
 ## WechatyEventFunction  <a id="wechatyeventfunction"></a>
 
