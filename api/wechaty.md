@@ -31,8 +31,8 @@ description: Wechaty 是主要的bot 类，一个 Bot 代表着一个微信客�
 
 **Kind**: global class
 
-* ​[Wechaty](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty)​
-  * ​[new Wechaty\(\[options\]\)](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#new_Wechaty_new)​
+* ​[Wechaty](#Wechaty)​
+  * ​[new Wechaty\(\[options\]\)](#new-wechaty-options)​
   * _instance_
     * ​[.on\(event, listener\)](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty+on) ⇒ [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty)​
     * ​[.start\(\)](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty+start) ⇒ `Promise.`
