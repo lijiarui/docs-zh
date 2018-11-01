@@ -133,6 +133,10 @@ setenforce 0
 * 相关博客:  [Find if permission denied errors are caused by SELinux](https://www.mysysadmintips.com/linux/servers/587-find-if-permission-denied-error-is-caused-by-selinux)
 * 相关 issues:[\#66](https://github.com/Chatie/wechaty/issues/66#issuecomment-374086724) Dockerize Wechaty for easy start
 
+#### 2.8 通过Room.find\(\)找到的群，要是用户名或群名字有相同的会怎么办，find找到的是哪一个？
+
+返回找到的第一个群，排序方式是随机的。
+
 ### 3. 最佳实践
 
 #### 3.1 wechaty & 队列的最佳实践

@@ -29,24 +29,23 @@ description: Wechaty 是主要的bot 类，一个 Bot 代表着一个微信客�
 
 ## 类型定义
 
-### [PuppetModuleName]
+### \[PuppetModuleName\]
 
 PuppetModuleName 参数在这里代表着Puppet 的名称，类型是 string, 可能的取值为：
 
-- PUPPET_DEFAULT
-- wechaty-puppet-ioscat'    
-- wechaty-puppet-mock'      
-- wechaty-puppet-padchat'   
-- wechaty-puppet-padpro'    
-- wechaty-puppet-puppeteer' 
-- wechaty-puppet-wechat4u'  
+* PUPPET\_DEFAULT
+* wechaty-puppet-ioscat'    
+* wechaty-puppet-mock'      
+* wechaty-puppet-padchat'   
+* wechaty-puppet-padpro'    
+* wechaty-puppet-puppeteer' 
+* wechaty-puppet-wechat4u'  
 
-
-### [WechatyOptions]
+### \[WechatyOptions\]
 
 这个参数
 
-```ts
+```typescript
 export interface WechatyOptions {
   memory?        : MemoryCard,
   name?          : string,                    // Wechaty Name
@@ -63,7 +62,7 @@ Wechaty Class Event Type[WechatyEventFunction](https://docs.chatie.io/~/revision
 
 Wechaty Class Event Function
 
-## Wechaty <a id="wechaty"></a>
+## Wechaty  <a id="wechaty"></a>
 
 Main bot class.
 
@@ -94,7 +93,7 @@ See more:
   * _static_
     * ​[.instance\(\[options\]\)](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty.instance)​
 
-### new Wechaty\(\[options\]\) <a id="new-wechaty-options"></a>
+### new Wechaty\(\[options\]\)  <a id="new-wechaty-options"></a>
 
 Creates an instance of Wechaty.
 
@@ -108,7 +107,7 @@ Creates an instance of Wechaty.
 const { Wechaty } = require('wechaty')const bot = new Wechaty()bot.on('scan',    (qrcode, status) => console.log(['https://api.qrserver.com/v1/create-qr-code/?data=',encodeURIComponent(qrcode),'&size=220x220&margin=20',].join('')))bot.on('login',   user => console.log(`User ${user} logined`))bot.on('message', message => console.log(`Message: ${message}`))bot.start()
 ```
 
-### wechaty.on\(event, listener\) ⇒ [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty)​ <a id="wechaty-on-event-listener-wechaty"></a>
+### wechaty.on\(event, listener\) ⇒ [`Wechaty`](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#Wechaty)​  <a id="wechaty-on-event-listener-wechaty"></a>
 
 When the bot get message, it will emit the following Event.
 
@@ -188,7 +187,7 @@ see more in [WechatyEventName](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y
 // error Event will emit when there's an error occurred.​bot.on('error', (error) => {  console.error(error)})
 ```
 
-### wechaty.start\(\) ⇒ `Promise.` <a id="wechaty-start-promise"></a>
+### wechaty.start\(\) ⇒ `Promise.`  <a id="wechaty-start-promise"></a>
 
 When you start the bot, bot will begin to login, need you wechat scan qrcode to login
 
@@ -200,7 +199,7 @@ When you start the bot, bot will begin to login, need you wechat scan qrcode to 
 await bot.start()// do other stuff with bot here
 ```
 
-### wechaty.stop\(\) ⇒ `Promise.` <a id="wechaty-stop-promise"></a>
+### wechaty.stop\(\) ⇒ `Promise.`  <a id="wechaty-stop-promise"></a>
 
 Stop the bot
 
@@ -210,7 +209,7 @@ Stop the bot
 await bot.stop()
 ```
 
-### wechaty.logout\(\) ⇒ `Promise.` <a id="wechaty-logout-promise"></a>
+### wechaty.logout\(\) ⇒ `Promise.`  <a id="wechaty-logout-promise"></a>
 
 Logout the bot
 
@@ -220,7 +219,7 @@ Logout the bot
 await bot.logout()
 ```
 
-### wechaty.logonoff\(\) ⇒ `boolean` <a id="wechaty-logonoff-boolean"></a>
+### wechaty.logonoff\(\) ⇒ `boolean`  <a id="wechaty-logonoff-boolean"></a>
 
 Get the logon / logoff state
 
@@ -230,7 +229,7 @@ Get the logon / logoff state
 if (bot.logonoff()) {  console.log('Bot logined')} else {  console.log('Bot not logined')}
 ```
 
-### wechaty.userSelf\(\) ⇒ `ContactSelf` <a id="wechaty-userself-contactself"></a>
+### wechaty.userSelf\(\) ⇒ `ContactSelf`  <a id="wechaty-userself-contactself"></a>
 
 Get current user
 
@@ -240,7 +239,7 @@ Get current user
 const contact = bot.userSelf()console.log(`Bot is ${contact.name()}`)
 ```
 
-### wechaty.say\(textOrContactOrFileOrUrl\) ⇒ `Promise.` <a id="wechaty-say-textorcontactorfileorurl-promise"></a>
+### wechaty.say\(textOrContactOrFileOrUrl\) ⇒ `Promise.`  <a id="wechaty-say-textorcontactorfileorurl-promise"></a>
 
 Send message to userSelf, in other words, bot send message to itself.
 
@@ -258,7 +257,7 @@ Send message to userSelf, in other words, bot send message to itself.
 const bot = new Wechaty()await bot.start()// after logged in​// 1. send text to bot itselfawait bot.say('hello!')​// 2. send Contact to bot itselfconst contact = bot.Contact.load('contactId')await bot.say(contact)​// 3. send Image to bot itself from remote urlimport { FileBox }  from 'file-box'const fileBox = FileBox.fromUrl('https://chatie.io/wechaty/images/bot-qr-code.png')await bot.say(fileBox)​// 4. send Image to bot itself from local fileimport { FileBox }  from 'file-box'const fileBox = FileBox.fromFile('/tmp/text.jpg')await bot.say(fileBox)
 ```
 
-### Wechaty.instance\(\[options\]\) <a id="wechaty-instance-options"></a>
+### Wechaty.instance\(\[options\]\)  <a id="wechaty-instance-options"></a>
 
 Get the global instance of Wechaty
 
@@ -274,7 +273,7 @@ Get the global instance of Wechaty
 const { Wechaty } = require('wechaty')​Wechaty.instance() // Global instance.on('scan', (url, code) => console.log(`Scan QR Code to login: ${code}\n${url}`)).on('login',       user => console.log(`User ${user} logined`)).on('message',  message => console.log(`Message: ${message}`)).start()
 ```
 
-## PuppetName <a id="puppetname"></a>
+## PuppetName  <a id="puppetname"></a>
 
 The term [Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) in Wechaty is an Abstract Class for implementing protocol plugins. The plugins are the component that helps Wechaty to control the Wechat\(that's the reason we call it puppet\). The plugins are named XXXPuppet, for example:
 
@@ -290,7 +289,7 @@ The term [Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) in Wechaty is a
 | puppeteer | `string` | - Using the [google puppeteer](https://github.com/GoogleChrome/puppeteer) to control the [WeChat Web API](https://wx.qq.com/) via a chrome browser. |
 | mock | `string` | - Using the mock data to mock wechat operation, just for test. |
 
-## WechatyOptions <a id="wechatyoptions"></a>
+## WechatyOptions  <a id="wechatyoptions"></a>
 
 The option parameter to create a wechaty instance
 
@@ -303,7 +302,7 @@ The option parameter to create a wechaty instance
 | puppetOptions | `Partial.` | Puppet TOKEN |
 | ioToken | `string` | Io TOKEN |
 
-## WechatyEventName <a id="wechatyeventname"></a>
+## WechatyEventName  <a id="wechatyeventname"></a>
 
 Wechaty Class Event Type
 
@@ -324,7 +323,7 @@ Wechaty Class Event Type
 | room-invite | `string` | Emit when there is a room invitation, see more in [RoomInvitation](https://github.com/Chatie/docs/tree/777195b62684a2fcb789911ad01bf3a16e5bdbf6/root/wechaty/api/RoomInvitation/README.md) If someone leaves the room by themselves, wechat will not notice other people in the room, so the bot will never get the "leave" event. |
 | scan | `string` | A scan event will be emitted when the bot needs to show you a QR Code for scanning. &lt;/br&gt; It is recommend to install qrcode-terminal\(run `npm install qrcode-terminal`\) in order to show qrcode in the terminal. |
 
-## WechatyEventFunction <a id="wechatyeventfunction"></a>
+## WechatyEventFunction  <a id="wechatyeventfunction"></a>
 
 Wechaty Class Event Function
 
