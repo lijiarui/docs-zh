@@ -329,73 +329,27 @@ const { Wechaty } = require('wechaty')
 .start()
 ```
 
-## PuppetName  <a id="puppetname"></a>
-
-The term [Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) in Wechaty is an Abstract Class for implementing protocol plugins. The plugins are the component that helps Wechaty to control the Wechat\(that's the reason we call it puppet\). The plugins are named XXXPuppet, for example:
-
-* ​[PuppetPuppeteer](https://github.com/Chatie/wechaty-puppet-puppeteer):
-* ​[PuppetPadchat](https://github.com/lijiarui/wechaty-puppet-padchat)​
-
-**Kind**: global typedef **Properties**
-
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| wechat4u | `string` | The default puppet, using the [wechat4u](https://github.com/nodeWechat/wechat4u) to control the [WeChat Web API](https://wx.qq.com/) via a chrome browser. |
-| padchat | `string` | - Using the WebSocket protocol to connect with a Protocol Server for controlling the iPad Wechat program. |
-| puppeteer | `string` | - Using the [google puppeteer](https://github.com/GoogleChrome/puppeteer) to control the [WeChat Web API](https://wx.qq.com/) via a chrome browser. |
-| mock | `string` | - Using the mock data to mock wechat operation, just for test. |
-
-## WechatyOptions  <a id="wechatyoptions"></a>
-
-The option parameter to create a wechaty instance
-
-**Kind**: global typedef **Properties**
-
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| profile | `string` | Wechaty Name. &lt;/br&gt; When you set this: &lt;/br&gt; `new Wechaty({profile: 'wechatyName'})` &lt;/br&gt; it will generate a file called `wechatyName.memory-card.json`. &lt;/br&gt; This file stores the bot's login information. &lt;/br&gt; If the file is valid, the bot can auto login so you don't need to scan the qrcode to login again. &lt;/br&gt; Also, you can set the environment variable for `WECHATY_PROFILE` to set this value when you start. &lt;/br&gt; eg: `WECHATY_PROFILE="your-cute-bot-name" node bot.js` |
-| puppet | `PuppetModuleName` \| `Puppet` | Puppet name or instance |
-| puppetOptions | `Partial.` | Puppet TOKEN |
-| ioToken | `string` | Io TOKEN |
-
-## WechatyEventName  <a id="wechatyeventname"></a>
-
-Wechaty Class Event Type
-
-**Kind**: global typedef **Properties**
-
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| error | `string` | When the bot get error, there will be a Wechaty error event fired. |
-| login | `string` | After the bot login full successful, the event login will be emitted, with a Contact of current logined user. |
-| logout | `string` | Logout will be emitted when bot detected log out, with a Contact of the current login user. |
-| heartbeat | `string` | Get bot's heartbeat. |
-| friendship | `string` | When someone sends you a friend request, there will be a Wechaty friendship event fired. |
-| message | `string` | Emit when there's a new message. |
-| ready | `string` | Emit when all data has load completed, in wechaty-puppet-padchat, it means it has sync Contact and Room completed |
-| room-join | `string` | Emit when anyone join any room. |
-| room-topic | `string` | Get topic event, emitted when someone change room topic. |
-| room-leave | `string` | Emit when anyone leave the room. |
-| room-invite | `string` | Emit when there is a room invitation, see more in [RoomInvitation](https://github.com/Chatie/docs/tree/777195b62684a2fcb789911ad01bf3a16e5bdbf6/root/wechaty/api/RoomInvitation/README.md) If someone leaves the room by themselves, wechat will not notice other people in the room, so the bot will never get the "leave" event. |
-| scan | `string` | A scan event will be emitted when the bot needs to show you a QR Code for scanning. &lt;/br&gt; It is recommend to install qrcode-terminal\(run `npm install qrcode-terminal`\) in order to show qrcode in the terminal. |
-
 ## 类型定义
 
-### \[PuppetModuleName\]
+### 
+
+### PuppetModuleName
+
+**Kind**: global typedef **Properties**
 
 PuppetModuleName 参数在这里代表着Puppet 的名称，类型是 string, 可能的取值为：
 
-* PUPPET\_DEFAULT
-* wechaty-puppet-ioscat'    
-* wechaty-puppet-mock'      
-* wechaty-puppet-padchat'   
-* wechaty-puppet-padpro'    
-* wechaty-puppet-puppeteer' 
-* wechaty-puppet-wechat4u'  
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| PUPPET\_DEFAULT | `string` | 默认的puppet， 默认会使用 wechaty-puppet-puppeteer |
+| wechaty-puppet-wechat4u | `string` | 默认的puppet，使用 [wechat4u](https://github.com/nodeWechat/wechat4u) 来控制 [网页微信 API](https://wx.qq.com/)  |
+| wechaty-puppet-padchat | `string` | 使用WebSocket 协议链接一个协议服务器，来控制iPad 微信。 |
+| wechaty-puppet-puppeteer | `string` | 通过chrome\(谷歌\)浏览器使用 [google puppeteer](https://github.com/GoogleChrome/puppeteer) 来控制 [网页微信 API](https://wx.qq.com/)  |
+| wechaty-puppet-mock | `string` | 为单元测试提供模拟调用的Puppet |
 
-### \[WechatyOptions\]
+### WechatyOptions 
 
-这个参数
+创建wechaty 实例的可选参数类型。
 
 ```typescript
 export interface WechatyOptions {
@@ -408,15 +362,145 @@ export interface WechatyOptions {
 }
 ```
 
-The option parameter to create a wechaty instance[WechatyEventName](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyEventName)​
+**Kind**: global typedef **Properties**
 
-Wechaty Class Event Type[WechatyEventFunction](https://docs.chatie.io/~/revisions/-LQ4xhAwjZxF8y32AG4S/wechaty/api/wechaty#WechatyEventFunction)​
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Name</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">name</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">
+        <p>Wechaty 机器人的名称.</p>
+        <p>当你按照下面的方式设置的时候： <code>new Wechaty({name: &apos;wechatyName&apos;})</code> 
+        </p>
+        <p>他会自动生成一个叫做<code>wechatyName.memory-card.json</code>的文件 。这个文件会存储机器人的登陆信息。如果这个文件有效，启动wechaty
+          的时候，你不需要扫码登陆就能自动登陆机器人。</p>
+        <p>这个名字在启动机器人的时候，是可以通过环境变量<code>WECHATY_NAME</code> 设置的，如：<code>WECHATY_NAME=&quot;wechatyName&quot; node bot.js</code>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">puppet</td>
+      <td style="text-align:left"><code>PuppetModuleName</code> | <code>Puppet</code>
+      </td>
+      <td style="text-align:left">Puppet 名称或者实例</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">puppetOptions</td>
+      <td style="text-align:left"><code>Partial.</code>
+      </td>
+      <td style="text-align:left">Puppet TOKEN</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">ioToken</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">Io TOKEN</td>
+    </tr>
+  </tbody>
+</table>### WechatyEventName 
 
-Wechaty Class Event Function
+Wechaty 事件的类型
 
-## WechatyEventFunction  <a id="wechatyeventfunction"></a>
+**Kind**: global typedef **Properties**
 
-Wechaty Class Event Function
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Name</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">error</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当机器人内部出错的时候会触发error 事件。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">login</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当机器人成功登陆后，会触发login 事件，并会在事件中传递当前登陆机器人的信息。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">logout</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当机器人检测到登出的时候，会触发logout 事件，并会在事件中传递机器人的信息。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">heartbeat</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">获取机器人的心跳。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">friendship</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当有人给机器人发好友请求的时候会触发这个事件。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">message</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当机器人收到消息的时候会触发这个事件。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">ready</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当所有数据加载完成后，会触发这个事件。在wechaty-puppet-padchat 中，它意味着已经加载完成Contact 和Room 的信息。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">room-join</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当有人进入微信群的时候会触发这个事件。机器人主动进入某个微信群，t那个样会触发这个事件。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">room-topic</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当有人修改群名称的时候会触发这个事件。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">room-leave</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当机器人把群里某个用户移出群聊的时候会触发这个时间。用户主动退群是无法检测到的。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">room-invite</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当收到群邀请的时候，会触发这个事件。具体请看 <a href="https://github.com/Chatie/docs/tree/777195b62684a2fcb789911ad01bf3a16e5bdbf6/root/wechaty/api/RoomInvitation/README.md">RoomInvitation</a> 
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">scan</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">
+        <p>当机器人需要扫码登陆的时候会触发这个事件。</p>
+        <p>建议你安装 qrcode-terminal(run <code>npm install qrcode-terminal</code>) 这个包，这样你可以在命令行中直接看到二维码。</p>
+      </td>
+    </tr>
+  </tbody>
+</table>### WechatyEventFunction 
+
+Wechaty 事件函数
 
 **Kind**: global typedef **Properties**
 
