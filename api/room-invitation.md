@@ -1,28 +1,28 @@
 ---
-description: accept room invitation
+description: 自动通过入群邀请
 ---
 
 # RoomInvitation
 
 ## RoomInvitation
 
-accept room invitation
+自动通过入群邀请
 
 **Kind**: global class
 
-* [RoomInvitation](room-invitation.md#RoomInvitation)
-  * [.accept\(\)](room-invitation.md#RoomInvitation+accept) ⇒ `Promise.`
-  * [.inviter\(\)](room-invitation.md#RoomInvitation+inviter) ⇒ `Contact`
-  * [.topic\(\)](room-invitation.md#RoomInvitation+topic) ⇒ `Contact`
-  * [.roomTopic\(\)](room-invitation.md#RoomInvitation+roomTopic)
-  * [.date\(\)](room-invitation.md#RoomInvitation+date) ⇒ `Promise.`
-  * [.age\(\)](room-invitation.md#RoomInvitation+age) ⇒ `number`
+* [RoomInvitation](room-invitation.md#roominvitation)
+  * [.accept\(\)](room-invitation.md#roominvitation-accept-promise) ⇒ `Promise.`
+  * [.inviter\(\)](room-invitation.md#roominvitation-inviter-contact) ⇒ `Contact`
+  * [.topic\(\)](room-invitation.md#roominvitation-topic-contact) ⇒ `Contact`
+  * [.roomTopic\(\)](room-invitation.md#roominvitation-roomtopic)
+  * [.date\(\)](room-invitation.md#roominvitation-date-promise) ⇒ `Promise.`
+  * [.age\(\)](room-invitation.md#roominvitation-age-number) ⇒ `number`
 
 ### roomInvitation.accept\(\) ⇒ `Promise.`
 
-Accept Room Invitation
+自动通过入群邀请
 
-**Kind**: instance method of [`RoomInvitation`](room-invitation.md#RoomInvitation)  
+**Kind**: instance method of [`RoomInvitation`](room-invitation.md#roominvitation)  
 **Example**
 
 ```javascript
@@ -40,9 +40,9 @@ bot.on('room-invite', async roomInvitation => {
 
 ### roomInvitation.inviter\(\) ⇒ `Contact`
 
-Get the inviter from room invitation
+获取发送入群邀请的联系人。
 
-**Kind**: instance method of [`RoomInvitation`](room-invitation.md#RoomInvitation)  
+**Kind**: instance method of [`RoomInvitation`](room-invitation.md#roominvitation)  
 **Example**
 
 ```javascript
@@ -57,9 +57,9 @@ bot.on('room-invite', async roomInvitation => {
 
 ### roomInvitation.topic\(\) ⇒ `Contact`
 
-Get the room topic from room invitation
+获取需要进的群的群名称.
 
-**Kind**: instance method of [`RoomInvitation`](room-invitation.md#RoomInvitation)  
+**Kind**: instance method of [`RoomInvitation`](room-invitation.md#roominvitation)  
 **Example**
 
 ```javascript
@@ -74,22 +74,21 @@ bot.on('room-invite', async roomInvitation => {
 ### roomInvitation.roomTopic\(\)
 
 **Kind**: instance method of [`RoomInvitation`](room-invitation.md#RoomInvitation)  
-**Deprecated:**: use topic\(\) instead  
+**Deprecated:**: 请使用 [topic\(\) ](room-invitation.md#roominvitation-topic-contact)  
 
 
 ### roomInvitation.date\(\) ⇒ `Promise.`
 
-Get the invitation time
+获取发送入群邀请的时间。
 
-**Kind**: instance method of [`RoomInvitation`](room-invitation.md#RoomInvitation)  
+**Kind**: instance method of [`RoomInvitation`](room-invitation.md#roominvitation)  
 
 
 ### roomInvitation.age\(\) ⇒ `number`
 
-Returns the roopm invitation age in seconds.   
+获取入群邀请的时间间隔。
 
+例如：入群邀请的发送时间在 `8:43:01`, 当我们在Wechaty 上收到这个信息的时间是 `8:43:15`, 那么 age\(\) 的值为： `8:43:15 - 8:43:01 = 14 (seconds)`
 
-For example, the invitation is sent at time `8:43:01`, and when we received it in Wechaty, the time is `8:43:15`, then the age\(\) will return `8:43:15 - 8:43:01 = 14 (seconds)`
-
-**Kind**: instance method of [`RoomInvitation`](room-invitation.md#RoomInvitation)
+**Kind**: instance method of [`RoomInvitation`](room-invitation.md#roominvitation)
 
