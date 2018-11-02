@@ -4,12 +4,6 @@ description: 所有的微信群都会被封装成 Room 类
 
 # Room
 
-## Classes
-
-[Room](room.md#Room)
-
-[Examples/Room-Bot](https://github.com/Chatie/wechaty/blob/1523c5e02be46ebe2cc172a744b2fbe53351540e/examples/room-bot.ts)
-
 ## Room
 
 所有的微信群都会被封装成 Room 类。
@@ -23,32 +17,32 @@ description: 所有的微信群都会被封装成 Room 类
 | :--- | :--- | :--- |
 | id | `string` | 获取群id。这个id 是否是永久不变的id 取决于使用哪一个puppet，具体 [查看puppet兼容性清单](../puppet.md#3-wechaty-puppet-jian-rong-xing)。 |
 
-* [Room](room.md#Room)
+* [Room](room.md#room)
   * _instance_
-    * [.sync\(\)](room.md#Room+sync) ⇒ `Promise.`
-    * [.say\(textOrContactOrFileOrUrl, \[mention\]\)](room.md#Room+say) ⇒ `Promise.`
-    * [.on\(event, listener\)](room.md#Room+on) ⇒ `this`
-    * [.add\(contact\)](room.md#Room+add) ⇒ `Promise.`
-    * [.del\(contact\)](room.md#Room+del) ⇒ `Promise.`
-    * [.quit\(\)](room.md#Room+quit) ⇒ `Promise.`
-    * [.topic\(\[newTopic\]\)](room.md#Room+topic) ⇒ `Promise.`
-    * [.announce\(\[text\]\)](room.md#Room+announce) ⇒ `Promise.`
-    * [.qrcode\(\)](room.md#Room+qrcode) ⇒ `Promise.`
-    * [.alias\(contact\)](room.md#Room+alias) ⇒ `Promise.`
-    * [.has\(contact\)](room.md#Room+has) ⇒ `Promise.`
-    * [.memberAll\(\[query\]\)](room.md#Room+memberAll) ⇒ `Promise.>`
-    * [.member\(queryArg\)](room.md#Room+member) ⇒ `Promise.`
-    * [.owner\(\)](room.md#Room+owner) ⇒ `Contact` \| `null`
+    * [.sync\(\)](room.md#room-sync-promise) ⇒ `Promise.`
+    * [.say\(textOrContactOrFileOrUrl, \[mention\]\)](room.md#room-say-textorcontactorfileorurl-mention-promise) ⇒ `Promise.`
+    * [.on\(event, listener\)](room.md#room-on-event-listener-this) ⇒ `this`
+    * [.add\(contact\)](room.md#room-add-contact-promise) ⇒ `Promise.`
+    * [.del\(contact\)](room.md#room-del-contact-promise) ⇒ `Promise.`
+    * [.quit\(\)](room.md#room-quit-promise) ⇒ `Promise.`
+    * [.topic\(\[newTopic\]\)](room.md#room-topic-newtopic-promise) ⇒ `Promise.`
+    * [.announce\(\[text\]\)](room.md#room-announce-text-promise) ⇒ `Promise.`
+    * [.qrcode\(\)](room.md#room-qrcode-promise) ⇒ `Promise.`
+    * [.alias\(contact\)](room.md#room-alias-contact-promise) ⇒ `Promise.`
+    * [.has\(contact\)](room.md#room-has-contact-promise) ⇒ `Promise.`
+    * [.memberAll\(\[query\]\)](room.md#room-memberall-query-promise-greater-than) ⇒ `Promise.>`
+    * [.member\(queryArg\)](room.md#room-member-queryarg-promise) ⇒ `Promise.`
+    * [.owner\(\)](room.md#room-owner-contact-or-null) ⇒ `Contact` \| `null`
   * _static_
-    * [.create\(contactList, \[topic\]\)](room.md#Room.create) ⇒ [`Promise.`](room.md#Room)
-    * [.findAll\(\[query\]\)](room.md#Room.findAll) ⇒ `Promise.>`
-    * [.find\(query\)](room.md#Room.find) ⇒ `Promise.`
+    * [.create\(contactList, \[topic\]\)](room.md#room-create-contactlist-topic-promise) ⇒ [`Promise.`](room.md#Room)
+    * [.findAll\(\[query\]\)](room.md#room-findall-query-promise-greater-than) ⇒ `Promise.>`
+    * [.find\(query\)](room.md#room-findall-query-promise-greater-than) ⇒ `Promise.`
 
 ### room.sync\(\) ⇒ `Promise.`
 
 强制加载群的数据，从底层API 重新加载数据。
 
-**Kind**: instance method of [`Room`](room.md#Room)  
+**Kind**: instance method of [`Room`](room.md#room)  
 **Example**
 
 ```javascript
@@ -63,7 +57,7 @@ await room.sync()
 这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
 {% endhint %}
 
-> **Kind**: instance method of [`Room`](room.md#Room)
+> **Kind**: instance method of [`Room`](room.md#room)
 
 | Param | Type | Description |
 | :--- | :--- | :--- |
@@ -100,7 +94,7 @@ await room.say('Hello world!', contact)
 
 ### room.on\(event, listener\) ⇒ `this`
 
-**Kind**: instance method of [`Room`](room.md#Room)  
+**Kind**: instance method of [`Room`](room.md#room)  
 **Returns**: `this` - - this for chain
 
 | Param | Type | Description |
@@ -174,7 +168,7 @@ if (room) {
 基于网页微信开发的用户请查看： [Web version of WeChat closed group interface](https://github.com/Chatie/wechaty/issues/1441)
 {% endhint %}
 
-**Kind**: instance method of [`Room`](room.md#Room)
+**Kind**: instance method of [`Room`](room.md#room)
 
 | Param | Type |
 | :--- | :--- |
@@ -207,7 +201,7 @@ if (room) {
 基于网页微信开发的用户请查看： [Web version of WeChat closed group interface](https://github.com/Chatie/wechaty/issues/1441)
 {% endhint %}
 
-**Kind**: instance method of [`Room`](room.md#Room)
+**Kind**: instance method of [`Room`](room.md#room)
 
 | Param | Type |
 | :--- | :--- |
@@ -238,7 +232,7 @@ if (room) {
 这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
 {% endhint %}
 
-**Kind**: instance method of [`Room`](room.md#Room)  
+**Kind**: instance method of [`Room`](room.md#room)  
 **Example**
 
 ```javascript
@@ -249,7 +243,7 @@ await room.quit()
 
 设置 / 获取 群名称。
 
-**Kind**: instance method of [`Room`](room.md#Room)
+**Kind**: instance method of [`Room`](room.md#room)
 
 | Param | Type | Description |
 | :--- | :--- | :--- |
@@ -296,7 +290,7 @@ bot
 这个功能仅在机器人是群主的时候生效。
 {% endhint %}
 
-**Kind**: instance method of [`Room`](room.md#Room)
+**Kind**: instance method of [`Room`](room.md#room)
 
 | Param | Type | Description |
 | :--- | :--- | :--- |
@@ -335,13 +329,13 @@ console.log(`room announce change from ${oldAnnounce} to ${room.announce()}`)
 这个二维码仅在群人数小于100人的时候可用。
 {% endhint %}
 
-**Kind**: instance method of [`Room`](room.md#Room)
+**Kind**: instance method of [`Room`](room.md#room)
 
 ### room.alias\(contact\) ⇒ `Promise.`
 
 获取这个联系人在群内的群昵称。
 
-**Kind**: instance method of [`Room`](room.md#Room)  
+**Kind**: instance method of [`Room`](room.md#room)  
 **Returns**: `Promise.` - - 如果此联系人在群内设置了群昵称则会返回，否则会返回空。
 
 | Param | Type |
@@ -368,7 +362,7 @@ bot
 
 检查群内是否有这个群成员。
 
-**Kind**: instance method of [`Room`](room.md#Room)  
+**Kind**: instance method of [`Room`](room.md#room)  
 **Returns**: `Promise.` - Return `true` if has contact, else return `false`.
 
 | Param | Type |
@@ -402,7 +396,7 @@ if (contact && room) {
 * `roomAlias`             微信联系人自己在群内设置的昵称。
 * `contactAlias`       机器人给微信联系人设置的，等于 `Contact.alias()`
 
-**Kind**: instance method of [`Room`](room.md#Room)
+**Kind**: instance method of [`Room`](room.md#room)
 
 <table>
   <thead>
@@ -415,7 +409,7 @@ if (contact && room) {
   <tbody>
     <tr>
       <td style="text-align:left">[query]</td>
-      <td style="text-align:left"><a href="room.md#RoomMemberQueryFilter"><code>RoomMemberQueryFilter</code></a> | <code>string</code>
+      <td style="text-align:left"><a href="room.md#roommemberqueryfilter"><code>RoomMemberQueryFilter</code></a> | <code>string</code>
       </td>
       <td style="text-align:left">
         <p>可选参数。</p>
@@ -441,7 +435,7 @@ console.log(`contact list with all name, room alias, alias are abc:`, memberCont
 
 根据 query 查找群成员，如果找到多个，返回第一个。
 
-**Kind**: instance method of [`Room`](room.md#Room)
+**Kind**: instance method of [`Room`](room.md#room)
 
 <table>
   <thead>
@@ -454,7 +448,7 @@ console.log(`contact list with all name, room alias, alias are abc:`, memberCont
   <tbody>
     <tr>
       <td style="text-align:left">queryArg</td>
-      <td style="text-align:left"><a href="room.md#RoomMemberQueryFilter"><code>RoomMemberQueryFilter</code></a> | <code>string</code>
+      <td style="text-align:left"><a href="room.md#roommemberqueryfilter"><code>RoomMemberQueryFilter</code></a> | <code>string</code>
       </td>
       <td style="text-align:left">
         <p>如果找到多个，返回第一个。</p>
@@ -508,7 +502,7 @@ if (room) {
 这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
 {% endhint %}
 
-**Kind**: instance method of [`Room`](room.md#Room)  
+**Kind**: instance method of [`Room`](room.md#room)  
 **Example**
 
 ```javascript
@@ -519,7 +513,7 @@ const owner = room.owner()
 
 创建群聊
 
-**Kind**: static method of [`Room`](room.md#Room)
+**Kind**: static method of [`Room`](room.md#room)
 
 | Param | Type |
 | :--- | :--- |
@@ -543,11 +537,11 @@ await room.say('ding - created')
 
 通过  {topic: string \| RegExp}, 查找群，返回找到的所有群的数组。
 
-**Kind**: static method of [`Room`](room.md#Room)
+**Kind**: static method of [`Room`](room.md#room)
 
 | Param | Type |
 | :--- | :--- |
-| \[query\] | [`RoomQueryFilter`](room.md#RoomQueryFilter) |
+| \[query\] | [`RoomQueryFilter`](room.md#roomqueryfilter) |
 
 **Example**
 
@@ -563,12 +557,12 @@ const roomList = await bot.Room.findAll({topic: 'wechaty'})  // find all of the 
 
 通过  {topic: string \| RegExp}, 查找群，如果找到多个群，返回找到的第一个群。
 
-**Kind**: static method of [`Room`](room.md#Room)  
+**Kind**: static method of [`Room`](room.md#room)  
 **Returns**: `Promise.` - If can find the room, return Room, or return null
 
 | Param | Type |
 | :--- | :--- |
-| query | [`RoomQueryFilter`](room.md#RoomQueryFilter) |
+| query | [`RoomQueryFilter`](room.md#roomqueryfilter) |
 
 **Example**
 

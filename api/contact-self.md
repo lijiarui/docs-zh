@@ -12,16 +12,16 @@ description: 机器人自己的信息将会封装一个ContactSelf 类. 这个�
 
 **Kind**: global class
 
-* [ContactSelf](contact-self.md#ContactSelf)
-  * [.avatar\(\[file\]\)](contact-self.md#ContactSelf+avatar) ⇒ `Promise.`
-  * [.qrcode\(\)](contact-self.md#ContactSelf+qrcode) ⇒ `Promise.`
-  * [.signature\(signature\)](contact-self.md#ContactSelf+signature)
+* [ContactSelf](contact-self.md)
+  * [.avatar\(\[file\]\)](contact-self.md#contactself-avatar-file-promise) ⇒ `Promise.`
+  * [.qrcode\(\)](contact-self.md#contactself-qrcode-promise) ⇒ `Promise.`
+  * [.signature\(signature\)](contact-self.md#contactself-signature-signature)
 
 ### contactSelf.avatar\(\[file\]\) ⇒ `Promise.`
 
 获取 / 设置 机器人的头像。
 
-**Kind**: instance method of [`ContactSelf`](contact-self.md#ContactSelf)
+**Kind**: instance method of [`ContactSelf`](contact-self.md)
 
 | Param | Type |
 | :--- | :--- |
@@ -57,7 +57,7 @@ bot.on('login', (user: ContactSelf) => {
 
 获取机器人的二维码。
 
-**Kind**: instance method of [`ContactSelf`](contact-self.md#ContactSelf)  
+**Kind**: instance method of [`ContactSelf`](contact-self.md#contactself)  
 **Example**
 
 ```javascript
@@ -74,7 +74,7 @@ bot.on('login', (user: ContactSelf) => {
 
 修改机器人签名。
 
-**Kind**: instance method of [`ContactSelf`](contact-self.md#ContactSelf)
+**Kind**: instance method of [`ContactSelf`](contact-self.md#contactself)
 
 | Param | Description |
 | :--- | :--- |
