@@ -4,15 +4,9 @@ description: 所有的联系人（好友）都会被封装成要给Contact 类
 
 # Contact
 
-## Classes
-
-[Contact](contact.md#Contact)
-
-所有的联系人（好友）都会被封装成要给Contact 类.
-
- [Examples/Contact-Bot](https://github.com/Chatie/wechaty/blob/1523c5e02be46ebe2cc172a744b2fbe53351540e/examples/contact-bot.ts)
-
 ## Contact
+
+[Examples/Contact-Bot](https://github.com/Chatie/wechaty/blob/1523c5e02be46ebe2cc172a744b2fbe53351540e/examples/contact-bot.ts)
 
 **Kind**: global class  
 **Properties**
@@ -21,22 +15,22 @@ description: 所有的联系人（好友）都会被封装成要给Contact 类
 | :--- | :--- | :--- |
 | id | `string` | 获取联系人id，这个id 是否为永久唯一id 取决于你使用什么puppet，详见 [Puppet 兼容性清单](../puppet.md#3-wechaty-puppet-jian-rong-xing)。 |
 
-* [Contact](contact.md#Contact)
+* [Contact](contact.md#contact)
   * _instance_
-    * [.say\(textOrContactOrFileOrUrl\)](contact.md#Contact+say) ⇒ `Promise.`
-    * [.name\(\)](contact.md#Contact+name) ⇒ `string`
-    * [.alias\(newAlias\)](contact.md#Contact+alias) ⇒ `Promise.`
-    * [.friend\(\)](contact.md#Contact+friend) ⇒ `boolean` \| `null`
-    * [.type\(\)](contact.md#Contact+type) ⇒ `ContactType.Unknown` \| `ContactType.Personal` \| `ContactType.Official`
-    * [.gender\(\)](contact.md#Contact+gender) ⇒ `ContactGender.Unknown` \| `ContactGender.Male` \| `ContactGender.Female`
-    * [.province\(\)](contact.md#Contact+province) ⇒ `string` \| `null`
-    * [.city\(\)](contact.md#Contact+city) ⇒ `string` \| `null`
-    * [.avatar\(\)](contact.md#Contact+avatar) ⇒ `Promise.`
-    * [.sync\(\)](contact.md#Contact+sync) ⇒ `Promise.`
-    * [.self\(\)](contact.md#Contact+self) ⇒ `boolean`
+    * [.say\(textOrContactOrFileOrUrl\)](contact.md#contact-say-textorcontactorfileorurl-promise) ⇒ `Promise.`
+    * [.name\(\)](contact.md#contact-name-string) ⇒ `string`
+    * [.alias\(newAlias\)](contact.md#contact-alias-newalias-promise) ⇒ `Promise.`
+    * [.friend\(\)](contact.md#contact-friend-boolean-or-null) ⇒ `boolean` \| `null`
+    * [.type\(\)](contact.md#contact-type-contacttype-unknown-or-contacttype-personal-or-contacttype-official) ⇒ `ContactType.Unknown` \| `ContactType.Personal` \| `ContactType.Official`
+    * [.gender\(\)](contact.md#contact-gender-contactgender-unknown-or-contactgender-male-or-contactgender-female) ⇒ `ContactGender.Unknown` \| `ContactGender.Male` \| `ContactGender.Female`
+    * [.province\(\)](contact.md#contact-province-string-or-null) ⇒ `string` \| `null`
+    * [.city\(\)](contact.md#contact-city-string-or-null) ⇒ `string` \| `null`
+    * [.avatar\(\)](contact.md#contact-avatar-promise) ⇒ `Promise.`
+    * [.sync\(\)](contact.md#contact-sync-promise) ⇒ `Promise.`
+    * [.self\(\)](contact.md#contact-self-boolean) ⇒ `boolean`
   * _static_
-    * [.find\(query\)](contact.md#Contact.find) ⇒ `Promise.`
-    * [.findAll\(\[queryArg\]\)](contact.md#Contact.findAll) ⇒ `Promise.>`
+    * [.find\(query\)](contact.md#contact-find-query-promise) ⇒ `Promise.`
+    * [.findAll\(\[queryArg\]\)](contact.md#contact-findall-queryarg-promise-greater-than) ⇒ `Promise.>`
 
 ### contact.say\(textOrContactOrFileOrUrl\) ⇒ `Promise.`
 
@@ -44,11 +38,11 @@ description: 所有的联系人（好友）都会被封装成要给Contact 类
 这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
 {% endhint %}
 
-**Kind**: instance method of [`Contact`](contact.md#Contact)
+**Kind**: instance method of [`Contact`](contact.md#contact)
 
 | Param | Type | Description |
 | :--- | :--- | :--- |
-| textOrContactOrFileOrUrl | `string` \| [`Contact`](contact.md#Contact) \| `FileBox` | 给微信好友发送文本，联系人名片或者文件。你可以使用[FileBox](https://www.npmjs.com/package/file-box) 来发送文件。 |
+| textOrContactOrFileOrUrl | `string` \| [`Contact`](contact.md#contact) \| `FileBox` | 给微信好友发送文本，联系人名片或者文件。你可以使用[FileBox](https://www.npmjs.com/package/file-box) 来发送文件。 |
 
 **Example**
 
@@ -79,7 +73,7 @@ await contact.say(contactCard)
 
 获取联系人的昵称
 
-**Kind**: instance method of [`Contact`](contact.md#Contact)  
+**Kind**: instance method of [`Contact`](contact.md#contact)  
 **Example**
 
 ```javascript
@@ -92,7 +86,7 @@ const name = contact.name()
 
 如果设置备注过于频繁，设置将会失效（比如1分钟设置60次）
 
-**Kind**: instance method of [`Contact`](contact.md#Contact)
+**Kind**: instance method of [`Contact`](contact.md#contact)
 
 | Param | Type |
 | :--- | :--- |
@@ -140,7 +134,7 @@ try {
 这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
 {% endhint %}
 
-**Kind**: instance method of [`Contact`](contact.md#Contact)  
+**Kind**: instance method of [`Contact`](contact.md#contact)  
 **Returns**: `boolean` \| `null` -   
 True for friend of the bot   
  False for not friend of the bot, null for unknown.  
@@ -158,7 +152,7 @@ const isFriend = contact.friend()
 ContactType 在这里是enum
 {% endhint %}
 
-**Kind**: instance method of [`Contact`](contact.md#Contact)  
+**Kind**: instance method of [`Contact`](contact.md#contact)  
 **Example**
 
 ```javascript
@@ -175,7 +169,7 @@ const isOfficial = contact.type() === bot.Contact.Type.Official
 ContactGender在这里是 enum
 {% endhint %}
 
-**Kind**: instance method of [`Contact`](contact.md#Contact)  
+**Kind**: instance method of [`Contact`](contact.md#contact)  
 **Example**
 
 ```javascript
@@ -186,7 +180,7 @@ const gender = contact.gender() === bot.Contact.Gender.Male
 
 获取联系人设置的省份信息
 
-**Kind**: instance method of [`Contact`](contact.md#Contact)  
+**Kind**: instance method of [`Contact`](contact.md#contact)  
 **Example**
 
 ```javascript
@@ -197,7 +191,7 @@ const province = contact.province()
 
 获取联系人设置的城市信息
 
-**Kind**: instance method of [`Contact`](contact.md#Contact)  
+**Kind**: instance method of [`Contact`](contact.md#contact)  
 **Example**
 
 ```javascript
@@ -208,7 +202,7 @@ const city = contact.city()
 
 获取联系人的头像
 
-**Kind**: instance method of [`Contact`](contact.md#Contact)  
+**Kind**: instance method of [`Contact`](contact.md#contact)  
 **Example**
 
 ```javascript
@@ -224,7 +218,7 @@ console.log(`Contact: ${contact.name()} with avatar file: ${name}`)
 
 强制重新加载好友数据，会从低级别的 API 中重新同步一遍。
 
-**Kind**: instance method of [`Contact`](contact.md#Contact)  
+**Kind**: instance method of [`Contact`](contact.md#contact)  
 **Example**
 
 ```javascript
@@ -235,7 +229,7 @@ await contact.sync()
 
 检测好友是否是机器人自己。
 
-**Kind**: instance method of [`Contact`](contact.md#Contact)  
+**Kind**: instance method of [`Contact`](contact.md#contact)  
 **Returns**: `boolean` - True for contact is self, False for contact is others  
 **Example**
 
@@ -249,12 +243,12 @@ const isSelf = contact.self()
 
 支持通过昵称或者备注查找。如果查到不止一个联系人，返回找到的第一个。
 
-**Kind**: static method of [`Contact`](contact.md#Contact)  
+**Kind**: static method of [`Contact`](contact.md#contact)  
 **Returns**: `Promise.` - If can find the contact, return Contact, or return null
 
 | Param | Type |
 | :--- | :--- |
-| query | [`ContactQueryFilter`](contact.md#ContactQueryFilter) |
+| query | [`ContactQueryFilter`](contact.md#contactqueryfilter) |
 
 **Example**
 
@@ -276,11 +270,11 @@ const contactFindByAlias = await bot.Contact.find({ alias:"lijiarui"} )
 * `name`   用户自己设置的昵称叫做name
 * `alias`  机器人给这个用户设置的昵称叫做alias
 
-**Kind**: static method of [`Contact`](contact.md#Contact)
+**Kind**: static method of [`Contact`](contact.md#contact)
 
 | Param | Type |
 | :--- | :--- |
-| \[queryArg\] | [`ContactQueryFilter`](contact.md#ContactQueryFilter) |
+| \[queryArg\] | [`ContactQueryFilter`](contact.md#contactqueryfilter) |
 
 **Example**
 
@@ -306,5 +300,7 @@ const contactList = await bot.Contact.findAll({ alias: 'lijiarui' }) // find all
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | name | `string` | 用户自己设置的昵称叫做name |
-| alias | `string` | 机器人或者其他人给这个用户设置的昵称叫做alias[More Detail](https://github.com/Chatie/wechaty/issues/365) |
+| alias | `string` | 机器人或者其他人给这个用户设置的昵称叫做alias：[More Detail](https://github.com/Chatie/wechaty/issues/365) |
+
+
 

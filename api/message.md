@@ -10,33 +10,33 @@ description: 所有的微信消息会被封装成一个Message 类
 
 **Kind**: global class
 
-* [Message](message.md#Message)
+* [Message](message.md#message)
   * _instance_
-    * [.from\(\)](message.md#Message+from) ⇒ `Contact`
-    * [.to\(\)](message.md#Message+to) ⇒ `Contact` \| `null`
-    * [.room\(\)](message.md#Message+room) ⇒ `Room` \| `null`
-    * [~~.content\(\)~~](message.md#Message+content)
-    * [.text\(\)](message.md#Message+text) ⇒ `string`
-    * [.say\(textOrContactOrFile, \[mention\]\)](message.md#Message+say) ⇒ `Promise.`
-    * [.type\(\)](message.md#Message+type) ⇒ `MessageType`
-    * [.self\(\)](message.md#Message+self) ⇒ `boolean`
-    * [.mention\(\)](message.md#Message+mention) ⇒ `Promise.>`
-    * [.mentionSelf\(\)](message.md#Message+mentionSelf) ⇒ `Promise.`
-    * [.forward\(to\)](message.md#Message+forward) ⇒ `Promise.`
-    * [.date\(\)](message.md#Message+date)
-    * [.age\(\)](message.md#Message+age) ⇒ `number`
-    * [~~.file\(\)~~](message.md#Message+file)
-    * [.toFileBox\(\)](message.md#Message+toFileBox) ⇒ `Promise.`
-    * [.toContact\(\)](message.md#Message+toContact) ⇒ `Promise.`
+    * [.from\(\) ](message.md#message-from-contact)⇒ `Contact`
+    * [.to\(\)](message.md#message-to-contact-or-null) ⇒ `Contact` \| `null`
+    * [.room\(\)](message.md#message-room-room-or-null) ⇒ `Room` \| `null`
+    * ~~~~[~~.content\(\)~~](message.md#message-content)~~~~
+    * .[text\(\)](message.md#message-text-string) ⇒ `string`
+    * [.say\(textOrContactOrFile, \[mention\]\)](message.md#message-say-textorcontactorfile-mention-promise) ⇒ `Promise.`
+    * [.type\(\)](message.md#message-type-messagetype) ⇒ `MessageType`
+    * [.self\(\)](message.md#message-self-boolean) ⇒ `boolean`
+    * [.mention\(\)](message.md#message-mention-promise-greater-than) ⇒ `Promise.>`
+    * [.mentionSelf\(\)](message.md#message-mentionself-promise) ⇒ `Promise.`
+    * [.forward\(to\)](message.md#message-forward-to-promise) ⇒ `Promise.`
+    * [.date\(\)](message.md#message-date)
+    * [.age\(\)](message.md#message-age-number) ⇒ `number`
+    * ~~~~[~~.file\(\)~~](message.md#message-file)~~~~
+    * [.toFileBox\(\) ](message.md#message-tofilebox-promise)⇒ `Promise.`
+    * [.toContact\(\)](message.md#message-tocontact-promise) ⇒ `Promise.`
   * _static_
-    * [.find\(\)](message.md#Message.find)
-    * [.findAll\(\)](message.md#Message.findAll)
+    * [.find\(\)](message.md#message-find)
+    * [.findAll\(\)](message.md#message-findall)
 
 ### message.from\(\) ⇒ `Contact`
 
 获取发送消息的联系人
 
-**Kind**: instance method of [`Message`](message.md#Message)  
+**Kind**: instance method of [`Message`](message.md#message)  
 **Example**
 
 ```javascript
@@ -60,13 +60,13 @@ bot
 
 获取消息发送的联系人。在微信群中，Message.to\(\) 会返回null，使用Message.room\(\)获取微信群信息。
 
-**Kind**: instance method of [`Message`](message.md#Message)
+**Kind**: instance method of [`Message`](message.md#message)
 
 ### message.room\(\) ⇒ `Room` \| `null`
 
 获取消息所在的微信群，如果这条消息不在微信群中，会返回null
 
-**Kind**: instance method of [`Message`](message.md#Message)  
+**Kind**: instance method of [`Message`](message.md#message)  
 **Example**
 
 ```javascript
@@ -90,16 +90,16 @@ bot
 
 _**Deprecated**_
 
-请使用  [message.text\(\)](message.md#Message+text) 
+请使用  [message.text\(\) ](message.md#message-text-string)
 
-**Kind**: instance method of [`Message`](message.md#Message)  
+**Kind**: instance method of [`Message`](message.md#message)  
 
 
 ### message.text\(\) ⇒ `string`
 
 获取消息的文本内容。
 
-**Kind**: instance method of [`Message`](message.md#Message)  
+**Kind**: instance method of [`Message`](message.md#message)  
 **Example**
 
 ```javascript
@@ -127,7 +127,7 @@ bot
 这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
 {% endhint %}
 
-**Kind**: instance method of [`Message`](message.md#Message)  
+**Kind**: instance method of [`Message`](message.md#message)  
 **See**: [Examples/ding-dong-bot](https://github.com/Chatie/wechaty/blob/1523c5e02be46ebe2cc172a744b2fbe53351540e/examples/ding-dong-bot.ts)
 
 <table>
@@ -209,7 +209,7 @@ MessageType 的类型是 Enum， 具体如下
 * MessageType.Url   
 {% endhint %}
 
-**Kind**: instance method of [`Message`](message.md#Message)  
+**Kind**: instance method of [`Message`](message.md#message)  
 **Example**
 
 ```javascript
@@ -223,7 +223,7 @@ if (message.type() === bot.Message.Type.Text) {
 
 查看这条消息是否为机器人发送的。
 
-**Kind**: instance method of [`Message`](message.md#Message)  
+**Kind**: instance method of [`Message`](message.md#message)  
 **Returns**: `boolean` - - Return `true` for send from self, `false` for send from others.  
 **Example**
 
@@ -237,7 +237,7 @@ if (message.self()) {
 
 获取在群中@的用户列表。
 
-**Kind**: instance method of [`Message`](message.md#Message)  
+**Kind**: instance method of [`Message`](message.md#message)  
 **Returns**: `Promise.>` - - Return message mentioned contactList  
 **Example**
 
@@ -250,7 +250,7 @@ console.log(contactList)
 
 获取机器人是否在群里被@ 了
 
-**Kind**: instance method of [`Message`](message.md#Message)  
+**Kind**: instance method of [`Message`](message.md#message)  
 **Returns**: `Promise.` - - Return `true` for mention me.  
 **Example**
 
@@ -264,7 +264,7 @@ if (await message.mentionSelf()) {
 
 转发收到的消息
 
-**Kind**: instance method of [`Message`](message.md#Message)
+**Kind**: instance method of [`Message`](message.md#message)
 
 <table>
   <thead>
@@ -304,7 +304,7 @@ bot
 
 消息发送的时间
 
-**Kind**: instance method of [`Message`](message.md#Message)  
+**Kind**: instance method of [`Message`](message.md#message)  
 
 
 ### message.age\(\) ⇒ `number`
@@ -314,7 +314,7 @@ bot
    
 例如： 消息在`8:43:01`发送的，当我们在wechaty 上收到消息的时候，时间是`8:43:15`,那么 age\(\) 为 `8:43:15 - 8:43:01 = 14 (seconds)`
 
-**Kind**: instance method of [`Message`](message.md#Message)  
+**Kind**: instance method of [`Message`](message.md#message)  
 
 
 ### ~~message.file\(\)~~
@@ -323,7 +323,7 @@ _**Deprecated**_
 
 使用 [toFileBox](message.md#Message+toFileBox) 
 
-**Kind**: instance method of [`Message`](message.md#Message)  
+**Kind**: instance method of [`Message`](message.md#message)  
 
 
 ### message.toFileBox\(\) ⇒ `Promise.`
@@ -334,7 +334,7 @@ _**Deprecated**_
 这个方法是否能实现，取决于用的是什么Puppet，具体请看：[Puppet 兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
 {% endhint %}
 
-**Kind**: instance method of [`Message`](message.md#Message)  
+**Kind**: instance method of [`Message`](message.md#message)  
 
 
 ### message.toContact\(\) ⇒ `Promise.`
@@ -345,19 +345,19 @@ _**Deprecated**_
 这个方法是否能实现，取决于用的是什么Puppet，具体请看：[Puppet 兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
 {% endhint %}
 
-**Kind**: instance method of [`Message`](message.md#Message)  
+**Kind**: instance method of [`Message`](message.md#message)  
 
 
 ### Message.find\(\)
 
 在缓存中找消息。
 
-**Kind**: static method of [`Message`](message.md#Message)  
+**Kind**: static method of [`Message`](message.md#message)  
 
 
 ### Message.findAll\(\)
 
 在缓存中找消息
 
-**Kind**: static method of [`Message`](message.md#Message)
+**Kind**: static method of [`Message`](message.md#message)
 
