@@ -6,9 +6,9 @@ description: 机器人自己的信息将会封装一个ContactSelf 类. 这个�
 
 ## ContactSelf
 
-Bot itself will be encapsulated as a ContactSelf.
-
-> Tips: this class is extends Contact
+{% hint style="info" %}
+这个类继承自 Contact
+{% endhint %}
 
 **Kind**: global class
 
@@ -19,7 +19,7 @@ Bot itself will be encapsulated as a ContactSelf.
 
 ### contactSelf.avatar\(\[file\]\) ⇒ `Promise.`
 
-GET / SET bot avatar
+获取 / 设置 机器人的头像。
 
 **Kind**: instance method of [`ContactSelf`](contact-self.md#ContactSelf)
 
@@ -55,7 +55,7 @@ bot.on('login', (user: ContactSelf) => {
 
 ### contactSelf.qrcode\(\) ⇒ `Promise.`
 
-Get bot qrcode
+获取机器人的二维码。
 
 **Kind**: instance method of [`ContactSelf`](contact-self.md#ContactSelf)  
 **Example**
@@ -72,7 +72,7 @@ bot.on('login', (user: ContactSelf) => {
 
 ### contactSelf.signature\(signature\)
 
-Change bot signature
+修改机器人签名。
 
 **Kind**: instance method of [`ContactSelf`](contact-self.md#ContactSelf)
 

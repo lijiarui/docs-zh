@@ -294,6 +294,8 @@ const contactList = await bot.Contact.findAll({ alias: 'lijiarui' }) // find all
 
 ## 类型定义
 
+* [ContactQueryFilter](contact.md#contactqueryfilter)
+
 ### ContactQueryFilter
 
 搜索联系人的方式

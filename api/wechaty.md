@@ -331,6 +331,11 @@ const { Wechaty } = require('wechaty')
 
 ## 类型定义
 
+* [PuppetModuleName](wechaty.md#puppetmodulename)
+* [WechatyOptions](wechaty.md#wechatyoptions)
+* [WechatyEventName](wechaty.md#wechatyeventname)
+* \*\*\*\*[WechatyEventFunction](wechaty.md#wechatyeventfunction)
+
 ### PuppetModuleName
 
 **Kind**: global typedef **Properties**
