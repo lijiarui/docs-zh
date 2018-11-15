@@ -13,14 +13,14 @@
 * [示例代码](example.md)
 * [Puppet](puppet.md)
 * [FAQ](faq.md)
-* [购买第三方iPad版本](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
+* [购买第三方iPad版本](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/购买token)
 
 ## 了解更多
 
-* [视频教程](more/video.md)
-* [进阶](more/advanced.md)
-* [ReleaseLog](more/releaselog.md)
-* [ChangeLog](more/changelog.md)
-* [Awesome Wechaty](more/awesome-wechaty.md)
+* [视频教程](liao-jie-geng-duo/video.md)
+* [进阶](liao-jie-geng-duo/advanced.md)
+* [ReleaseLog](liao-jie-geng-duo/releaselog.md)
+* [ChangeLog](liao-jie-geng-duo/changelog.md)
+* [Awesome Wechaty](liao-jie-geng-duo/awesome-wechaty.md)
 * [Contributors](https://github.com/Chatie/wechaty/wiki/Contributors)
 

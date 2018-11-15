@@ -46,7 +46,7 @@
 
 ### 2.2 wechaty 是支持个人号还是公众号？
 
-现阶段，wechaty 只支持个人号
+现阶段，wechaty 只支持个人号，未来会陆续开放支持公众号的功能。
 
 相关Issue: [Using wechaty to start a wechatOA account](https://github.com/Chatie/wechaty/issues/1016)
 

@@ -27,7 +27,7 @@ description: 一个Wechaty 代表着一个微信的客户端，他取决于你�
 
 {% page-ref page="room.md" %}
 
-## Wechaty    <a id="wechaty"></a>
+## Wechaty     <a id="wechaty"></a>
 
 **Kind**: global class
 
@@ -44,7 +44,7 @@ description: 一个Wechaty 代表着一个微信的客户端，他取决于你�
   * _static_
     * ​[.instance\(\[options\]\)](wechaty.md#wechaty-instance-options)​
 
-### new Wechaty\(\[options\]\)    <a id="new-wechaty-options"></a>
+### new Wechaty\(\[options\]\)     <a id="new-wechaty-options"></a>
 
 创建一个 Wechaty 的实例.
 
@@ -64,7 +64,7 @@ bot.on('message', message => console.log(`Message: ${message}`))
 bot.start()
 ```
 
-### wechaty.on\(event, listener\) ⇒ [`Wechaty`](wechaty.md#Wechaty)​    <a id="wechaty-on-event-listener-wechaty"></a>
+### wechaty.on\(event, listener\) ⇒ [`Wechaty`](wechaty.md#Wechaty)​     <a id="wechaty-on-event-listener-wechaty"></a>
 
 当机器人收到消息，会触发一个事件，一些简单的事件介绍如下：
 
@@ -197,7 +197,7 @@ bot.on('room-topic', (room, topic, oldTopic, changer) => {
 ​bot.on('error', (error) => {  console.error(error)})
 ```
 
-### wechaty.start\(\) ⇒ `Promise.`    <a id="wechaty-start-promise"></a>
+### wechaty.start\(\) ⇒ `Promise.`     <a id="wechaty-start-promise"></a>
 
 启动机器人
 
@@ -211,7 +211,7 @@ bot.on('room-topic', (room, topic, oldTopic, changer) => {
 await bot.start() // do other stuff with bot here
 ```
 
-### wechaty.stop\(\) ⇒ `Promise.`    <a id="wechaty-stop-promise"></a>
+### wechaty.stop\(\) ⇒ `Promise.`     <a id="wechaty-stop-promise"></a>
 
 停止机器人
 
@@ -221,7 +221,7 @@ await bot.start() // do other stuff with bot here
 await bot.stop()
 ```
 
-### wechaty.logout\(\) ⇒ `Promise.`    <a id="wechaty-logout-promise"></a>
+### wechaty.logout\(\) ⇒ `Promise.`     <a id="wechaty-logout-promise"></a>
 
 登出机器人
 
@@ -231,7 +231,7 @@ await bot.stop()
 await bot.logout()
 ```
 
-### wechaty.logonoff\(\) ⇒ `boolean`    <a id="wechaty-logonoff-boolean"></a>
+### wechaty.logonoff\(\) ⇒ `boolean`     <a id="wechaty-logonoff-boolean"></a>
 
 获取机器人logon/logoff 的状态
 
@@ -245,7 +245,7 @@ if (bot.logonoff()) {
 }
 ```
 
-### wechaty.userSelf\(\) ⇒ `ContactSelf`    <a id="wechaty-userself-contactself"></a>
+### wechaty.userSelf\(\) ⇒ `ContactSelf`     <a id="wechaty-userself-contactself"></a>
 
 获取当前机器人的所有信息
 
@@ -256,7 +256,7 @@ const contact = bot.userSelf()
 console.log(`Bot is ${contact.name()}`)
 ```
 
-### wechaty.say\(textOrContactOrFileOrUrl\) ⇒ `Promise.`    <a id="wechaty-say-textorcontactorfileorurl-promise"></a>
+### wechaty.say\(textOrContactOrFileOrUrl\) ⇒ `Promise.`     <a id="wechaty-say-textorcontactorfileorurl-promise"></a>
 
 机器人自己给自己发消息。
 
@@ -283,27 +283,13 @@ console.log(`Bot is ${contact.name()}`)
     </tr>
   </thead>
   <tbody></tbody>
-</table>```typescript
-const bot = new Wechaty()
-await bot.start()
-// after logged in
+</table>​// 1. send text to bot itselfawait bot.say\('hello!'\)​ // 2. send Contact to bot itself const contact = bot.Contact.load\('contactId'\) await bot.say\(contact\)​
 
-​// 1. send text to bot itselfawait bot.say('hello!')​
-// 2. send Contact to bot itself
-const contact = bot.Contact.load('contactId')
-await bot.say(contact)​
+// 3. send Image to bot itself from remote url import { FileBox } from 'file-box' const fileBox = FileBox.fromUrl\('[https://chatie.io/wechaty/images/bot-qr-code.png](https://chatie.io/wechaty/images/bot-qr-code.png)'\) await bot.say\(fileBox\)​
 
-// 3. send Image to bot itself from remote url
-import { FileBox }  from 'file-box'
-const fileBox = FileBox.fromUrl('https://chatie.io/wechaty/images/bot-qr-code.png')
-await bot.say(fileBox)​
+// 4. send Image to bot itself from local file import { FileBox } from 'file-box' const fileBox = FileBox.fromFile\('/tmp/text.jpg'\) await bot.say\(fileBox\)
 
-// 4. send Image to bot itself from local file
-import { FileBox }  from 'file-box'
-const fileBox = FileBox.fromFile('/tmp/text.jpg')
-await bot.say(fileBox)
-```
-
+```text
 ### Wechaty.instance\(\[options\]\)    <a id="wechaty-instance-options"></a>
 
 获取全局的Wechaty 实例。
@@ -385,11 +371,7 @@ export interface WechatyOptions {
     </tr>
   </thead>
   <tbody></tbody>
-</table>| puppet | `PuppetModuleName` \| `Puppet` | Puppet 名称或者实例 |
-| :--- | :--- | :--- |
-
-
-| puppetOptions | `Partial.` | Puppet TOKEN |
+</table>| puppetOptions | `Partial.` | Puppet TOKEN |
 | :--- | :--- | :--- |
 
 
@@ -462,9 +444,7 @@ Wechaty 事件的类型
     </tr>
   </thead>
   <tbody></tbody>
-</table>Wechaty 事件函数
-
-**Kind**: global typedef **Properties**
+</table>**Kind**: global typedef **Properties**
 
 | Name | Type | Description |
 | :--- | :--- | :--- |

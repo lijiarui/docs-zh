@@ -419,14 +419,7 @@ if (contact && room) {
     </tr>
   </thead>
   <tbody></tbody>
-</table>```javascript
-const roomList:Conatct[] | null = await room.findAll()
-if(roomList)
-console.log(`room all member list: `, roomList)
-const memberContactList: Conatct[] | null =await room.findAll(`abc`)
-console.log(`contact list with all name, room alias, alias are abc:`, memberContactList)
-```
-
+</table>```text
 ### room.member\(queryArg\) ⇒ `Promise.`
 
 根据 query 查找群成员，如果找到多个，返回第一个。

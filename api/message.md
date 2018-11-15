@@ -146,11 +146,7 @@ bot
     </tr>
   </thead>
   <tbody></tbody>
-</table>| \[mention\] | `Contact` \| `Array.` | 如果这是一条来自微信群的消息，当你设置了这个参数，你会在群中@这个联系人。 |
-| :--- | :--- | :--- |
-
-
-```javascript
+</table>```javascript
 import { FileBox }  from 'file-box'
 const bot = new Wechaty()
 bot
@@ -276,18 +272,7 @@ if (await message.mentionSelf()) {
     </tr>
   </thead>
   <tbody></tbody>
-</table>```javascript
-const bot = new Wechaty()
-bot
-.on('message', async m => {
-  const room = await bot.Room.find({topic: 'wechaty'})
-  if (room) {
-    await m.forward(room)
-    console.log('forward this message to wechaty room!')
-  }
-})
-.start()
-```
+</table>\`\`\`
 
 ### message.date\(\)
 
