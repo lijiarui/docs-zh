@@ -46,7 +46,7 @@ description: 一个Wechaty 代表着一个微信的客户端，他取决于你�
 
 ### new Wechaty\(\[options\]\)     <a id="new-wechaty-options"></a>
 
-创建一个 Wechaty 的实例.
+创建一个 Wechaty 的实例，默认使用Web 的方式，切换到iPad 的方式，参数设置请查看[示例代码](https://github.com/lijiarui/wechaty-puppet-padchat#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)
 
 | Param | Type | Default |
 | :--- | :--- | :--- |
