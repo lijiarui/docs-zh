@@ -29,7 +29,35 @@
 请查看[ Puppet功能兼容性清单](puppet.md#3-wechaty-puppet-jian-rong-xing) 查看完整功能内容
 {% endhint %}
 
-### 2.1 支持 红包、转账、朋友圈… 吗？
+### 2.1 如何获取到用户的微信号
+
+> 我用\`Contact.id\`获取到的不是用户的微信号，如何获取到用户的微信号？
+
+对的，`Contact.id` 获取不到用户的微信号的，应该用 `Contact.weixin()` 获取用户的微信号。
+
+能否获取到用户的微信号，取决于你使用的是哪一个Puppet。
+
+* 如果使用的是Web 版本的Puppet，基于网页微信的机制，大部分情况下获取不到微信号，只有一小部分用户能获取到微信号。
+* 如果使用的是iPad 版本的Puppet，即将推出获取微信号的功能，详情看 [\#1647](https://github.com/Chatie/wechaty/issues/1647)
+
+相关issue：[\#1658](https://github.com/Chatie/wechaty/issues/1658)
+
+### 2.2 如何获取好友和群的唯一id？
+
+通过 `Contact.id` 和 `Room.id` 获取好友和群的唯一id。
+
+不同的Puppet，这个唯一id是不同的。
+
+除此之外，还有一定重要的不同：**是否能够跨session 依然保持不变，换句话说，当你重新登录的时候，或者切换账号登录的时候，同一个好友或者群的id 是否唯一。**
+
+不通的Puppet 表现各不相同：
+
+* 基于Web 版本的Puppet 得到的id 跨session 是会变化的，所以不能被用来当做你系统的唯一标识码来使用。
+* 基于iPad 版本的Puppet 得到的id 跨session 是不会变化的，可以用来当做这个联系人的唯一标识码。
+
+相关issue: [\#1644](https://github.com/Chatie/wechaty/issues/1644) , [\#90](https://github.com/Chatie/wechaty/issues/90) , [\#1276](https://github.com/Chatie/wechaty/issues/1276) , [\#133](https://github.com/Chatie/wechaty/issues/133) , [\#1307](https://github.com/Chatie/wechaty/issues/1307)
+
+### 2.3 支持 红包、转账、朋友圈… 吗？
 
 以下功能目前均不支持
 
@@ -44,13 +72,13 @@
 * 发送名片，仅padchat 支持
 * 发送语音消息，仅padchat 支持
 
-### 2.2 wechaty 是支持个人号还是公众号？
+### 2.4 wechaty 是支持个人号还是公众号？
 
 现阶段，wechaty 只支持个人号，未来会陆续开放支持公众号的功能。
 
 相关Issue: [Using wechaty to start a wechatOA account](https://github.com/Chatie/wechaty/issues/1016)
 
-### 2.3 wechaty 是否可以发送卡片消息，然后跳转到网页
+### 2.5 wechaty 是否可以发送卡片消息，然后跳转到网页
 
 PuppetPadchat 是支持的， 其他版本是不支持的，示例代码：
 
@@ -67,7 +95,7 @@ PuppetPadchat 是支持的， 其他版本是不支持的，示例代码：
   })
 ```
 
-### 2.4 机器人被拉到一个新的群组里的事件是否支持？
+### 2.6 机器人被拉到一个新的群组里的事件是否支持？
 
 支持，可以通过\`room-join\` 获取到这个事件。
 
@@ -79,7 +107,7 @@ bot.on('room-join', (room, inviteeList, inviter) => {
 })
 ```
 
-### 2.5 为什么需要扫码登陆而不是用户名密码登陆？
+### 2.7 为什么需要扫码登陆而不是用户名密码登陆？
 
 > 我发现代码是有通过用户名密码登陆的方法的，所以也许我可以很简单的写一个创建账户的功能，然后不用再扫码登陆，但是为什么现在没做呢？
 
@@ -91,7 +119,7 @@ bot.on('room-join', (room, inviteeList, inviter) => {
 2. 当你使用扫码的方式登陆的时候，你是可以保存你手机的session的。换句话说，你可以同时让手机和机器人同时在线。如果你使用了用户名密码登陆，那么的session将会失效，只有机器人微信在线，手机微信将会自动退出。
 3. 通过用户名密码登陆的协议，是使用一个协议服务器来控制iPad 微信的。如果你使用用户名密码的方式登陆，那么你就会直接把这些敏感的账号信息发给第三方的服务器，这种方式大部分用户会觉得很不舒服。
 
-### 2.6 如何不使用onMessage 来发消息？
+### 2.8 如何不使用onMessage 来发消息？
 
 **在群内发送消息：**
 
@@ -116,7 +144,7 @@ contact.say('hello room')
 * [\#89](https://github.com/Chatie/wechaty/issues/89) Wechaty.send\(\) error when send message to the room
 * [\#41](https://github.com/Chatie/wechaty/issues/41) \[New Feature\] send message by branding new method: say\(\)
 
-### 2.7 运行出现Error: can not found bot file: xxx.js when using docker to start wechaty.
+### 2.9 运行出现Error: can not found bot file: xxx.js when using docker to start wechaty.
 
 首先，请确认你有`xxx.js`文件，如果依然有这个问题，请检查一下Linux 的 `SELinux`设置。
 
@@ -133,11 +161,11 @@ setenforce 0
 * 相关博客:  [Find if permission denied errors are caused by SELinux](https://www.mysysadmintips.com/linux/servers/587-find-if-permission-denied-error-is-caused-by-selinux)
 * 相关 issues:[\#66](https://github.com/Chatie/wechaty/issues/66#issuecomment-374086724) Dockerize Wechaty for easy start
 
-### 2.8 通过Room.find\(\)找到的群，要是用户名或群名字有相同的会怎么办，find找到的是哪一个？
+### 2.10 通过Room.find\(\)找到的群，要是用户名或群名字有相同的会怎么办，find找到的是哪一个？
 
 返回找到的第一个群，排序方式是随机的。
 
-### 2.9 如何发送一个链接邀请好友进群？
+### 2.11 如何发送一个链接邀请好友进群？
 
 > 我是用 \`room.add\(contact\)\` 的方法邀请好友入群的，但是我发现机器人是直接拉用户进群的，而没有给用户发送的入群邀请链接。
 
