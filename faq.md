@@ -85,7 +85,9 @@
 
 现阶段，wechaty 只支持个人号，未来会陆续开放支持公众号的功能。
 
-相关Issue: [Using wechaty to start a wechatOA account](https://github.com/Chatie/wechaty/issues/1016)
+相关Issue: 
+
+* [\#1016](https://github.com/Chatie/wechaty/issues/1016) Using wechaty to start a wechatOA account
 
 ### 2.5 wechaty 是否可以发送卡片消息，然后跳转到网页
 
