@@ -91,6 +91,8 @@
 
 ### 2.5 wechaty 是否可以发送卡片消息，然后跳转到网页
 
+> 是否可以通过wechaty 发送分享链接？
+
 PuppetPadchat 是支持的， 其他版本是不支持的，示例代码：
 
 ```typescript
@@ -105,6 +107,13 @@ PuppetPadchat 是支持的， 其他版本是不支持的，示例代码：
     m.say(link)
   })
 ```
+
+相关issue:
+
+* [\#1593](https://github.com/Chatie/wechaty/issues/1539) feat: add receive and send link
+* [\#718](https://github.com/Chatie/wechaty/issues/718) Add support for send url rich media message
+* [\#537](https://github.com/Chatie/wechaty/issues/537) \[enhancement\] Cant send a wechat page link to the room.
+* [\#331](https://github.com/Chatie/wechaty/issues/331) \[Feature\] sending formatted links / href tags
 
 ### 2.6 机器人被拉到一个新的群组里的事件是否支持？
 
