@@ -40,7 +40,10 @@
 * 如果使用的是Web 版本的Puppet，基于网页微信的机制，大部分情况下获取不到微信号，只有一小部分用户能获取到微信号。
 * 如果使用的是iPad 版本的Puppet，即将推出获取微信号的功能，详情看 [\#1647](https://github.com/Chatie/wechaty/issues/1647)
 
-相关issue：[\#1658](https://github.com/Chatie/wechaty/issues/1658)
+相关issue：
+
+* [\#1658](https://github.com/Chatie/wechaty/issues/1658) How to get the wx\_id when user had wx account? 
+* [\#1307](https://github.com/Chatie/wechaty/issues/1307) How to get the user's wechat account（微信号）？
 
 ### 2.2 如何获取好友和群的唯一id？
 
@@ -55,7 +58,13 @@
 * 基于Web 版本的Puppet 得到的id 跨session 是会变化的，所以不能被用来当做你系统的唯一标识码来使用。
 * 基于iPad 版本的Puppet 得到的id 跨session 是不会变化的，可以用来当做这个联系人的唯一标识码。
 
-相关issue: [\#1644](https://github.com/Chatie/wechaty/issues/1644) , [\#90](https://github.com/Chatie/wechaty/issues/90) , [\#1276](https://github.com/Chatie/wechaty/issues/1276) , [\#133](https://github.com/Chatie/wechaty/issues/133) , [\#1307](https://github.com/Chatie/wechaty/issues/1307)
+相关issue:
+
+* [\#1644](https://github.com/Chatie/wechaty/issues/1644)  About wxid or chatroomID
+* [\#90](https://github.com/Chatie/wechaty/issues/90) 请问可以获取到群号吗？
+* [\#1276](https://github.com/Chatie/wechaty/issues/1276) 最新版本Contact没有uin字段了吗？
+* [\#133](https://github.com/Chatie/wechaty/issues/133)  请问有办法取得个人和群的唯一标识吗？或者有没有办法自己构建？
+* [\#1307](https://github.com/Chatie/wechaty/issues/1307) How to get the user's wechat account（微信号）？
 
 ### 2.3 支持 红包、转账、朋友圈… 吗？
 
