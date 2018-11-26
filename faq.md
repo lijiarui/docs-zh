@@ -223,6 +223,8 @@ WECHATY_PROFILE="your-cute-bot-name" node bot.js
 
 ### 3.5 wechaty 运行的bot 如何修改文件后自动重启
 
+> docker运行的bot文件如何debug？像nodemon那样?
+
 wechaty 提供了hot-import 模块，参考：[https://github.com/Chatie/wechaty-getting-started/tree/master/examples/professional/hot-import-bot](https://github.com/Chatie/wechaty-getting-started/tree/master/examples/professional/hot-import-bot)
 
 ## 4. 其他
