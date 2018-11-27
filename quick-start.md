@@ -50,6 +50,8 @@ npm start
 node examples/starter-bot.js
 ```
 
+npm start 实际上执行的命令是：`node examples/starter-bot.js`你可以基于examples 目录下的starter-bot.js 文件修改你希望实现的功能。
+
 运行成功后，你可以看到下面的界面：
 
 ![demo](https://chatie.io/wechaty-getting-started/demo.gif)
@@ -66,10 +68,10 @@ npm install wechaty-puppet-padchat
 WECHATY_PUPPET_PADCHAT_TOKEN=你的token WECHATY_PUPPET=padchat npm start
 ```
 
-{% hint style="info" %}
-1. 关于token：[点击链接申请token](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
-2. npm start 的代码位置：在wechaty-getting-started 项目下的example/starter-bot.js 按照示例进一步修改即可。
-{% endhint %}
+#### 第二步进一步说明：
+
+* WECHATY\_PUPPET\_PADCHAT\_TOKEN：[点击链接申请token](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
+* WECHATY\_PUPPET : 切换到wechaty-puppet-padchat 的puppet 来运行，即从使用web 版本变为使用ipad 版本
 
 ## DEMO 展示
 
