@@ -10,6 +10,10 @@
 4. 默认会跑起来我们的demo 例子，demo代码位置: [examples/starter-bot.js](https://github.com/Chatie/wechaty-getting-started/blob/master/examples/starter-bot.js)
 5. 修改demo 的例子，实现你自己想要的bot 逻辑
 
+### 1.3 Windows 安装wechaty-puppet-padchat 失败怎么办？
+
+请参考这篇博客：[在Windows10下安装Wechaty](https://blog.chatie.io/wechaty-installation-in-windows-10/)
+
 ### 1.2 我的微信号无法登陆
 
 从2017年6月下旬开始，使用基于web版微信接入方案存在大概率的被限制登陆的可能性。 主要表现为：无法登陆Web 微信，但不影响手机等其他平台。 验证是否被限制登陆： [https://wx.qq.com](https://wx.qq.com) 上扫码查看是否能登陆。 更多内容详见：
