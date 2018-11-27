@@ -198,6 +198,51 @@ setenforce 0
 * 40人以下的群，是直接拉用户进群的。
 * 40人以上的群，是发送入群邀请链接的。
 
+### 2.12 为什么我通过Room.findAll只拿到了一部分的群 <a id="room-list-not-complete"></a>
+
+> 有谁知道, Room.findAll拿不到所有的群列表吗?
+
+首先，`Room.findAll`可以拿到所有的群，但是微信的群数据量很大，需要同步时间。无论是web的puppet还是iPad的puppet都需要一定时间来同步这部分消息，如果在同步的时候去调用`Room.findAll`，就只能拿到当前已经同步好的群。
+
+因此，`wechaty` 有一个`ready` 的事件可以供大家来监听，当所有数据都加载完毕的时候，`ready` 事件会被触发，此事件在`wechaty` 启动后只会被触发一次。那么，在`ready` 事件被触发了之后去调用`Room.findAll` 就会拿到所有的群聊消息了。示例代码如下：
+
+```javascript
+bot.on('ready', () => {
+    const allRooms = await bot.Room.findAll()
+    // Then do whatever you want to do
+}
+```
+
+### 2.13 我的群好多，我等不了ready事件就想要操作bot的群 <a id="too-many-rooms-to-wait"></a>
+
+这个问题是有两个workaround的，首先要明确一下需求：
+
+**我需要操作的这个群是我的长期管理的群，每次启动都需要拿到这个群**
+
+对于这种情况，可以在开发阶段先拿到这个群的`id` 并且保存这个`id`，之后每次启动之后，主动加载这个room。
+
+```javascript
+bot.on('login', user => {
+    const room = bot.Room.load(roomId)
+    await room.sync()
+    // Do whatever you want to do with the room
+}
+```
+
+**我需要对这个群的事件有些响应**
+
+对于这种情况，所有的群的事件（`room-join`, `room-leave`, `room-topic`）在触发了之后，都会对当前这个群做一次加载，所有监听到的事件里面，都是可以直接拿到这个群的信息的，是不需要等待的，还有当群里面有消息的时候，如果当前的群并没有被加载过，也是会手动加载这个群的，然后可以通过消息对象来获取这个群。
+
+```javascript
+bot.on('message', message => {
+    const room = message.room()
+    // room might not be available if the message is not in a room
+    if (room) {
+        // Do things you like in the room
+    }
+}
+```
+
 ## 3. 最佳实践 <a id="best-practice"></a>
 
 ### 3.1 wechaty & 队列的最佳实践 <a id="best-practice-queue"></a>
