@@ -16,7 +16,31 @@
 * 智能对话：通过简单配置，即可加入智能对话系统，完成指定任务
 * ... 请自行开脑洞
 
-详情请看[Wechaty](https://github.com/chatie/wechaty)项目 [![NPM Version](https://badge.fury.io/js/wechaty.svg)](https://badge.fury.io/js/wechaty) [![Docker Pulls](https://img.shields.io/docker/pulls/zixia/wechaty.svg?maxAge=2592000)](https://hub.docker.com/r/zixia/wechaty/) [![TypeScript](https://img.shields.io/badge/<%2F>-TypeScript-blue.svg)](https://www.typescriptlang.org/) [![Greenkeeper badge](https://badges.greenkeeper.io/Chatie/wechaty.svg)](https://greenkeeper.io/)
+详情请看[Wechaty](https://github.com/chatie/wechaty)项目 [![NPM Version](https://badge.fury.io/js/wechaty.svg)](https://badge.fury.io/js/wechaty) [![Docker Pulls](https://img.shields.io/docker/pulls/zixia/wechaty.svg?maxAge=2592000)](https://hub.docker.com/r/zixia/wechaty/) [![TypeScript](https://img.shields.io/badge/<%2F>-TypeScript-blue.svg)](https://www.typescriptlang.org/) [![Greenkeeper badge](https://badges.greenkeeper.io/Chatie/wechaty.svg)](https://greenkeeper.io/)jia
+
+## 加入我们
+
+扫描下方二维码，加入Wechaty Developers Home
+
+![Wechaty Developers&apos; Home](https://chatie.io/wechaty-getting-started/bot-qr-code.png)
+
+{% hint style="success" %}
+回复 'wechaty' 加入 Wechaty 开发者群。
+{% endhint %}
+
+{% hint style="danger" %}
+群内均为wechaty 的开发者，群内发言之前请先阅读文档。
+{% endhint %}
+
+{% hint style="warning" %}
+请不要问这些问题：
+
+* Wechaty 怎么用？
+* 有人成功过吗？
+* 能不能实现_\*\*_？
+* 为什么我跑不起来？
+* 有待补充 …
+{% endhint %}
 
 ## 注意事项
 
@@ -28,12 +52,12 @@
 * [wechaty-puppet-puppeteer](https://github.com/chatie/wechaty-puppet-puppeteer)
 
 {% hint style="success" %}
-**解决方案： 我们提供了非web 版本解决方案，**[**点击购买token**](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/购买token) **, 更多技术细节查看** [**wechaty-puppet-padchat**](https://github.com/lijiarui/wechaty-puppet-padchat)
+**解决方案： 我们提供了非web 版本解决方案，**[**点击购买token**](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/购买token) **, 更多技术细节查看** [**wechaty-puppet-padchat**](https://github.com/lijiarui/wechaty-puppet-padchat)z
 {% endhint %}
 
-## 什么是 Puppet
+## 支持多种微信接入方式
 
-不同的[Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) 代表的我们对微信协议的不同实现方式, Puppet的英文意思是`傀儡`, 很形象的描述了我们希望Puppet做的事情：帮助 Wechaty 来控制微信的操作。
+我们提供多种微信协议的实现方式，在wechaty 的系统中，我们叫她[Puppet](https://github.com/Chatie/wechaty/wiki/Puppet)。Puppet的英文意思是`傀儡`, 很形象的描述了我们希望Puppet做的事情：帮助 Wechaty 来控制微信的操作。
 
 所有的实现方式都以`PuppetXXX` 来命名的，比如[PuppetPuppeteer](https://github.com/Chatie/wechaty-puppet-puppeteer) 是通过谷歌浏览器，通过 [google puppeteer](https://github.com/GoogleChrome/puppeteer)来控制[网页微信API](https://wx.qq.com)。[PuppetPadchat](https://github.com/lijiarui/wechaty-puppet-padchat) 是通过WebSocket 连接一个协议服务器来控制iPad 微信，两个重要的信息参考：
 
@@ -42,7 +66,7 @@
 
 如果你希望深入了解Puppet是如何在Wechaty 运行的，你可以在[https://github.com/Chatie/wechaty-puppet/blob/master/src/puppet.ts](https://github.com/Chatie/wechaty-puppet/blob/master/src/puppet.ts) 查看源代码。
 
-基于网页微信的实现方式是免费的，基于其他的接入方式是收费的，详细介绍：[收费说明](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/购买token)
+基于网页微信的实现方式是免费的，基于其他的接入方式是收费的。[这里是收费说明](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/购买token)。
 
 以下是Puppet 和Wechaty 的架构图，更多Puppet 的介绍在这里： [Puppet in wiki](https://github.com/Chatie/wechaty-puppet/wiki)
 
