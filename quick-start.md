@@ -59,7 +59,7 @@ npm start 实际上执行的命令是：`node examples/starter-bot.js`你可以�
 ### 4. Web 版本的限制
 
 1. 登录限制：从2017年6月下旬开始，使用基于web版微信接入方案存在大概率的被限制登陆的可能性。 主要表现为：无法登陆Web 微信，但不影响手机等其他平台。验证是否被限制登陆： [https://wx.qq.com](https://wx.qq.com/) 上扫码查看是否能登陆。
-2. 功能限制：Web 版本会限制微信一些方法的获取，具体参考：[不同puppet 功能清单](https://botorange.gitbook.io/wechaty/puppet#3-wechaty-puppet-jian-rong-xing)。为了帮助开发者快速实现自己希望实现的功能，我们提供了一个[ipad](https://github.com/lijiarui/wechaty-puppet-padchat) 版本的接入方式，运行下面两条命令就可以了：
+2. 功能限制：Web 版本会限制微信一些方法的获取，具体参考[puppet 功能对比](https://botorange.gitbook.io/wechaty/puppet#3-wechaty-puppet-jian-rong-xing)。为了帮助开发者快速实现自己希望实现的功能，我们提供了一个[ipad](https://github.com/lijiarui/wechaty-puppet-padchat) 版本的接入方式，运行下面两条命令就可以了：
 
 ```bash
 # 1. 安装 wechaty-puppet-padchat
