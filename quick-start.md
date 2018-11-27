@@ -2,7 +2,9 @@
 
 ## 环境要求
 
-Node.js 版本高于 v10
+{% hint style="warning" %}
+注意： Wechaty 需要Node.js 版本高于 10
+{% endhint %}
 
 ## 运行
 
@@ -44,10 +46,6 @@ npm install
 ```
 
 ### 3. 运行Bot
-
-{% hint style="warning" %}
-注意： Wechaty 需要Node.js 版本高于 10
-{% endhint %}
 
 ```bash
 npm start
