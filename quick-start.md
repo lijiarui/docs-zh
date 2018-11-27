@@ -46,7 +46,7 @@ npm install
 ```bash
 npm start
 
-# Or use node to run bot directly
+# 或者直接用node 运行代码
 node examples/starter-bot.js
 ```
 
