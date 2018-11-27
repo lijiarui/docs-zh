@@ -54,6 +54,23 @@ node examples/starter-bot.js
 
 ![demo](https://chatie.io/wechaty-getting-started/demo.gif)
 
+### 4. Web 版本限制的处理办法
+
+从2017年6月下旬开始，使用基于web版微信接入方案存在大概率的被限制登陆的可能性。 主要表现为：无法登陆Web 微信，但不影响手机等其他平台。验证是否被限制登陆： [https://wx.qq.com](https://wx.qq.com/) 上扫码查看是否能登陆。另外，Web 版本会限制微信一些方法的获取，为了帮助开发者快速实现自己希望实现的功能，我们提供了一个ipad 版本的接入方式，运行下面两条命令就可以了：
+
+```bash
+# 1. 安装 wechaty-puppet-padchat
+npm install wechaty-puppet-padchat
+
+# 2. 通过环境变量设置接入方式并设置token 运行
+WECHATY_PUPPET_PADCHAT_TOKEN=你的token WECHATY_PUPPET=padchat npm start
+```
+
+{% hint style="info" %}
+1. 关于token：[点击链接申请token](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
+2. npm start 的代码位置：在wechaty-getting-started 项目下的example/starter-bot.js 按照示例进一步修改即可。
+{% endhint %}
+
 ## DEMO 展示
 
 以下是使用wechaty 开发的机器人，扫码体验。
