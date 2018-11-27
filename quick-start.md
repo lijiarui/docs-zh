@@ -24,6 +24,12 @@ Node.js 版本高于 v10
 node --version
 ```
 
+安装成功且版本正确，你会看到类似下面的输出结果，只要是v10以上的都可以。
+
+```bash
+v10.10.0
+```
+
 ### 1. 从GitHub 上下载 wechaty-getting-started  代码
 
 ```bash
