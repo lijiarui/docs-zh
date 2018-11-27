@@ -27,7 +27,7 @@ node --version
 ### 1. 从GitHub 上下载 wechaty-getting-started  代码
 
 ```bash
-git clone tps://github.com/Chatie/wechaty-getting-started
+git clone https://github.com/Chatie/wechaty-getting-started
 cd wechaty-getting-started
 ```
 
