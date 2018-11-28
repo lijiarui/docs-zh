@@ -64,6 +64,45 @@ bot.on('message', message => console.log(`Message: ${message}`))
 bot.start()
 ```
 
+注意，\`new Wechaty\(\)\` 是可以传参数的
+
+#### 使用网页版本的场景
+
+* 这里name 是用来存储登录信息的，和\`Wechaty.instance\({name: 'XX'}\)\` 的作用是一样的。 [查看详情](../faq.md#login-status-persistent). 
+
+```typescript
+const bot = new Wechaty({
+  name: 'your-bot-name',
+})
+```
+
+#### 使用iPad 版本的场景
+
+* 当不使用web 版本的时候，需要定义你需要用什么样的方式接入，通过定义puppet名字的方式确定接入方式，这里是wechaty-puppet-padchat
+* puppetOptions 在这里是用来传递[token](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)的，按照下面代码示例传入即可。
+
+```typescript
+const WECHATY_PUPPET_PADCHAT_TOKEN = 'your-token-here'
+
+const puppet = 'wechaty-puppet-padchat' // 使用ipad 的方式接入。
+
+const puppetOptions = {
+  token: WECHATY_PUPPET_PADCHAT_TOKEN,
+}
+  
+const bot = new Wechaty({
+  name: 'your-bot-name'
+  puppet,
+  puppetOptions,
+})
+```
+
+* 上述的puppet 和 token 也可以不写进代码里面，通过环境变量来传递，如在命令行中运行：
+
+```text
+WECHATY_PUPPET_PADCHAT_TOKEN=你的token WECHATY_PUPPET=padchat node bot.js
+```
+
 ### wechaty.on\(event, listener\) ⇒ [`Wechaty`](wechaty.md#Wechaty)​        <a id="wechaty-on-event-listener-wechaty"></a>
 
 当机器人收到消息，会触发一个事件，一些简单的事件介绍如下：
