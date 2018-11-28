@@ -317,7 +317,6 @@ await bot.say(fileBox)
 
 **Example** _\(The World's Shortest ChatBot Code: 6 lines of JavaScript\)_
 
-
 ```typescript
 const { Wechaty } = require('wechaty')
 ​Wechaty.instance() // Global instance
