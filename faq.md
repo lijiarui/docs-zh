@@ -243,6 +243,22 @@ bot.on('message', message => {
 }
 ```
 
+### 2.14 为什么我的bot疯狂的在说话 <a id="endless-talking"></a>
+
+以下只是一个可能的原因，但是应该是大部分人遇到这个问题的原因
+
+`Wechaty` 的消息事件是会在所有消息被发出来的时候都会触发的，包括自己发的消息。所以大部分情况如果发现机器人疯狂的在说话，那么大概是机器人在自己和自己说话了。建议在消息事件里面对自己说的话做一个过滤，只处理别人说话，这样就不会造成死循环一直自己对自己说话了
+
+```javascript
+bot.on('message', message => {
+    if (message.self()) {
+        // Don't deal with message from yourself.
+        return
+    }
+    // Deal with message from anyone else
+}
+```
+
 ## 3. 最佳实践 <a id="best-practice"></a>
 
 ### 3.1 wechaty & 队列的最佳实践 <a id="best-practice-queue"></a>
