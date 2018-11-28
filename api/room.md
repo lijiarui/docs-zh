@@ -447,7 +447,9 @@ if (contact && room) {
     </tr>
   </thead>
   <tbody></tbody>
-</table>```javascript
+</table>
+
+```javascript
 const bot = new Wechaty()
 await bot.start()
 // after logged in...

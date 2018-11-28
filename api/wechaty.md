@@ -283,7 +283,9 @@ console.log(`Bot is ${contact.name()}`)
     </tr>
   </thead>
   <tbody></tbody>
-</table>```typescript
+</table>
+
+```typescript
 // 1. send text to bot itself
 await bot.say('hello!')​ 
 
@@ -383,7 +385,9 @@ export interface WechatyOptions {
     </tr>
   </thead>
   <tbody></tbody>
-</table>| ioToken | `string` | Io TOKEN |
+</table>
+
+| ioToken | `string` | Io TOKEN |
 | :--- | :--- | :--- |
 
 
