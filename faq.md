@@ -259,6 +259,12 @@ bot.on('message', message => {
 }
 ```
 
+### 2.15 重新登陆之后是否可以读到之前的消息 <a id="endless-talking"></a>
+
+这取决于你多久之后重新启动，也取决于这条消息是否在手机上被阅读过。如果是断线重连的情况，是可以读到之前的消息的。
+
+通常情况下，机器人只能读到在线期间所有的消息
+
 ## 3. 最佳实践 <a id="best-practice"></a>
 
 ### 3.1 wechaty & 队列的最佳实践 <a id="best-practice-queue"></a>
