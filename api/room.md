@@ -419,7 +419,8 @@ if (contact && room) {
     </tr>
   </thead>
   <tbody></tbody>
-</table>```text
+</table>
+
 ### room.member\(queryArg\) ⇒ `Promise.`
 
 根据 query 查找群成员，如果找到多个，返回第一个。
