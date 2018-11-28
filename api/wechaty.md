@@ -283,7 +283,9 @@ console.log(`Bot is ${contact.name()}`)
     </tr>
   </thead>
   <tbody></tbody>
-</table>```typescript
+</table>
+
+```typescript
 // 1. send text to bot itself
 await bot.say('hello!')​ 
 
@@ -303,8 +305,6 @@ await bot.say(fileBox)
 ```
 
 
-
-```text
 ### Wechaty.instance\(\[options\]\)    <a id="wechaty-instance-options"></a>
 
 获取全局的Wechaty 实例。
@@ -316,6 +316,7 @@ await bot.say(fileBox)
 | \[options\] | ​[`WechatyOptions`](wechaty.md#wechatyoptions)​ | `{}` |
 
 **Example** _\(The World's Shortest ChatBot Code: 6 lines of JavaScript\)_
+
 
 ```typescript
 const { Wechaty } = require('wechaty')
