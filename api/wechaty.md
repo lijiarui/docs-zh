@@ -4,7 +4,7 @@ description: 一个Wechaty 代表着一个微信的客户端，他取决于你�
 
 # Wechaty
 
-## 简介 <a id="intro"></a>
+## 简介  <a id="intro"></a>
 
 根据你选择的[Puppet](../puppet.md#intro)的不同，Bot 可能等于下面中的一个客户端，不同的[Puppet](../puppet.md#intro) 代表的我们对微信协议的不同实现方式, Puppet的英文意思是`傀儡`, 很形象的描述了我们希望Puppet做的事情：帮助 Wechaty 来控制微信的操作。
 
@@ -27,7 +27,7 @@ description: 一个Wechaty 代表着一个微信的客户端，他取决于你�
 
 {% page-ref page="room.md" %}
 
-## Wechaty     <a id="wechaty"></a>
+## Wechaty      <a id="wechaty"></a>
 
 **Kind**: global class
 
@@ -44,9 +44,9 @@ description: 一个Wechaty 代表着一个微信的客户端，他取决于你�
   * _static_
     * ​[.instance\(\[options\]\)](wechaty.md#wechaty-instance-options)​
 
-### new Wechaty\(\[options\]\)     <a id="new-wechaty-options"></a>
+### new Wechaty\(\[options\]\)      <a id="new-wechaty-options"></a>
 
-创建一个 Wechaty 的实例，默认使用Web 的方式，切换到iPad 的方式，参数设置请查看[示例代码](https://github.com/lijiarui/wechaty-puppet-padchat#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)
+创建一个 Wechaty 的实例，默认使用Web 的方式，切换到iPad 的方式，参数设置请查看[示例代码](https://github.com/lijiarui/wechaty-puppet-padchat#示例代码)
 
 | Param | Type | Default |
 | :--- | :--- | :--- |
@@ -64,7 +64,7 @@ bot.on('message', message => console.log(`Message: ${message}`))
 bot.start()
 ```
 
-### wechaty.on\(event, listener\) ⇒ [`Wechaty`](wechaty.md#Wechaty)​     <a id="wechaty-on-event-listener-wechaty"></a>
+### wechaty.on\(event, listener\) ⇒ [`Wechaty`](wechaty.md#Wechaty)​      <a id="wechaty-on-event-listener-wechaty"></a>
 
 当机器人收到消息，会触发一个事件，一些简单的事件介绍如下：
 
@@ -197,7 +197,7 @@ bot.on('room-topic', (room, topic, oldTopic, changer) => {
 ​bot.on('error', (error) => {  console.error(error)})
 ```
 
-### wechaty.start\(\) ⇒ `Promise.`     <a id="wechaty-start-promise"></a>
+### wechaty.start\(\) ⇒ `Promise.`      <a id="wechaty-start-promise"></a>
 
 启动机器人
 
@@ -211,7 +211,7 @@ bot.on('room-topic', (room, topic, oldTopic, changer) => {
 await bot.start() // do other stuff with bot here
 ```
 
-### wechaty.stop\(\) ⇒ `Promise.`     <a id="wechaty-stop-promise"></a>
+### wechaty.stop\(\) ⇒ `Promise.`      <a id="wechaty-stop-promise"></a>
 
 停止机器人
 
@@ -221,7 +221,7 @@ await bot.start() // do other stuff with bot here
 await bot.stop()
 ```
 
-### wechaty.logout\(\) ⇒ `Promise.`     <a id="wechaty-logout-promise"></a>
+### wechaty.logout\(\) ⇒ `Promise.`      <a id="wechaty-logout-promise"></a>
 
 登出机器人
 
@@ -231,7 +231,7 @@ await bot.stop()
 await bot.logout()
 ```
 
-### wechaty.logonoff\(\) ⇒ `boolean`     <a id="wechaty-logonoff-boolean"></a>
+### wechaty.logonoff\(\) ⇒ `boolean`      <a id="wechaty-logonoff-boolean"></a>
 
 获取机器人logon/logoff 的状态
 
@@ -245,7 +245,7 @@ if (bot.logonoff()) {
 }
 ```
 
-### wechaty.userSelf\(\) ⇒ `ContactSelf`     <a id="wechaty-userself-contactself"></a>
+### wechaty.userSelf\(\) ⇒ `ContactSelf`      <a id="wechaty-userself-contactself"></a>
 
 获取当前机器人的所有信息
 
@@ -256,7 +256,7 @@ const contact = bot.userSelf()
 console.log(`Bot is ${contact.name()}`)
 ```
 
-### wechaty.say\(textOrContactOrFileOrUrl\) ⇒ `Promise.`     <a id="wechaty-say-textorcontactorfileorurl-promise"></a>
+### wechaty.say\(textOrContactOrFileOrUrl\) ⇒ `Promise.`      <a id="wechaty-say-textorcontactorfileorurl-promise"></a>
 
 机器人自己给自己发消息。
 
@@ -283,9 +283,7 @@ console.log(`Bot is ${contact.name()}`)
     </tr>
   </thead>
   <tbody></tbody>
-</table>
-
-```typescript
+</table>```typescript
 // 1. send text to bot itself
 await bot.say('hello!')​ 
 
@@ -304,8 +302,7 @@ const fileBox = FileBox.fromFile('/tmp/text.jpg')
 await bot.say(fileBox)
 ```
 
-
-### Wechaty.instance\(\[options\]\)    <a id="wechaty-instance-options"></a>
+### Wechaty.instance\(\[options\]\)     <a id="wechaty-instance-options"></a>
 
 获取全局的Wechaty 实例。
 
@@ -326,7 +323,7 @@ const { Wechaty } = require('wechaty')
 .start()
 ```
 
-## 类型定义 <a id="typedef"></a>
+## 类型定义  <a id="typedef"></a>
 
 * [PuppetModuleName](wechaty.md#puppetmodulename)
 * [WechatyOptions](wechaty.md#wechatyoptions)
@@ -386,11 +383,7 @@ export interface WechatyOptions {
     </tr>
   </thead>
   <tbody></tbody>
-</table>| puppetOptions | `Partial.` | Puppet TOKEN |
-| :--- | :--- | :--- |
-
-
-| ioToken | `string` | Io TOKEN |
+</table>| ioToken | `string` | Io TOKEN |
 | :--- | :--- | :--- |
 
 
@@ -459,9 +452,7 @@ Wechaty 事件的类型
     </tr>
   </thead>
   <tbody></tbody>
-</table>**Kind**: global typedef **Properties**
-
-| Name | Type | Description |
+</table>| Name | Type | Description |
 | :--- | :--- | :--- |
 | error | `function` | \(this: Wechaty, error: Error\) =&gt; void callback function |
 | login | `function` | \(this: Wechaty, user: ContactSelf\)=&gt; void |

@@ -6,7 +6,7 @@ description: 所有的微信群都会被封装成 Room 类
 
 ## Room
 
-所有的微信群都会被封装成 Room 类。
+所有的微信群都会被封装成 Room类。
 
 [Examples/Room-Bot](https://github.com/Chatie/wechaty/blob/1523c5e02be46ebe2cc172a744b2fbe53351540e/examples/room-bot.ts)
 
@@ -15,7 +15,7 @@ description: 所有的微信群都会被封装成 Room 类
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| id | `string` | 获取群id。这个id 是否是永久不变的id 取决于使用哪一个puppet，具体 [查看puppet兼容性清单](../puppet.md#3-wechaty-puppet-jian-rong-xing)。 |
+| id | `string` | 获取群id。这个id 是否是永久不变的id 取决于使用哪一个puppet，具体 [查看puppet兼容性清单](../puppet.md#puppet-compatibility)。 |
 
 * [Room](room.md#room)
   * _instance_
@@ -54,7 +54,7 @@ await room.sync()
 在群内发消息，如果设置了 \[mention\] 参数，机器人在群内发送消息的时候还会@这个联系人。
 
 {% hint style="info" %}
-这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#puppet-compatibility)
 {% endhint %}
 
 > **Kind**: instance method of [`Room`](room.md#room)
@@ -163,7 +163,7 @@ if (room) {
 邀请好友加入群聊。
 
 {% hint style="info" %}
-这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#puppet-compatibility)
 
 基于网页微信开发的用户请查看： [Web version of WeChat closed group interface](https://github.com/Chatie/wechaty/issues/1441)
 {% endhint %}
@@ -196,7 +196,7 @@ if (room) {
 将好友移出群聊，这个功能仅在机器人是群主的时候会生效。
 
 {% hint style="info" %}
-这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#puppet-compatibility)
 
 基于网页微信开发的用户请查看： [Web version of WeChat closed group interface](https://github.com/Chatie/wechaty/issues/1441)
 {% endhint %}
@@ -229,7 +229,7 @@ if (room) {
 机器人主动退群。
 
 {% hint style="info" %}
-这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#puppet-compatibility)
 {% endhint %}
 
 **Kind**: instance method of [`Room`](room.md#room)  
@@ -324,7 +324,7 @@ console.log(`room announce change from ${oldAnnounce} to ${room.announce()}`)
 获取群二维码，用户可以通过扫描这个二维码加入群聊。
 
 {% hint style="info" %}
-这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#puppet-compatibility)
 
 这个二维码仅在群人数小于100人的时候可用。
 {% endhint %}

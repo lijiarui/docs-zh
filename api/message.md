@@ -123,7 +123,7 @@ bot
 回复多媒体、微信名片或者文本给这条消息的发送者。
 
 {% hint style="info" %}
-这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#puppet-compatibility)
 {% endhint %}
 
 **Kind**: instance method of [`Message`](message.md#message)  
@@ -289,7 +289,7 @@ _**Deprecated**_
 从消息中提取多媒体文件并把它 存入到FileBox 里面。
 
 {% hint style="info" %}
-这个方法是否能实现，取决于用的是什么Puppet，具体请看：[Puppet 兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+这个方法是否能实现，取决于用的是什么Puppet，具体请看：[Puppet 兼容性列表](../puppet.md#puppet-compatibility)
 {% endhint %}
 
 **Kind**: instance method of [`Message`](message.md#message)
@@ -299,7 +299,7 @@ _**Deprecated**_
 提取转发的微信好友名片内容，并封装成Contact 类型。
 
 {% hint style="info" %}
-这个方法是否能实现，取决于用的是什么Puppet，具体请看：[Puppet 兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+这个方法是否能实现，取决于用的是什么Puppet，具体请看：[Puppet 兼容性列表](../puppet.md#puppet-compatibility)
 {% endhint %}
 
 **Kind**: instance method of [`Message`](message.md#message)
