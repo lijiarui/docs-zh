@@ -291,12 +291,16 @@ const bot = Wechaty.instance({ name: 'your-cute-bot-name' })
 
 ```typescript
 const bot = Wechaty.instance({ name: 'your-cute-bot-name' })
+
+或者
+
+const bot = new Wechaty({ name: 'your-bot-name'})
 ```
 
-**2. 通过设置**`WECHATY_PROFILE` **环境变量传递profile**
+**2. 通过设置**`WECHATY_NAME` **环境变量传递profile**
 
 ```text
-WECHATY_PROFILE="your-cute-bot-name" node bot.js
+WECHATY_NAME="your-cute-bot-name" node bot.js
 ```
 
 这样，你就可以在根目录下看到`your-cute-bot-name.memory-card.json`的文件了。
