@@ -10,11 +10,11 @@
 4. 默认会跑起来我们的demo 例子，demo代码位置: [examples/starter-bot.js](https://github.com/Chatie/wechaty-getting-started/blob/master/examples/starter-bot.js)
 5. 修改demo 的例子，实现你自己想要的bot 逻辑
 
-### 1.3 Windows 安装wechaty-puppet-padchat 失败怎么办？ <a id="install-failed"></a>
+### 1.2 Windows 安装wechaty-puppet-padchat 失败怎么办？ <a id="install-failed"></a>
 
 请参考这篇博客：[在Windows10下安装Wechaty](https://blog.chatie.io/wechaty-installation-in-windows-10/)
 
-### 1.2 我的微信号无法登陆 <a id="can-not-login"></a>
+### 1.3 我的微信号无法登陆 <a id="can-not-login"></a>
 
 从2017年6月下旬开始，使用基于web版微信接入方案存在大概率的被限制登陆的可能性。 主要表现为：无法登陆Web 微信，但不影响手机等其他平台。 验证是否被限制登陆： [https://wx.qq.com](https://wx.qq.com) 上扫码查看是否能登陆。 更多内容详见：
 
@@ -26,6 +26,27 @@
 {% hint style="success" %}
 **解决方案： 我们提供了非web 版本解决方案，**[**点击购买token**](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/购买token) **, 更多技术细节查看** [**wechaty-puppet-padchat**](https://github.com/lijiarui/wechaty-puppet-padchat)
 {% endhint %}
+
+### 1.**4** 如何打开调试信息 <a id="can-not-login"></a>
+
+wechaty 使用了 [brolog](https://github.com/huan/brolog) 作为日志工具，默认打印的级别是\`verbose\`, brolog 共有的级别从高到低分别为：
+
+* silent
+* error
+* warn
+* info
+* verbose
+* silly
+
+有以下两种方式来设置LOG 的级别：
+
+1. 可以通过设置环境变量 \`WECHATY\_LOG\` 的方式设置LOG的级别
+2. 在代码中设置:
+
+```typescript
+import { log } from 'wechaty'
+log.level('silly') // 'silent' | 'error' | 'warn' | 'info' | 'verbose' | 'silly'
+```
 
 ## 2. 功能相关 <a id="feature"></a>
 
