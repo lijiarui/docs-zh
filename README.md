@@ -61,8 +61,8 @@
 
 所有的实现方式都以`PuppetXXX` 来命名的，比如[PuppetPuppeteer](https://github.com/Chatie/wechaty-puppet-puppeteer) 是通过谷歌浏览器，通过 [google puppeteer](https://github.com/GoogleChrome/puppeteer)来控制[网页微信API](https://wx.qq.com)。[PuppetPadchat](https://github.com/lijiarui/wechaty-puppet-padchat) 是通过WebSocket 连接一个协议服务器来控制iPad 微信，两个重要的信息参考：
 
-* [完整的Puppet清单](puppet.md#2-wechaty-puppet-qing-dan)
-* [基于不同实现方式的Puppet兼容性对比](puppet.md#3-wechaty-puppet-jian-rong-xing)
+* [完整的Puppet清单](puppet.md#puppet-list)
+* [基于不同实现方式的Puppet兼容性对比](puppet.md#puppet-compatibility)
 
 如果你希望深入了解Puppet是如何在Wechaty 运行的，你可以在[https://github.com/Chatie/wechaty-puppet/blob/master/src/puppet.ts](https://github.com/Chatie/wechaty-puppet/blob/master/src/puppet.ts) 查看源代码。
 

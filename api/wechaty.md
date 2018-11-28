@@ -6,14 +6,14 @@ description: 一个Wechaty 代表着一个微信的客户端，他取决于你�
 
 ## 简介 <a id="intro"></a>
 
-根据你选择的[Puppet](../puppet.md)的不同，Bot 可能等于下面中的一个客户端，不同的[Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) 代表的我们对微信协议的不同实现方式, Puppet的英文意思是`傀儡`, 很形象的描述了我们希望Puppet做的事情：帮助 Wechaty 来控制微信的操作。
+根据你选择的[Puppet](../puppet.md#intro)的不同，Bot 可能等于下面中的一个客户端，不同的[Puppet](../puppet.md#intro) 代表的我们对微信协议的不同实现方式, Puppet的英文意思是`傀儡`, 很形象的描述了我们希望Puppet做的事情：帮助 Wechaty 来控制微信的操作。
 
 * 网页微信客户端, 当你选择: [puppet-puppeteer](https://github.com/chatie/wechaty-puppet-puppeteer)/[puppet-wechat4u](https://github.com/chatie/wechaty-puppet-wechat4u)​
 * iPad 微信客户端, 当你选择: [puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat)​
 
 了解更多:
 
-* [Wechaty 中的Puppet 是什么意思](../puppet.md#1-jie-shao)
+* [Wechaty 中的Puppet 是什么意思](../puppet.md#intro)
 
 如果你希望先了解如何发送消息，点击下面
 
@@ -261,7 +261,7 @@ console.log(`Bot is ${contact.name()}`)
 机器人自己给自己发消息。
 
 {% hint style="info" %}
-这个函数是否能成功调用，取决于你使用了哪一种Puppet 的实现，了解更多：[Puppet 兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+这个函数是否能成功调用，取决于你使用了哪一种Puppet 的实现，了解更多：[Puppet 兼容性列表](../puppet.md#puppet-compatibility)
 {% endhint %}
 
 **Kind**: instance method of [`Wechaty`](wechaty.md#wechaty)​
@@ -283,11 +283,26 @@ console.log(`Bot is ${contact.name()}`)
     </tr>
   </thead>
   <tbody></tbody>
-</table>​// 1. send text to bot itselfawait bot.say\('hello!'\)​ // 2. send Contact to bot itself const contact = bot.Contact.load\('contactId'\) await bot.say\(contact\)​
+</table>```typescript
+// 1. send text to bot itself
+await bot.say('hello!')​ 
 
-// 3. send Image to bot itself from remote url import { FileBox } from 'file-box' const fileBox = FileBox.fromUrl\('[https://chatie.io/wechaty/images/bot-qr-code.png](https://chatie.io/wechaty/images/bot-qr-code.png)'\) await bot.say\(fileBox\)​
+// 2. send Contact to bot itself 
+const contact = bot.Contact.load('contactId') 
+await bot.say(contact)​
 
-// 4. send Image to bot itself from local file import { FileBox } from 'file-box' const fileBox = FileBox.fromFile\('/tmp/text.jpg'\) await bot.say\(fileBox\)
+// 3. send Image to bot itself from remote url 
+import { FileBox } from 'file-box' 
+const fileBox = FileBox.fromUrl('https://chatie.io/wechaty/images/bot-qr-code.png') 
+await bot.say(fileBox)​
+
+// 4. send Image to bot itself from local file 
+import { FileBox } from 'file-box' 
+const fileBox = FileBox.fromFile('/tmp/text.jpg') 
+await bot.say(fileBox)
+```
+
+
 
 ```text
 ### Wechaty.instance\(\[options\]\)    <a id="wechaty-instance-options"></a>
