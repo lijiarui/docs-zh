@@ -397,31 +397,90 @@ export interface WechatyOptions {
 
 **Kind**: global typedef **Properties**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| error | `string` | 当机器人内部出错的时候会触发error 事件。 |
-| login | `string` | 当机器人成功登陆后，会触发login 事件，并会在事件中传递当前登陆机器人的信息。 |
-| logout | `string` | 当机器人检测到登出的时候，会触发logout 事件，并会在事件中传递机器人的信息。 |
-| heartbeat | `string` | 获取机器人的心跳。 |
-| friendship | `string` | 当有人给机器人发好友请求的时候会触发这个事件。 |
-| message | `string` | 当机器人收到消息的时候会触发这个事件。 |
-| ready | `string` | 当所有数据加载完成后，会触发这个事件。在wechaty-puppet-padchat 中，它意味着已经加载完成Contact 和Room 的信息。 |
-| room-join | `string` | 当有人进入微信群的时候会触发这个事件。机器人主动进入某个微信群，t那个样会触发这个事件。 |
-| room-topic | `string` | 当有人修改群名称的时候会触发这个事件。 |
-| room-leave | `string` | 当机器人把群里某个用户移出群聊的时候会触发这个时间。用户主动退群是无法检测到的。 |
-| room-invite | `string` | 当收到群邀请的时候，会触发这个事件。具体请看 [RoomInvitation](room-invitation.md) |
-
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">scan</th>
-      <th style="text-align:left"><code>string</code>
-      </th>
-      <th style="text-align:left">
-        <p>当机器人需要扫码登陆的时候会触发这个事件。</p>
-        <p>建议你安装 qrcode-terminal(run <code>npm install qrcode-terminal</code>) 这个包，这样你可以在命令行中直接看到二维码。</p>
-      </th>
+      <th style="text-align:left">Name</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
     </tr>
   </thead>
-  <tbody></tbody>
+  <tbody>
+    <tr>
+      <td style="text-align:left">error</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当机器人内部出错的时候会触发error 事件。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">login</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当机器人成功登陆后，会触发login 事件，并会在事件中传递当前登陆机器人的信息。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">logout</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当机器人检测到登出的时候，会触发logout 事件，并会在事件中传递机器人的信息。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">heartbeat</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">获取机器人的心跳。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">friendship</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当有人给机器人发好友请求的时候会触发这个事件。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">message</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当机器人收到消息的时候会触发这个事件。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">ready</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当所有数据加载完成后，会触发这个事件。在wechaty-puppet-padchat 中，它意味着已经加载完成Contact 和Room 的信息。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">room-join</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当有人进入微信群的时候会触发这个事件。机器人主动进入某个微信群，t那个样会触发这个事件。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">room-topic</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当有人修改群名称的时候会触发这个事件。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">room-leave</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当机器人把群里某个用户移出群聊的时候会触发这个时间。用户主动退群是无法检测到的。</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">room-invite</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">当收到群邀请的时候，会触发这个事件。具体请看 <a href="room-invitation.md">RoomInvitation</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">scan</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">
+        <p>当机器人需要扫码登陆的时候会触发这个事件。</p>
+        <p>建议你安装 qrcode-terminal(运行 <code>npm install qrcode-terminal</code>) 这个包，这样你可以在命令行中直接看到二维码。</p>
+      </td>
+    </tr>
+  </tbody>
 </table>
