@@ -419,9 +419,7 @@ if (contact && room) {
     </tr>
   </thead>
   <tbody></tbody>
-</table>
-
-### room.member\(queryArg\) ⇒ `Promise.`
+</table>### room.member\(queryArg\) ⇒ `Promise.`
 
 根据 query 查找群成员，如果找到多个，返回第一个。
 
@@ -448,9 +446,7 @@ if (contact && room) {
     </tr>
   </thead>
   <tbody></tbody>
-</table>
-
-```javascript
+</table>```javascript
 const bot = new Wechaty()
 await bot.start()
 // after logged in...
@@ -487,7 +483,7 @@ if (room) {
 获取群主的信息。
 
 {% hint style="info" %}
-这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#3-wechaty-puppet-jian-rong-xing)
+这个功能是否能实现取决于你使用的是哪一个Puppet, 详情参考：[puppet兼容性列表](../puppet.md#puppet-compatibility)
 {% endhint %}
 
 **Kind**: instance method of [`Room`](room.md#room)  
@@ -562,7 +558,7 @@ const roomList = await bot.Room.find()
 const roomList = await bot.Room.find({topic: 'wechaty'})
 ```
 
-## 类型定义 <a id="typedef"></a>
+## 类型定义  <a id="typedef"></a>
 
 [RoomQueryFilter](room.md#RoomQueryFilter)
 
