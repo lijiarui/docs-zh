@@ -71,9 +71,7 @@ bot.start()
 * 这里name 是用来存储登录信息的，和\`Wechaty.instance\({name: 'XX'}\)\` 的作用是一样的。 [查看详情](../faq.md#login-status-persistent). 
 
 ```typescript
-const bot = new Wechaty({
-  name: 'your-bot-name',
-})
+const bot = new Wechaty({ name: 'your-bot-name' })
 ```
 
 #### 使用iPad 版本的场景
