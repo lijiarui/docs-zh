@@ -4,7 +4,7 @@ description: 一个Wechaty 代表着一个微信的客户端，他取决于你�
 
 # Wechaty
 
-## 简介
+## 简介 <a id="intro"></a>
 
 根据你选择的[Puppet](../puppet.md)的不同，Bot 可能等于下面中的一个客户端，不同的[Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) 代表的我们对微信协议的不同实现方式, Puppet的英文意思是`傀儡`, 很形象的描述了我们希望Puppet做的事情：帮助 Wechaty 来控制微信的操作。
 
@@ -311,12 +311,12 @@ const { Wechaty } = require('wechaty')
 .start()
 ```
 
-## 类型定义
+## 类型定义 <a id="typedef"></a>
 
 * [PuppetModuleName](wechaty.md#puppetmodulename)
 * [WechatyOptions](wechaty.md#wechatyoptions)
 * [WechatyEventName](wechaty.md#wechatyeventname)
-* \*\*\*\*[WechatyEventFunction](wechaty.md#wechatyeventfunction)
+* [WechatyEventFunction](wechaty.md#wechatyeventfunction)
 
 ### PuppetModuleName
 

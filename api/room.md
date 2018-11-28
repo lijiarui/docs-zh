@@ -559,7 +559,7 @@ const roomList = await bot.Room.find()
 const roomList = await bot.Room.find({topic: 'wechaty'})
 ```
 
-## 类型定义
+## 类型定义 <a id="typedef"></a>
 
 [RoomQueryFilter](room.md#RoomQueryFilter)
 

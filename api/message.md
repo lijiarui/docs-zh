@@ -186,18 +186,6 @@ bot
 
 {% hint style="info" %}
 
-MessageType 的类型是 Enum， 具体如下
-
-* MessageType.Unknown     
-* MessageType.Attachment  
-* MessageType.Audio       
-* MessageType.Contact     
-* MessageType.Emoticon  
-* MessageType.Image      
-* MessageType.Text      
-* MessageType.Video    
-* MessageType.Url   
-
 **Kind**: instance method of [`Message`](message.md#message)  
 **Example**
 
