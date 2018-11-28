@@ -4,7 +4,7 @@ description: 一个Wechaty 代表着一个微信的客户端，他取决于你�
 
 # Wechaty
 
-## 简介   <a id="intro"></a>
+## 简介    <a id="intro"></a>
 
 根据你选择的[Puppet](../puppet.md#intro)的不同，Bot 可能等于下面中的一个客户端，不同的[Puppet](../puppet.md#intro) 代表的我们对微信协议的不同实现方式, Puppet的英文意思是`傀儡`, 很形象的描述了我们希望Puppet做的事情：帮助 Wechaty 来控制微信的操作。
 
@@ -27,7 +27,7 @@ description: 一个Wechaty 代表着一个微信的客户端，他取决于你�
 
 {% page-ref page="room.md" %}
 
-## Wechaty       <a id="wechaty"></a>
+## Wechaty        <a id="wechaty"></a>
 
 **Kind**: global class
 
@@ -44,7 +44,7 @@ description: 一个Wechaty 代表着一个微信的客户端，他取决于你�
   * _static_
     * ​[.instance\(\[options\]\)](wechaty.md#wechaty-instance-options)​
 
-### new Wechaty\(\[options\]\)       <a id="new-wechaty-options"></a>
+### new Wechaty\(\[options\]\)        <a id="new-wechaty-options"></a>
 
 创建一个 Wechaty 的实例，默认使用Web 的方式，切换到iPad 的方式，参数设置请查看[示例代码](https://github.com/lijiarui/wechaty-puppet-padchat#示例代码)
 
@@ -64,7 +64,7 @@ bot.on('message', message => console.log(`Message: ${message}`))
 bot.start()
 ```
 
-### wechaty.on\(event, listener\) ⇒ [`Wechaty`](wechaty.md#Wechaty)​       <a id="wechaty-on-event-listener-wechaty"></a>
+### wechaty.on\(event, listener\) ⇒ [`Wechaty`](wechaty.md#Wechaty)​        <a id="wechaty-on-event-listener-wechaty"></a>
 
 当机器人收到消息，会触发一个事件，一些简单的事件介绍如下：
 
@@ -197,7 +197,7 @@ bot.on('room-topic', (room, topic, oldTopic, changer) => {
 ​bot.on('error', (error) => {  console.error(error)})
 ```
 
-### wechaty.start\(\) ⇒ `Promise.`       <a id="wechaty-start-promise"></a>
+### wechaty.start\(\) ⇒ `Promise.`        <a id="wechaty-start-promise"></a>
 
 启动机器人
 
@@ -211,7 +211,7 @@ bot.on('room-topic', (room, topic, oldTopic, changer) => {
 await bot.start() // do other stuff with bot here
 ```
 
-### wechaty.stop\(\) ⇒ `Promise.`       <a id="wechaty-stop-promise"></a>
+### wechaty.stop\(\) ⇒ `Promise.`        <a id="wechaty-stop-promise"></a>
 
 停止机器人
 
@@ -221,7 +221,7 @@ await bot.start() // do other stuff with bot here
 await bot.stop()
 ```
 
-### wechaty.logout\(\) ⇒ `Promise.`       <a id="wechaty-logout-promise"></a>
+### wechaty.logout\(\) ⇒ `Promise.`        <a id="wechaty-logout-promise"></a>
 
 登出机器人
 
@@ -231,7 +231,7 @@ await bot.stop()
 await bot.logout()
 ```
 
-### wechaty.logonoff\(\) ⇒ `boolean`       <a id="wechaty-logonoff-boolean"></a>
+### wechaty.logonoff\(\) ⇒ `boolean`        <a id="wechaty-logonoff-boolean"></a>
 
 获取机器人logon/logoff 的状态
 
@@ -245,7 +245,7 @@ if (bot.logonoff()) {
 }
 ```
 
-### wechaty.userSelf\(\) ⇒ `ContactSelf`       <a id="wechaty-userself-contactself"></a>
+### wechaty.userSelf\(\) ⇒ `ContactSelf`        <a id="wechaty-userself-contactself"></a>
 
 获取当前机器人的所有信息
 
@@ -256,7 +256,7 @@ const contact = bot.userSelf()
 console.log(`Bot is ${contact.name()}`)
 ```
 
-### wechaty.say\(textOrContactOrFileOrUrl\) ⇒ `Promise.`       <a id="wechaty-say-textorcontactorfileorurl-promise"></a>
+### wechaty.say\(textOrContactOrFileOrUrl\) ⇒ `Promise.`        <a id="wechaty-say-textorcontactorfileorurl-promise"></a>
 
 机器人自己给自己发消息。
 
@@ -266,26 +266,26 @@ console.log(`Bot is ${contact.name()}`)
 
 **Kind**: instance method of [`Wechaty`](wechaty.md#wechaty)​
 
-| Param | Type | Description |
-| :--- | :--- | :--- |
-
-
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">textOrContactOrFileOrUrl</th>
-      <th style="text-align:left"><code>string</code> | <code>Contact</code> | <code>FileBox</code>
-      </th>
-      <th style="text-align:left">
-        <p>发送文本、联系人名片或者文件给机器人自己。</p>
-        <p>你可以使用 <a href="https://www.npmjs.com/package/file-box">FileBox</a> 来发送文件</p>
-      </th>
+      <th style="text-align:left">Param</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
     </tr>
   </thead>
-  <tbody></tbody>
-</table>
-
-```typescript
+  <tbody>
+    <tr>
+      <td style="text-align:left">textOrContactOrFileOrUrl</td>
+      <td style="text-align:left"><code>string</code> | <code>Contact</code> | <code>FileBox</code>
+      </td>
+      <td style="text-align:left">
+        <p>发送文本、联系人名片或者文件给机器人自己。</p>
+        <p>你可以使用 <a href="https://www.npmjs.com/package/file-box">FileBox</a> 来发送文件</p>
+      </td>
+    </tr>
+  </tbody>
+</table>```typescript
 // 1. send text to bot itself
 await bot.say('hello!')​ 
 
@@ -304,7 +304,7 @@ const fileBox = FileBox.fromFile('/tmp/text.jpg')
 await bot.say(fileBox)
 ```
 
-### Wechaty.instance\(\[options\]\)      <a id="wechaty-instance-options"></a>
+### Wechaty.instance\(\[options\]\)       <a id="wechaty-instance-options"></a>
 
 获取全局的Wechaty 实例。
 
@@ -325,7 +325,7 @@ const { Wechaty } = require('wechaty')
 .start()
 ```
 
-## 类型定义   <a id="typedef"></a>
+## 类型定义    <a id="typedef"></a>
 
 * [PuppetModuleName](wechaty.md#puppetmodulename)
 * [WechatyOptions](wechaty.md#wechatyoptions)
@@ -363,15 +363,20 @@ export interface WechatyOptions {
 
 **Kind**: global typedef **Properties**
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">name</th>
-      <th style="text-align:left"><code>string</code>
-      </th>
-      <th style="text-align:left">
+      <th style="text-align:left">Name</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">name</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">
         <p>Wechaty 机器人的名称.</p>
         <p>当你按照下面的方式设置的时候： <code>new Wechaty({name: &apos;wechatyName&apos;})</code>
         </p>
@@ -379,17 +384,16 @@ export interface WechatyOptions {
           的时候，你不需要扫码登陆就能自动登陆机器人。</p>
         <p>这个名字在启动机器人的时候，是可以通过环境变量<code>WECHATY_NAME</code> 设置的，如：<code>WECHATY_NAME=&quot;wechatyName&quot; node bot.js</code>
         </p>
-      </th>
+      </td>
     </tr>
-  </thead>
-  <tbody></tbody>
-</table>
-
-| ioToken | `string` | Io TOKEN |
-| :--- | :--- | :--- |
-
-
-Wechaty 事件的类型
+    <tr>
+      <td style="text-align:left">ioToken</td>
+      <td style="text-align:left"><code>string</code>
+      </td>
+      <td style="text-align:left">Io TOKEN</td>
+    </tr>
+  </tbody>
+</table>Wechaty 事件的类型
 
 **Kind**: global typedef **Properties**
 

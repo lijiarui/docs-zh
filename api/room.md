@@ -419,9 +419,7 @@ if (contact && room) {
     </tr>
   </thead>
   <tbody></tbody>
-</table>
-
-### room.member\(queryArg\) ⇒ `Promise.`
+</table>### room.member\(queryArg\) ⇒ `Promise.`
 
 根据 query 查找群成员，如果找到多个，返回第一个。
 
@@ -448,21 +446,7 @@ if (contact && room) {
     </tr>
   </thead>
   <tbody></tbody>
-</table>```javascript
-const bot = new Wechaty()
-await bot.start()
-// after logged in...
-const room = await bot.Room.find({topic: 'wechaty'})           // change 'wechaty' to any room name in your wechat
-if (room) {
-  const member = await room.member('lijiarui')             // change 'lijiarui' to any room member in your wechat
-  if (member) {
-    console.log(`wechaty room got the member: ${member.name()}`)
-  } else {
-    console.log(`cannot get member in wechaty room!`)
-  }
-}
-```
-
+</table>```text
 **Example** _\(Find member by MemberQueryFilter\)_
 
 ```javascript
@@ -560,7 +544,7 @@ const roomList = await bot.Room.find()
 const roomList = await bot.Room.find({topic: 'wechaty'})
 ```
 
-## 类型定义  <a id="typedef"></a>
+## 类型定义   <a id="typedef"></a>
 
 [RoomQueryFilter](room.md#RoomQueryFilter)
 
