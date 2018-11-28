@@ -249,7 +249,7 @@ await room.quit()
 | :--- | :--- | :--- |
 | \[newTopic\] | `string` | 参数可选，如果没有设置，则会获取群名称，如果设置了，则会设置群名称。 |
 
-**Example** _\(When you say anything in a room, it will get room topic. \)_
+**Example** _\(当你在群里说话的时候，打印群名称 \)_
 
 ```javascript
 const bot = new Wechaty()
@@ -264,7 +264,7 @@ bot
 .start()
 ```
 
-**Example** _\(When you say anything in a room, it will change room topic. \)_
+**Example** _\(当你在群内说话的时候，机器人修改群名称. \)_
 
 ```javascript
 const bot = new Wechaty()
@@ -296,7 +296,7 @@ bot
 | :--- | :--- | :--- |
 | \[text\] | `string` | 如果设置了这个参数，则会设置群公告，如果没有设置，则是获取群公告。 |
 
-**Example** _\(When you say anything in a room, it will get room announce. \)_
+**Example** _\(当你在群里说话的时候，打印群公告. \)_
 
 ```javascript
 const bot = new Wechaty()
@@ -307,7 +307,7 @@ const announce = await room.announce()
 console.log(`room announce is : ${announce}`)
 ```
 
-**Example** _\(When you say anything in a room, it will change room announce. \)_
+**Example** _\(当你在群里说话的时候，修改群公告. \)_
 
 ```javascript
 const bot = new Wechaty()
@@ -398,54 +398,58 @@ if (contact && room) {
 
 **Kind**: instance method of [`Room`](room.md#room)
 
-| Param | Type | Description |
-| :--- | :--- | :--- |
-
-
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">[query]</th>
-      <th style="text-align:left"><a href="room.md#roommemberqueryfilter"><code>RoomMemberQueryFilter</code></a> | <code>string</code>
-      </th>
-      <th style="text-align:left">
-        <p>可选参数。</p>
+      <th style="text-align:left">Param</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">[query]</td>
+      <td style="text-align:left"><a href="room.md#roommemberqueryfilter"><code>RoomMemberQueryFilter</code></a> | <code>string</code>
+      </td>
+      <td style="text-align:left">
+        <p>可选参数</p>
         <ul>
           <li>RoomMemberQueryFilter 可通过 name, roomAlias, contactAlias 查找指定的群成员。</li>
           <li>当memberAll(name) 的参数为string 类型的时候, 返回所有找到的群成员。这里面的name 包括上面定义的name, roomAlias,
             contactAlias。</li>
         </ul>
-      </th>
+      </td>
     </tr>
-  </thead>
-  <tbody></tbody>
+  </tbody>
 </table>### room.member\(queryArg\) ⇒ `Promise.`
 
 根据 query 查找群成员，如果找到多个，返回第一个。
 
 **Kind**: instance method of [`Room`](room.md#room)
 
-| Param | Type | Description |
-| :--- | :--- | :--- |
-
-
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">queryArg</th>
-      <th style="text-align:left"><a href="room.md#roommemberqueryfilter"><code>RoomMemberQueryFilter</code></a> | <code>string</code>
-      </th>
-      <th style="text-align:left">
+      <th style="text-align:left">Param</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">queryArg</td>
+      <td style="text-align:left"><a href="room.md#roommemberqueryfilter"><code>RoomMemberQueryFilter</code></a> | <code>string</code>
+      </td>
+      <td style="text-align:left">
         <p>如果找到多个，返回第一个。</p>
         <ul>
           <li>RoomMemberQueryFilter 可通过 name, roomAlias, contactAlias 查找指定的群成员。</li>
           <li>当memberAll(name) 的参数为string 类型的时候, 返回所有找到的群成员。这里面的name 包括上面定义的name, roomAlias,
             contactAlias。</li>
         </ul>
-      </th>
+      </td>
     </tr>
-  </thead>
-  <tbody></tbody>
+  </tbody>
 </table>```text
 **Example** _\(Find member by MemberQueryFilter\)_
 

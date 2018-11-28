@@ -129,23 +129,25 @@ bot
 **Kind**: instance method of [`Message`](message.md#message)  
 **See**: [Examples/ding-dong-bot](https://github.com/Chatie/wechaty/blob/1523c5e02be46ebe2cc172a744b2fbe53351540e/examples/ding-dong-bot.ts)
 
-| Param | Type | Description |
-| :--- | :--- | :--- |
-
-
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">textOrContactOrFile</th>
-      <th style="text-align:left"><code>string</code> | <code>Contact</code> | <code>FileBox</code>
-      </th>
-      <th style="text-align:left">
-        <p>发送文本、名片或者文件</p>
-        <p>你可以使用 <a href="https://www.npmjs.com/package/file-box">FileBox</a> 来发送文件</p>
-      </th>
+      <th style="text-align:left">Param</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
     </tr>
   </thead>
-  <tbody></tbody>
+  <tbody>
+    <tr>
+      <td style="text-align:left">textOrContactOrFile</td>
+      <td style="text-align:left"><code>string</code> | <code>Contact</code> | <code>FileBox</code>
+      </td>
+      <td style="text-align:left">
+        <p>发送文本、名片或者文件</p>
+        <p>你可以使用 <a href="https://www.npmjs.com/package/file-box">FileBox</a> 来发送文件</p>
+      </td>
+    </tr>
+  </tbody>
 </table>```javascript
 import { FileBox }  from 'file-box'
 const bot = new Wechaty()
@@ -245,22 +247,7 @@ if (await message.mentionSelf()) {
 
 | Param | Type | Description |
 | :--- | :--- | :--- |
-
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">to</th>
-      <th style="text-align:left"><code>Sayable</code> | <code>Array.</code>
-      </th>
-      <th style="text-align:left">
-        <p>Room or Contact</p>
-        <p>The recipient of the message, the room, or the contact</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>\`\`\`
+| to | `Sayable` \| `Array.` | Room 或者 Contact。指的是收消息方。 |
 
 ### message.date\(\)
 
