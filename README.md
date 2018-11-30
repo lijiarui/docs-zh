@@ -50,12 +50,8 @@
 
 ## 加入我们 <a id="join-us"></a>
 
-扫描下方二维码，加入Wechaty Developers Home
-
-![Wechaty Developers&apos; Home](https://chatie.io/wechaty-getting-started/bot-qr-code.png)
-
 {% hint style="success" %}
-回复 'wechaty' 加入 Wechaty 开发者群。
+扫描下方二维码，回复 'wechaty' 加入 Wechaty Developers Home
 {% endhint %}
 
 {% hint style="danger" %}
@@ -73,4 +69,6 @@
 {% endhint %}
 
 
+
+![Wechaty Developers&apos; Home](https://chatie.io/wechaty-getting-started/bot-qr-code.png)
 
