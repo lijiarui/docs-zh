@@ -18,6 +18,11 @@
 
 详情请看[Wechaty](https://github.com/chatie/wechaty)项目 [![NPM Version](https://badge.fury.io/js/wechaty.svg)](https://badge.fury.io/js/wechaty) [![Docker Pulls](https://img.shields.io/docker/pulls/zixia/wechaty.svg?maxAge=2592000)](https://hub.docker.com/r/zixia/wechaty/) [![TypeScript](https://img.shields.io/badge/<%2F>-TypeScript-blue.svg)](https://www.typescriptlang.org/) [![Greenkeeper badge](https://badges.greenkeeper.io/Chatie/wechaty.svg)](https://greenkeeper.io/)
 
+## 实现原理 <a id="web-limit"></a>
+
+* 第一阶段：早期是基于网页版的微信客户端实现，详情查看 [Wechaty 101: from v0.0 to v0.7](https://blog.chatie.io/wechaty-101-presentation/) 这篇博客通过一个近2个小时的视频教程和ppt 来详细解释了实现原理。所有基于网页版本的实现均是**完全开源且免费的**。
+* 第二阶段：[基于网页版的微信有了较多限制](./#web-limit-1)，为了方便开发者继续搭建自己的聊天机器人，我们提供了中间件 [Puppet](puppet.md) 来支持多种实现方式。[查看多种微信接入方式。](./#multi-protocal)
+
 ## 基于Web 微信的限制 <a id="web-limit"></a>
 
 从2017年6月下旬开始，使用基于web版微信接入方案存在大概率的被限制登陆的可能性。 主要表现为：无法登陆Web 微信，但不影响手机等其他平台。 验证是否被限制登陆： [https://wx.qq.com](https://wx.qq.com) 上扫码查看是否能登陆。 更多内容详见：
