@@ -100,5 +100,21 @@ Wechaty 根据 [http://semver.org/](http://semver.org/) 的规则制定版本号
 
 ## 6. 环境要求
 
+* 同时支持[Linux](https://travis-ci.com/chatie/wechaty), [Windows](https://ci.appveyor.com/project/chatie/wechaty), [Darwin\(OSX/Mac\)](https://travis-ci.com/chatie/wechaty) 和 [Docker](https://app.shippable.com/github/Chatie/wechaty) 多个平台。windows 用户如果安装失败，请参考这篇博客：[在Windows10下安装Wechaty](https://blog.chatie.io/wechaty-installation-in-windows-10/)​
+* Node.js 版本高于 10
+
+## 7. 相关拓展包说明
+
+* [memory-card](https://github.com/huan/memory-card)：Memory Card is an Easy to Use Key/Value Store, with Swagger API Backend & Serialization Support.
+* [brolog](https://github.com/huan/brolog): Brolog is Logger for Angular in Browser like Npmlog.
+* [rx-queue](https://github.com/huan/rx-queue): Easy to Use ReactiveX Queue that Supports Delay/DelayExector/Throttle/Debounce Features Powered by RxJS.
+* [file-box](https://github.com/huan/file-box)：Pack a File into Box for easy move/transfer between servers no matter of where it is.\(local, remote url, or cloud storage\)
+* [hot-import](https://github.com/huan/hot-import): Hot Module Replacement\(HMR\) for Node.js
+* [flash-store](https://github.com/huan/flash-store): FlashStore is a Key-Value persistent storage with easy to use ES6 Map-like API\(both Async and Sync support\), powered by LevelDB and TypeScript. 
+* [state-switch](https://github.com/huan/state-switch): State Switch is a Monitor/Guard for Managing Your Async Operations. 
+* [watchdog](https://github.com/huan/watchdog): An Timer used to Detect and Recover from Malfunctions
+* [finis](https://github.com/huan/finis): Hook node exit with your callback, get `exit code` and `signal name` from parameters 
+* [leveldown](https://github.com/Level/leveldown): Pure C++ Node.js LevelDB binding serving as the back-end to LevelUP
+
 ## 7. 代码示例
 
