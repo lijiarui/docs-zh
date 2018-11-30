@@ -29,24 +29,7 @@
 
 ### 1.**4** 如何打开调试信息 <a id="can-not-login"></a>
 
-wechaty 使用了 [brolog](https://github.com/huan/brolog) 作为日志工具，默认打印的级别是\`verbose\`, brolog 共有的级别从高到低分别为：
-
-* silent
-* error
-* warn
-* info
-* verbose
-* silly
-
-有以下两种方式来设置LOG 的级别：
-
-1. 可以通过设置环境变量 \`WECHATY\_LOG\` 的方式设置LOG的级别
-2. 在代码中设置:
-
-```typescript
-import { log } from 'wechaty'
-log.level('silly') // 'silent' | 'error' | 'warn' | 'info' | 'verbose' | 'silly'
-```
+参考 [最佳实践之日志说明](best-practice.md#4-ri-zhi-shuo-ming)
 
 ## 2. 功能相关 <a id="feature"></a>
 
@@ -291,7 +274,7 @@ bot.on('message', message => {
 
 ### 3.1 wechaty & 队列的最佳实践 <a id="best-practice-queue"></a>
 
-为了防止微信封号，wechaty 内置了队列，详细可见：[rx-queue](https://github.com/zixia/rx-queue)
+参考 [最佳实践之设置合理间隔](best-practice.md#3-wei-fang-fa-tiao-yong-she-zhi-he-li-jian-ge)
 
 ### 3.2 如何能不多次扫码登陆机器人 <a id="login-status-persistent"></a>
 
@@ -329,9 +312,7 @@ WECHATY_NAME="your-cute-bot-name" node bot.js
 
 ### 3.5 wechaty 运行的bot 如何修改文件后自动重启 <a id="hot-reload"></a>
 
-> docker运行的bot文件如何debug？像nodemon那样?
-
-wechaty 提供了hot-import 模块，参考：[https://github.com/Chatie/wechaty-getting-started/tree/master/examples/professional/hot-import-bot](https://github.com/Chatie/wechaty-getting-started/tree/master/examples/professional/hot-import-bot)
+参考 [最佳实践之热加载](best-practice.md#5-shi-yong-re-jia-zai)
 
 ## 4. 其他 <a id="other"></a>
 
@@ -351,38 +332,7 @@ wechaty 可以实现多个微信接入的方案，对外提供统一的接口，
 
 ### 4.3 如何理解Wechaty 的版本号 <a id="wechaty-version-number"></a>
 
-**简单回答：**
-
-次要版本号是偶数数字是生产版本。
-
-**详细回答：**
-
-Wechaty 根据 [http://semver.org/ ](http://semver.org/%20) 的规则制定版本号，并使用次要版本号来发布的版本是生产版本还是开发版本。
-
-数字的规则：
-
-1. 偶数版本，如0.8，0.12，是用于生产环境的
-2. 奇数版本，如0.11，0.13，是发布的开发版本
-
-参考 [wechaty issue \#905](https://github.com/Chatie/wechaty/issues/905) 和 [wechaty issue 1158](https://github.com/Chatie/wechaty/issues/1158), 当语义版本的次要版本号是技术的时候，意味着它是开发分支，建议不要上生产环境。
-
-**偶数版本** 例子: \(用于生产环境\)
-
-* 0.**16**.1
-* 0.**16**.2
-* 1.**0**.1
-* 1.**0**.2
-
-**技术版本** 例子: \(用于开发环境\)
-
-* 0.**15**.1
-* 0.**15**.2
-* 1.**1**.1
-* 1.**1**.2
-
-同时，只要代码通过了Travis CI 的自动化测试，我们会发布所有版本的NPM包。
-
-如果想了解更多：[How to Understand the Wechaty Semantic Versioning?](https://github.com/Chatie/wechaty/wiki/FAQ#3-how-to-understand-the-wechaty-semantic-versioning)
+参考 [最佳实践之版本说明](best-practice.md#6-tui-jian-ban-ben)
 
 {% hint style="info" %}
 如果FAQ的内容无法满足你，可以去官网发Issue 获取支持： [https://github.com/chatie/wechaty/issues](https://github.com/chatie/wechaty/issues)
