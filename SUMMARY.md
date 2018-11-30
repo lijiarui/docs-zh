@@ -21,6 +21,7 @@
 
 * [视频教程](more/video.md)
 * [进阶](more/advanced.md)
+* [目录结构](more/catalog.md)
 * [ReleaseLog](more/releaselog.md)
 * [ChangeLog](more/changelog.md)
 * [Awesome Wechaty](more/awesome-wechaty.md)
