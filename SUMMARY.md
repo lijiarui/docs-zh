@@ -12,7 +12,7 @@
   * [Friendship](api/friendship.md)
 * [示例代码](example.md)
 * [Puppet](puppet.md)
-* [FAQ](faq.md)
+* [常见问题](faq.md)
 * [最佳实践](best-practice.md)
 * [参与贡献](contribute.md)
 * [购买第三方iPad版本](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/购买token)
