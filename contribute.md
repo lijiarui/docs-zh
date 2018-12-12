@@ -21,7 +21,7 @@ Chatie 的成长离不开开源社区里面每一个成员的贡献，无论你�
 
 你可以有多种方式参与开源项目：
 
-### 1. 贡献代码
+#### 1. 贡献代码
 
 * 解决Chatie项目下标为 `good first issue` `pull request welcome` 或者 `help wanted` 的问题。
 * 为文档添加示例代码
@@ -34,7 +34,7 @@ Chatie 的成长离不开开源社区里面每一个成员的贡献，无论你�
 同时，也希望你能在提交代码前，为你的pull request 增加对应的自动化测试代码和文档。
 {% endhint %}
 
-### 2. 其他支持
+#### 2. 其他支持
 
 * 修改文档中的问题：
   * [中文文档地址](https://github.com/lijiarui/wechaty-docs)

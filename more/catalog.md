@@ -1,4 +1,4 @@
 # 目录结构
 
-PR is welcome.
+PR is welcome
 
