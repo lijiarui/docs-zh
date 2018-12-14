@@ -1,3 +1,8 @@
+# 已不再维护！
+
+- 移动到项目： https://github.com/Chatie/docs/tree/zh
+- 新文档地址： https://docs.chatie.io/zh
+
 # 介绍
 
 ## Wechaty 是什么  <a id="intro"></a>
